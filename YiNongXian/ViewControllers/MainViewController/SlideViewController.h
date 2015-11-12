@@ -1,0 +1,13 @@
+//
+//  SlideViewController.h
+//  YiNongXian
+//
+//  Created by 索金铭 on 15/11/12.
+//  Copyright © 2015年 bxlt. All rights reserved.
+//
+
+#import "LLBlurSidebar.h"
+
+@interface SlideViewController : LLBlurSidebar
+
+@end
