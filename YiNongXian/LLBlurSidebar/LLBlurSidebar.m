@@ -66,7 +66,7 @@
     [self.view addGestureRecognizer:recognizer];
     
     // 列表
-    CGRect rect = CGRectMake(-kSidebarWidth, 0, kSidebarWidth, self.view.bounds.size.height);
+    CGRect rect = CGRectMake(-kSidebarWidth, 66, kSidebarWidth, self.view.bounds.size.height);
     self.contentView = [[UIView alloc] initWithFrame:rect];
     [self.view addSubview:self.contentView];
     

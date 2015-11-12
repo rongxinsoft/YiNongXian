@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LoginViewController : UIViewController
+@class PooCodeView;
+@interface LoginViewController : UIViewController<UITextFieldDelegate>
 - (IBAction)login:(id)sender;
+- (IBAction)changeYzm:(id)sender;
+@property (weak, nonatomic) IBOutlet PooCodeView *yzmView;
+@property (weak, nonatomic) IBOutlet UITextField *unameText;//用户名
+@property (weak, nonatomic) IBOutlet UITextField *upasswordText;//密码
+@property (weak, nonatomic) IBOutlet UITextField *yzmText;//验证码
 
 @end

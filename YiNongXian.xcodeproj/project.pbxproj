@@ -20,6 +20,7 @@
 		213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D581BF46B49008D9C25 /* MainViewController.m */; };
 		213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D591BF46B49008D9C25 /* MainViewController.xib */; };
 		213D5D631BF46BCF008D9C25 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D621BF46BCF008D9C25 /* SlideViewController.m */; };
+		213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D651BF4973D008D9C25 /* PooCodeView.m */; };
 		21FE20711BF19A71002B08FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20701BF19A71002B08FC /* main.m */; };
 		21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20731BF19A71002B08FC /* AppDelegate.m */; };
 		21FE207C1BF19A71002B08FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FE207B1BF19A71002B08FC /* Assets.xcassets */; };
@@ -67,6 +68,8 @@
 		213D5D591BF46B49008D9C25 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		213D5D611BF46BCF008D9C25 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
 		213D5D621BF46BCF008D9C25 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
+		213D5D641BF4973D008D9C25 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
+		213D5D651BF4973D008D9C25 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
 		21FE206C1BF19A71002B08FC /* YiNongXian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiNongXian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FE20701BF19A71002B08FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21FE20721BF19A71002B08FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 		213D5D421BF43C8D008D9C25 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				213D5D641BF4973D008D9C25 /* PooCodeView.h */,
+				213D5D651BF4973D008D9C25 /* PooCodeView.m */,
 				213D5D431BF43CA2008D9C25 /* LoginViewController.h */,
 				213D5D441BF43CA2008D9C25 /* LoginViewController.m */,
 				213D5D451BF43CA2008D9C25 /* LoginViewController.xib */,
@@ -468,6 +473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */,
 				213D5D631BF46BCF008D9C25 /* SlideViewController.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
 				213D5D561BF468F4008D9C25 /* LLBlurSidebar.m in Sources */,

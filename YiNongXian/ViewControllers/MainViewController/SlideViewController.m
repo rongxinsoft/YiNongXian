@@ -16,15 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self initTable];
+}
+#pragma mark - init TableView
+-(void)initTable
+{
     // 列表
     self.menuTableView = [[UITableView alloc] initWithFrame:self.contentView.bounds];
     [self.menuTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    self.menuTableView.backgroundColor = [UIColor redColor];
+    self.menuTableView.backgroundColor = [UIColor blueColor];
     self.menuTableView.delegate = self;
     self.menuTableView.dataSource = self;
     [self.contentView addSubview:self.menuTableView];
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - TableView
@@ -54,16 +57,5 @@
     return cell;
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

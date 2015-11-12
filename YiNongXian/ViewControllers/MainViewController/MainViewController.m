@@ -17,9 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self creatNav];
+    [self initSlider];
     
-   
-    self.sidebarVC.view.frame  = self.view.bounds;
+}
+#pragma mark-nav
+-(void)creatNav
+{
     self.navigationController.navigationBar.hidden=NO;
     
     UIImage* backImage = [UIImage imageNamed:@"no.png"];
@@ -30,6 +34,12 @@
     
     UIBarButtonItem * leftBar=[[UIBarButtonItem alloc]initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftBar;
+}
+#pragma mark-Slider
+-(void)initSlider
+{
+    self.sidebarVC.view.frame  = self.view.bounds;
+
     // 左侧边栏开始
     UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
     [panGesture delaysTouchesBegan];
@@ -39,13 +49,13 @@
     [self.sidebarVC setBgRGB:0x000000];
     [self.view addSubview:self.sidebarVC.view];
 }
+#pragma mark-slider ApeearAction
 - (void )show:(id)sender {
     [self.sidebarVC showHideSidebar];
 }
 - (void)panDetected:(UIPanGestureRecognizer*)recoginzer
 {
     [self.sidebarVC panDetected:recoginzer];
-    
     
 }
 - (void)didReceiveMemoryWarning {
