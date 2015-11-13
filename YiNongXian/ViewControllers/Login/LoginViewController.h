@@ -15,5 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *unameText;//用户名
 @property (weak, nonatomic) IBOutlet UITextField *upasswordText;//密码
 @property (weak, nonatomic) IBOutlet UITextField *yzmText;//验证码
+@property (weak, nonatomic) IBOutlet UIButton *isAgreeImage;
 
+- (IBAction)setTap:(id)sender;
+- (IBAction)isRememberTap:(UIButton *)sender;
 @end

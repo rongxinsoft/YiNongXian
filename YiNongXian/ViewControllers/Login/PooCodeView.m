@@ -23,15 +23,15 @@
         self.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor blueColor];
 
-        [self change];
+        
     }
     return self;
 }
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [self change];
-    [self setNeedsDisplay];
-}
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [self change];
+//    [self setNeedsDisplay];
+//}
 -(void)changeView
 {
     [self change];

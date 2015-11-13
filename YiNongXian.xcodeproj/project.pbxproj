@@ -15,12 +15,28 @@
 		213D5D4B1BF441EF008D9C25 /* backgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D4A1BF441EF008D9C25 /* backgroud@2x.png */; };
 		213D5D4E1BF445D0008D9C25 /* no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D4C1BF445D0008D9C25 /* no@2x.png */; };
 		213D5D4F1BF445D0008D9C25 /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D4D1BF445D0008D9C25 /* ok@2x.png */; };
-		213D5D511BF446FF008D9C25 /* yzm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D501BF446FF008D9C25 /* yzm@2x.png */; };
-		213D5D561BF468F4008D9C25 /* LLBlurSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D551BF468F4008D9C25 /* LLBlurSidebar.m */; };
 		213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D581BF46B49008D9C25 /* MainViewController.m */; };
 		213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D591BF46B49008D9C25 /* MainViewController.xib */; };
-		213D5D631BF46BCF008D9C25 /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D621BF46BCF008D9C25 /* SlideViewController.m */; };
 		213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D651BF4973D008D9C25 /* PooCodeView.m */; };
+		21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */; };
+		21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9F91BF58F9700CFB9A7 /* RNSwipeViewController.m */; };
+		21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9FC1BF58F9700CFB9A7 /* UIView+Sizes.m */; };
+		21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9FE1BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m */; };
+		21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7FA041BF5918400CFB9A7 /* LeftMenuViewController.m */; };
+		21F7FA071BF5918400CFB9A7 /* LeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA051BF5918400CFB9A7 /* LeftMenuViewController.xib */; };
+		21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7FA0C1BF5924300CFB9A7 /* SwichViewController.m */; };
+		21F7FA0F1BF5961B00CFB9A7 /* leftButoom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA0E1BF5961B00CFB9A7 /* leftButoom@2x.png */; };
+		21F7FA141BF5C34F00CFB9A7 /* LeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7FA121BF5C34F00CFB9A7 /* LeftTableViewCell.m */; };
+		21F7FA151BF5C34F00CFB9A7 /* LeftTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA131BF5C34F00CFB9A7 /* LeftTableViewCell.xib */; };
+		21F7FA171BF5CC0800CFB9A7 /* headIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA161BF5CC0800CFB9A7 /* headIcon@2x.png */; };
+		21F7FA1C1BF5CC9800CFB9A7 /* chakan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA181BF5CC9800CFB9A7 /* chakan@2x.png */; };
+		21F7FA1D1BF5CC9800CFB9A7 /* chengbao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA191BF5CC9800CFB9A7 /* chengbao@2x.png */; };
+		21F7FA1E1BF5CC9800CFB9A7 /* shangbao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA1A1BF5CC9800CFB9A7 /* shangbao@2x.png */; };
+		21F7FA1F1BF5CC9800CFB9A7 /* tool@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA1B1BF5CC9800CFB9A7 /* tool@2x.png */; };
+		21F7FA221BF5D9C400CFB9A7 /* password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA201BF5D9C400CFB9A7 /* password@2x.png */; };
+		21F7FA231BF5D9C400CFB9A7 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA211BF5D9C400CFB9A7 /* user@2x.png */; };
+		21F7FA281BF5E47800CFB9A7 /* SetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7FA261BF5E47800CFB9A7 /* SetingViewController.m */; };
+		21F7FA291BF5E47800CFB9A7 /* SetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA271BF5E47800CFB9A7 /* SetingViewController.xib */; };
 		21FE20711BF19A71002B08FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20701BF19A71002B08FC /* main.m */; };
 		21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20731BF19A71002B08FC /* AppDelegate.m */; };
 		21FE207C1BF19A71002B08FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FE207B1BF19A71002B08FC /* Assets.xcassets */; };
@@ -60,16 +76,39 @@
 		213D5D4A1BF441EF008D9C25 /* backgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backgroud@2x.png"; sourceTree = "<group>"; };
 		213D5D4C1BF445D0008D9C25 /* no@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no@2x.png"; sourceTree = "<group>"; };
 		213D5D4D1BF445D0008D9C25 /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
-		213D5D501BF446FF008D9C25 /* yzm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yzm@2x.png"; sourceTree = "<group>"; };
-		213D5D541BF468F4008D9C25 /* LLBlurSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBlurSidebar.h; sourceTree = "<group>"; };
-		213D5D551BF468F4008D9C25 /* LLBlurSidebar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBlurSidebar.m; sourceTree = "<group>"; };
 		213D5D571BF46B49008D9C25 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		213D5D581BF46B49008D9C25 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		213D5D591BF46B49008D9C25 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		213D5D611BF46BCF008D9C25 /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideViewController.h; sourceTree = "<group>"; };
-		213D5D621BF46BCF008D9C25 /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideViewController.m; sourceTree = "<group>"; };
 		213D5D641BF4973D008D9C25 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
 		213D5D651BF4973D008D9C25 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
+		21F7F9F61BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
+		21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
+		21F7F9F81BF58F9700CFB9A7 /* RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewController.h; sourceTree = "<group>"; };
+		21F7F9F91BF58F9700CFB9A7 /* RNSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSwipeViewController.m; sourceTree = "<group>"; };
+		21F7F9FA1BF58F9700CFB9A7 /* RNSwipeViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewControllerDelegate.h; sourceTree = "<group>"; };
+		21F7F9FB1BF58F9700CFB9A7 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
+		21F7F9FC1BF58F9700CFB9A7 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
+		21F7F9FD1BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RNSwipeViewController.h"; sourceTree = "<group>"; };
+		21F7F9FE1BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RNSwipeViewController.m"; sourceTree = "<group>"; };
+		21F7FA031BF5918400CFB9A7 /* LeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuViewController.h; path = ../MainViewController/LeftMenuViewController.h; sourceTree = "<group>"; };
+		21F7FA041BF5918400CFB9A7 /* LeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuViewController.m; path = ../MainViewController/LeftMenuViewController.m; sourceTree = "<group>"; };
+		21F7FA051BF5918400CFB9A7 /* LeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeftMenuViewController.xib; path = ../MainViewController/LeftMenuViewController.xib; sourceTree = "<group>"; };
+		21F7FA0B1BF5924300CFB9A7 /* SwichViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwichViewController.h; sourceTree = "<group>"; };
+		21F7FA0C1BF5924300CFB9A7 /* SwichViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwichViewController.m; sourceTree = "<group>"; };
+		21F7FA0E1BF5961B00CFB9A7 /* leftButoom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftButoom@2x.png"; sourceTree = "<group>"; };
+		21F7FA111BF5C34F00CFB9A7 /* LeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTableViewCell.h; sourceTree = "<group>"; };
+		21F7FA121BF5C34F00CFB9A7 /* LeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTableViewCell.m; sourceTree = "<group>"; };
+		21F7FA131BF5C34F00CFB9A7 /* LeftTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftTableViewCell.xib; sourceTree = "<group>"; };
+		21F7FA161BF5CC0800CFB9A7 /* headIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headIcon@2x.png"; sourceTree = "<group>"; };
+		21F7FA181BF5CC9800CFB9A7 /* chakan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chakan@2x.png"; sourceTree = "<group>"; };
+		21F7FA191BF5CC9800CFB9A7 /* chengbao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chengbao@2x.png"; sourceTree = "<group>"; };
+		21F7FA1A1BF5CC9800CFB9A7 /* shangbao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shangbao@2x.png"; sourceTree = "<group>"; };
+		21F7FA1B1BF5CC9800CFB9A7 /* tool@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tool@2x.png"; sourceTree = "<group>"; };
+		21F7FA201BF5D9C400CFB9A7 /* password@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password@2x.png"; sourceTree = "<group>"; };
+		21F7FA211BF5D9C400CFB9A7 /* user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user@2x.png"; sourceTree = "<group>"; };
+		21F7FA251BF5E47800CFB9A7 /* SetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetingViewController.h; sourceTree = "<group>"; };
+		21F7FA261BF5E47800CFB9A7 /* SetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetingViewController.m; sourceTree = "<group>"; };
+		21F7FA271BF5E47800CFB9A7 /* SetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetingViewController.xib; sourceTree = "<group>"; };
 		21FE206C1BF19A71002B08FC /* YiNongXian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiNongXian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FE20701BF19A71002B08FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21FE20721BF19A71002B08FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,7 +173,14 @@
 		213D5D241BF42615008D9C25 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				213D5D501BF446FF008D9C25 /* yzm@2x.png */,
+				21F7FA201BF5D9C400CFB9A7 /* password@2x.png */,
+				21F7FA211BF5D9C400CFB9A7 /* user@2x.png */,
+				21F7FA181BF5CC9800CFB9A7 /* chakan@2x.png */,
+				21F7FA191BF5CC9800CFB9A7 /* chengbao@2x.png */,
+				21F7FA1A1BF5CC9800CFB9A7 /* shangbao@2x.png */,
+				21F7FA1B1BF5CC9800CFB9A7 /* tool@2x.png */,
+				21F7FA161BF5CC0800CFB9A7 /* headIcon@2x.png */,
+				21F7FA0E1BF5961B00CFB9A7 /* leftButoom@2x.png */,
 				213D5D4C1BF445D0008D9C25 /* no@2x.png */,
 				213D5D4D1BF445D0008D9C25 /* ok@2x.png */,
 				213D5D481BF4417D008D9C25 /* CPIC_Logo@2x.png */,
@@ -153,6 +199,8 @@
 		213D5D361BF42D56008D9C25 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				21F7FA241BF5E45E00CFB9A7 /* SetingController */,
+				21F7FA101BF5A8C000CFB9A7 /* LeftMunuController */,
 				213D5D521BF468CF008D9C25 /* MainViewController */,
 				213D5D421BF43C8D008D9C25 /* Login */,
 			);
@@ -195,19 +243,49 @@
 				213D5D571BF46B49008D9C25 /* MainViewController.h */,
 				213D5D581BF46B49008D9C25 /* MainViewController.m */,
 				213D5D591BF46B49008D9C25 /* MainViewController.xib */,
-				213D5D611BF46BCF008D9C25 /* SlideViewController.h */,
-				213D5D621BF46BCF008D9C25 /* SlideViewController.m */,
+				21F7FA0B1BF5924300CFB9A7 /* SwichViewController.h */,
+				21F7FA0C1BF5924300CFB9A7 /* SwichViewController.m */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
-		213D5D531BF468F4008D9C25 /* LLBlurSidebar */ = {
+		21F7F9F51BF58F9700CFB9A7 /* RNSwipeViewController */ = {
 			isa = PBXGroup;
 			children = (
-				213D5D541BF468F4008D9C25 /* LLBlurSidebar.h */,
-				213D5D551BF468F4008D9C25 /* LLBlurSidebar.m */,
+				21F7F9F61BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.h */,
+				21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */,
+				21F7F9F81BF58F9700CFB9A7 /* RNSwipeViewController.h */,
+				21F7F9F91BF58F9700CFB9A7 /* RNSwipeViewController.m */,
+				21F7F9FA1BF58F9700CFB9A7 /* RNSwipeViewControllerDelegate.h */,
+				21F7F9FB1BF58F9700CFB9A7 /* UIView+Sizes.h */,
+				21F7F9FC1BF58F9700CFB9A7 /* UIView+Sizes.m */,
+				21F7F9FD1BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.h */,
+				21F7F9FE1BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m */,
 			);
-			path = LLBlurSidebar;
+			path = RNSwipeViewController;
+			sourceTree = "<group>";
+		};
+		21F7FA101BF5A8C000CFB9A7 /* LeftMunuController */ = {
+			isa = PBXGroup;
+			children = (
+				21F7FA031BF5918400CFB9A7 /* LeftMenuViewController.h */,
+				21F7FA041BF5918400CFB9A7 /* LeftMenuViewController.m */,
+				21F7FA051BF5918400CFB9A7 /* LeftMenuViewController.xib */,
+				21F7FA111BF5C34F00CFB9A7 /* LeftTableViewCell.h */,
+				21F7FA121BF5C34F00CFB9A7 /* LeftTableViewCell.m */,
+				21F7FA131BF5C34F00CFB9A7 /* LeftTableViewCell.xib */,
+			);
+			path = LeftMunuController;
+			sourceTree = "<group>";
+		};
+		21F7FA241BF5E45E00CFB9A7 /* SetingController */ = {
+			isa = PBXGroup;
+			children = (
+				21F7FA251BF5E47800CFB9A7 /* SetingViewController.h */,
+				21F7FA261BF5E47800CFB9A7 /* SetingViewController.m */,
+				21F7FA271BF5E47800CFB9A7 /* SetingViewController.xib */,
+			);
+			path = SetingController;
 			sourceTree = "<group>";
 		};
 		21FE20631BF19A71002B08FC = {
@@ -236,7 +314,7 @@
 		21FE206E1BF19A71002B08FC /* YiNongXian */ = {
 			isa = PBXGroup;
 			children = (
-				213D5D531BF468F4008D9C25 /* LLBlurSidebar */,
+				21F7F9F51BF58F9700CFB9A7 /* RNSwipeViewController */,
 				213D5D3B1BF42DD1008D9C25 /* Request */,
 				213D5D351BF42D56008D9C25 /* Model */,
 				213D5D361BF42D56008D9C25 /* ViewControllers */,
@@ -356,6 +434,7 @@
 				TargetAttributes = {
 					21FE206B1BF19A71002B08FC = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = T38EB4K9M6;
 					};
 					21FE20841BF19A71002B08FC = {
 						CreatedOnToolsVersion = 7.1;
@@ -393,14 +472,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				213D5D491BF4417D008D9C25 /* CPIC_Logo@2x.png in Resources */,
+				21F7FA1E1BF5CC9800CFB9A7 /* shangbao@2x.png in Resources */,
 				21FE207F1BF19A71002B08FC /* LaunchScreen.storyboard in Resources */,
 				213D5D4F1BF445D0008D9C25 /* ok@2x.png in Resources */,
+				21F7FA1D1BF5CC9800CFB9A7 /* chengbao@2x.png in Resources */,
+				21F7FA0F1BF5961B00CFB9A7 /* leftButoom@2x.png in Resources */,
+				21F7FA1F1BF5CC9800CFB9A7 /* tool@2x.png in Resources */,
 				21FE207C1BF19A71002B08FC /* Assets.xcassets in Resources */,
 				213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */,
+				21F7FA221BF5D9C400CFB9A7 /* password@2x.png in Resources */,
 				213D5D4E1BF445D0008D9C25 /* no@2x.png in Resources */,
+				21F7FA1C1BF5CC9800CFB9A7 /* chakan@2x.png in Resources */,
+				21F7FA151BF5C34F00CFB9A7 /* LeftTableViewCell.xib in Resources */,
 				213D5D471BF43CA2008D9C25 /* LoginViewController.xib in Resources */,
 				213D5D4B1BF441EF008D9C25 /* backgroud@2x.png in Resources */,
-				213D5D511BF446FF008D9C25 /* yzm@2x.png in Resources */,
+				21F7FA291BF5E47800CFB9A7 /* SetingViewController.xib in Resources */,
+				21F7FA231BF5D9C400CFB9A7 /* user@2x.png in Resources */,
+				21F7FA071BF5918400CFB9A7 /* LeftMenuViewController.xib in Resources */,
+				21F7FA171BF5CC0800CFB9A7 /* headIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,14 +562,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F7FA281BF5E47800CFB9A7 /* SetingViewController.m in Sources */,
+				21F7FA141BF5C34F00CFB9A7 /* LeftTableViewCell.m in Sources */,
 				213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */,
-				213D5D631BF46BCF008D9C25 /* SlideViewController.m in Sources */,
+				21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */,
+				21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
-				213D5D561BF468F4008D9C25 /* LLBlurSidebar.m in Sources */,
+				21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */,
 				213D5D3A1BF42D56008D9C25 /* ViewModelClass.m in Sources */,
 				213D5D3E1BF42DE1008D9C25 /* NetRequestClass.m in Sources */,
 				213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */,
 				21FE20711BF19A71002B08FC /* main.m in Sources */,
+				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
+				21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */,
+				21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */,
 				213D5D461BF43CA2008D9C25 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -615,6 +710,7 @@
 			baseConfigurationReference = 756F6C675D356848EE770230 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YiNongXianTests/PrefixHeader.pch;
 				INFOPLIST_FILE = YiNongXian/Info.plist;
@@ -631,6 +727,7 @@
 			baseConfigurationReference = 82E19ED6D8142DEF0A087043 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YiNongXianTests/PrefixHeader.pch;
 				INFOPLIST_FILE = YiNongXian/Info.plist;

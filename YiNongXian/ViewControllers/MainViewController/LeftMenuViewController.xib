@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeftMenuViewController">
+            <connections>
+                <outlet property="farmTap" destination="hNf-CN-yUm" id="EDX-ju-QMs"/>
+                <outlet property="farmView" destination="Qp0-VY-x0I" id="DeI-Qi-j8d"/>
+                <outlet property="forestryTap" destination="FxH-Ny-igC" id="cRV-YR-ZjV"/>
+                <outlet property="forestryView" destination="Bq8-Zt-Z5L" id="MfK-EA-p7Q"/>
+                <outlet property="plantTap" destination="DTi-Zj-fQP" id="mJ7-Fc-Roq"/>
+                <outlet property="plantingView" destination="Uag-Y3-sDu" id="Tix-fE-qwn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="768"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeg-RY-NDk">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.0" green="0.19215686274509802" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="Z67-Ou-cDa"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZnJ-H3-bBc">
+                    <rect key="frame" x="0.0" y="137" width="320" height="631"/>
+                    <animations/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DHm-AS-5h3"/>
+                        <outlet property="delegate" destination="-1" id="alQ-mx-8Zg"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uag-Y3-sDu">
+                    <rect key="frame" x="72" y="74" width="50" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DTi-Zj-fQP">
+                            <rect key="frame" x="1" y="1" width="48" height="48"/>
+                            <animations/>
+                            <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="种植">
+                                <color key="titleColor" red="0.25490196078431371" green="0.25882352941176473" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="plantAction:" destination="-1" eventType="touchUpInside" id="KCE-s0-8GF"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.4823529411764706" green="0.7803921568627451" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="DTi-Zj-fQP" firstAttribute="leading" secondItem="Uag-Y3-sDu" secondAttribute="leading" constant="1" id="OAF-pM-7Qv"/>
+                        <constraint firstAttribute="height" constant="50" id="WDc-Hi-zJe"/>
+                        <constraint firstItem="DTi-Zj-fQP" firstAttribute="top" secondItem="Uag-Y3-sDu" secondAttribute="top" constant="1" id="f9F-AX-6sd"/>
+                        <constraint firstAttribute="trailing" secondItem="DTi-Zj-fQP" secondAttribute="trailing" constant="1" id="nJU-cE-4aL"/>
+                        <constraint firstAttribute="width" constant="50" id="o8y-yr-zZ5"/>
+                        <constraint firstAttribute="bottom" secondItem="DTi-Zj-fQP" secondAttribute="bottom" constant="1" id="zry-n9-FkP"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qp0-VY-x0I">
+                    <rect key="frame" x="135" y="74" width="50" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNf-CN-yUm">
+                            <rect key="frame" x="1" y="1" width="48" height="48"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="养殖">
+                                <color key="titleColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="farmAction:" destination="-1" eventType="touchUpInside" id="gC5-pb-yZC"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Ddg-Ft-bPY"/>
+                        <constraint firstAttribute="bottom" secondItem="hNf-CN-yUm" secondAttribute="bottom" constant="1" id="KGZ-qm-qk1"/>
+                        <constraint firstItem="hNf-CN-yUm" firstAttribute="top" secondItem="Qp0-VY-x0I" secondAttribute="top" constant="1" id="LUi-DA-msd"/>
+                        <constraint firstAttribute="trailing" secondItem="hNf-CN-yUm" secondAttribute="trailing" constant="1" id="MaD-ha-hPj"/>
+                        <constraint firstItem="hNf-CN-yUm" firstAttribute="leading" secondItem="Qp0-VY-x0I" secondAttribute="leading" constant="1" id="cvs-sS-k02"/>
+                        <constraint firstAttribute="width" constant="50" id="sOw-aP-v43"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bq8-Zt-Z5L">
+                    <rect key="frame" x="198" y="74" width="50" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FxH-Ny-igC">
+                            <rect key="frame" x="1" y="1" width="48" height="48"/>
+                            <animations/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="林业">
+                                <color key="titleColor" red="0.25490196079999999" green="0.25882352939999997" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="forestryAction:" destination="-1" eventType="touchUpInside" id="XfE-ie-w1B"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="6nf-LU-L8n"/>
+                        <constraint firstItem="FxH-Ny-igC" firstAttribute="top" secondItem="Bq8-Zt-Z5L" secondAttribute="top" constant="1" id="Grs-VB-IOs"/>
+                        <constraint firstAttribute="trailing" secondItem="FxH-Ny-igC" secondAttribute="trailing" constant="1" id="Ubz-MM-DRJ"/>
+                        <constraint firstItem="FxH-Ny-igC" firstAttribute="leading" secondItem="Bq8-Zt-Z5L" secondAttribute="leading" constant="1" id="oY4-CK-APE"/>
+                        <constraint firstAttribute="height" constant="50" id="s8D-A3-NS2"/>
+                        <constraint firstAttribute="bottom" secondItem="FxH-Ny-igC" secondAttribute="bottom" constant="1" id="sIe-dw-NXX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="oeg-RY-NDk" secondAttribute="trailing" id="8mj-3k-0hL"/>
+                <constraint firstItem="Qp0-VY-x0I" firstAttribute="leading" secondItem="Uag-Y3-sDu" secondAttribute="trailing" constant="13" id="Cb5-yZ-HSp"/>
+                <constraint firstAttribute="bottom" secondItem="ZnJ-H3-bBc" secondAttribute="bottom" id="ExP-iU-l6x"/>
+                <constraint firstItem="Bq8-Zt-Z5L" firstAttribute="top" secondItem="oeg-RY-NDk" secondAttribute="bottom" constant="10" id="GAe-Wa-mQ4"/>
+                <constraint firstItem="ZnJ-H3-bBc" firstAttribute="top" secondItem="Bq8-Zt-Z5L" secondAttribute="bottom" constant="13" id="GxU-3Z-Mre"/>
+                <constraint firstItem="oeg-RY-NDk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OZD-Xe-MXX"/>
+                <constraint firstItem="Qp0-VY-x0I" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Sr0-lN-br8"/>
+                <constraint firstItem="Uag-Y3-sDu" firstAttribute="top" secondItem="oeg-RY-NDk" secondAttribute="bottom" constant="10" id="b1H-nR-ioz"/>
+                <constraint firstItem="Bq8-Zt-Z5L" firstAttribute="leading" secondItem="Qp0-VY-x0I" secondAttribute="trailing" constant="13" id="ckT-37-ybF"/>
+                <constraint firstItem="ZnJ-H3-bBc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g8Z-At-cDu"/>
+                <constraint firstItem="Qp0-VY-x0I" firstAttribute="top" secondItem="oeg-RY-NDk" secondAttribute="bottom" constant="10" id="liz-hC-wZZ"/>
+                <constraint firstAttribute="trailing" secondItem="ZnJ-H3-bBc" secondAttribute="trailing" id="ofY-9m-7BF"/>
+                <constraint firstItem="oeg-RY-NDk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pqq-7e-zVo"/>
+            </constraints>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad-1/3"/>
+            <point key="canvasLocation" x="-452" y="252"/>
+        </view>
+    </objects>
+</document>

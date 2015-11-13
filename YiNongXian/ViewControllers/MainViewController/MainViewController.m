@@ -7,9 +7,11 @@
 //
 
 #import "MainViewController.h"
-#import "SlideViewController.h"
+#import "UIViewController+RNSwipeViewController.h"
+#import "RNSwipeViewController.h"
+
 @interface MainViewController ()
-@property (nonatomic, retain) SlideViewController* sidebarVC;
+
 
 @end
 
@@ -18,45 +20,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatNav];
-    [self initSlider];
     
 }
 #pragma mark-nav
 -(void)creatNav
 {
-    self.navigationController.navigationBar.hidden=NO;
     
-    UIImage* backImage = [UIImage imageNamed:@"no.png"];
-    CGRect backframe = CGRectMake(0,0,54,30);
+    self.swipeController.navigationController.navigationBar.hidden=NO;
+    
+    UIImage* backImage = [UIImage imageNamed:@"leftButoom@2x.png"];
+    CGRect backframe = CGRectMake(0,0,25,25);
     UIButton* backButton= [[UIButton alloc] initWithFrame:backframe];
     [backButton setBackgroundImage:backImage forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(show:) forControlEvents:UIControlEventTouchUpInside];
+    [backButton addTarget:self action:@selector(leftShow) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem * leftBar=[[UIBarButtonItem alloc]initWithCustomView:backButton];
-    self.navigationItem.leftBarButtonItem = leftBar;
+    self.swipeController.navigationItem.leftBarButtonItem = leftBar;
 }
-#pragma mark-Slider
--(void)initSlider
+-(void)leftShow
 {
-    self.sidebarVC.view.frame  = self.view.bounds;
-
-    // 左侧边栏开始
-    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panDetected:)];
-    [panGesture delaysTouchesBegan];
+    if (self.swipeController.visibleState == RNSwipeVisibleLeft)
+    {
+       
+        [self.swipeController resetView];
+        
+    }else
+    {
+        if (! self.swipeController) {
+            NSLog(@"swipe controller not found");
+        }
+        [self.swipeController showLeft];
+    }
     
-    [self.view addGestureRecognizer:panGesture];
-    self.sidebarVC = [[SlideViewController alloc] init];
-    [self.sidebarVC setBgRGB:0x000000];
-    [self.view addSubview:self.sidebarVC.view];
-}
-#pragma mark-slider ApeearAction
-- (void )show:(id)sender {
-    [self.sidebarVC showHideSidebar];
-}
-- (void)panDetected:(UIPanGestureRecognizer*)recoginzer
-{
-    [self.sidebarVC panDetected:recoginzer];
     
+  
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

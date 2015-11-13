@@ -12,5 +12,5 @@
 @property (nonatomic, retain) NSArray *changeArray;
 @property (nonatomic, retain) NSMutableString *changeString;
 @property (nonatomic, retain) UILabel *codeLabel;
-- (void)changeView;
+-(void)changeView;
 @end
