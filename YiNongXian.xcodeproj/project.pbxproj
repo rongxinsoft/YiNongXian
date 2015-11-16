@@ -18,6 +18,11 @@
 		213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D581BF46B49008D9C25 /* MainViewController.m */; };
 		213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D591BF46B49008D9C25 /* MainViewController.xib */; };
 		213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D651BF4973D008D9C25 /* PooCodeView.m */; };
+		214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214EEBDC1BF9DD27003282D9 /* Images.xcassets */; };
+		21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9741BF98CC500CE757D /* RepordViewController.m */; };
+		21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D9751BF98CC500CE757D /* RepordViewController.xib */; };
+		21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */; };
+		21E8D97C1BF9C88800CE757D /* RepordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D97A1BF9C88800CE757D /* RepordTableViewCell.xib */; };
 		21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */; };
 		21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9F91BF58F9700CFB9A7 /* RNSwipeViewController.m */; };
 		21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9FC1BF58F9700CFB9A7 /* UIView+Sizes.m */; };
@@ -39,7 +44,6 @@
 		21F7FA291BF5E47800CFB9A7 /* SetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21F7FA271BF5E47800CFB9A7 /* SetingViewController.xib */; };
 		21FE20711BF19A71002B08FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20701BF19A71002B08FC /* main.m */; };
 		21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20731BF19A71002B08FC /* AppDelegate.m */; };
-		21FE207C1BF19A71002B08FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21FE207B1BF19A71002B08FC /* Assets.xcassets */; };
 		21FE207F1BF19A71002B08FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21FE207D1BF19A71002B08FC /* LaunchScreen.storyboard */; };
 		21FE208A1BF19A71002B08FC /* YiNongXianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20891BF19A71002B08FC /* YiNongXianTests.m */; };
 		21FE20951BF19A71002B08FC /* YiNongXianUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FE20941BF19A71002B08FC /* YiNongXianUITests.m */; };
@@ -81,6 +85,13 @@
 		213D5D591BF46B49008D9C25 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		213D5D641BF4973D008D9C25 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
 		213D5D651BF4973D008D9C25 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
+		214EEBDC1BF9DD27003282D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		21E8D9731BF98CC500CE757D /* RepordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepordViewController.h; sourceTree = "<group>"; };
+		21E8D9741BF98CC500CE757D /* RepordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepordViewController.m; sourceTree = "<group>"; };
+		21E8D9751BF98CC500CE757D /* RepordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepordViewController.xib; sourceTree = "<group>"; };
+		21E8D9781BF9C88800CE757D /* RepordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepordTableViewCell.h; sourceTree = "<group>"; };
+		21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepordTableViewCell.m; sourceTree = "<group>"; };
+		21E8D97A1BF9C88800CE757D /* RepordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepordTableViewCell.xib; sourceTree = "<group>"; };
 		21F7F9F61BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
 		21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
 		21F7F9F81BF58F9700CFB9A7 /* RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewController.h; sourceTree = "<group>"; };
@@ -113,7 +124,6 @@
 		21FE20701BF19A71002B08FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21FE20721BF19A71002B08FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		21FE20731BF19A71002B08FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		21FE207B1BF19A71002B08FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21FE207E1BF19A71002B08FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21FE20801BF19A71002B08FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21FE20851BF19A71002B08FC /* YiNongXianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YiNongXianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,7 +177,8 @@
 			children = (
 				213D5D241BF42615008D9C25 /* images */,
 			);
-			path = "Resource ";
+			name = "Resource ";
+			path = "../Resource ";
 			sourceTree = "<group>";
 		};
 		213D5D241BF42615008D9C25 /* images */ = {
@@ -199,10 +210,11 @@
 		213D5D361BF42D56008D9C25 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				21E8D9721BF98C8600CE757D /* RepordViewController */,
 				21F7FA241BF5E45E00CFB9A7 /* SetingController */,
 				21F7FA101BF5A8C000CFB9A7 /* LeftMunuController */,
 				213D5D521BF468CF008D9C25 /* MainViewController */,
-				213D5D421BF43C8D008D9C25 /* Login */,
+				213D5D421BF43C8D008D9C25 /* LoginViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -225,7 +237,7 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		213D5D421BF43C8D008D9C25 /* Login */ = {
+		213D5D421BF43C8D008D9C25 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
 				213D5D641BF4973D008D9C25 /* PooCodeView.h */,
@@ -234,6 +246,7 @@
 				213D5D441BF43CA2008D9C25 /* LoginViewController.m */,
 				213D5D451BF43CA2008D9C25 /* LoginViewController.xib */,
 			);
+			name = LoginViewController;
 			path = Login;
 			sourceTree = "<group>";
 		};
@@ -247,6 +260,19 @@
 				21F7FA0C1BF5924300CFB9A7 /* SwichViewController.m */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		21E8D9721BF98C8600CE757D /* RepordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21E8D9731BF98CC500CE757D /* RepordViewController.h */,
+				21E8D9741BF98CC500CE757D /* RepordViewController.m */,
+				21E8D9751BF98CC500CE757D /* RepordViewController.xib */,
+				21E8D9781BF9C88800CE757D /* RepordTableViewCell.h */,
+				21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */,
+				21E8D97A1BF9C88800CE757D /* RepordTableViewCell.xib */,
+			);
+			path = RepordViewController;
 			sourceTree = "<group>";
 		};
 		21F7F9F51BF58F9700CFB9A7 /* RNSwipeViewController */ = {
@@ -291,7 +317,6 @@
 		21FE20631BF19A71002B08FC = {
 			isa = PBXGroup;
 			children = (
-				213D5D231BF42615008D9C25 /* Resource  */,
 				21FE206E1BF19A71002B08FC /* YiNongXian */,
 				21FE20881BF19A71002B08FC /* YiNongXianTests */,
 				21FE20931BF19A71002B08FC /* YiNongXianUITests */,
@@ -314,6 +339,7 @@
 		21FE206E1BF19A71002B08FC /* YiNongXian */ = {
 			isa = PBXGroup;
 			children = (
+				213D5D231BF42615008D9C25 /* Resource  */,
 				21F7F9F51BF58F9700CFB9A7 /* RNSwipeViewController */,
 				213D5D3B1BF42DD1008D9C25 /* Request */,
 				213D5D351BF42D56008D9C25 /* Model */,
@@ -321,9 +347,9 @@
 				213D5D371BF42D56008D9C25 /* ViewModel */,
 				21FE20721BF19A71002B08FC /* AppDelegate.h */,
 				21FE20731BF19A71002B08FC /* AppDelegate.m */,
-				21FE207B1BF19A71002B08FC /* Assets.xcassets */,
 				21FE207D1BF19A71002B08FC /* LaunchScreen.storyboard */,
 				21FE20801BF19A71002B08FC /* Info.plist */,
+				214EEBDC1BF9DD27003282D9 /* Images.xcassets */,
 				21FE206F1BF19A71002B08FC /* Supporting Files */,
 			);
 			path = YiNongXian;
@@ -477,9 +503,10 @@
 				213D5D4F1BF445D0008D9C25 /* ok@2x.png in Resources */,
 				21F7FA1D1BF5CC9800CFB9A7 /* chengbao@2x.png in Resources */,
 				21F7FA0F1BF5961B00CFB9A7 /* leftButoom@2x.png in Resources */,
+				21E8D97C1BF9C88800CE757D /* RepordTableViewCell.xib in Resources */,
 				21F7FA1F1BF5CC9800CFB9A7 /* tool@2x.png in Resources */,
-				21FE207C1BF19A71002B08FC /* Assets.xcassets in Resources */,
 				213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */,
+				214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */,
 				21F7FA221BF5D9C400CFB9A7 /* password@2x.png in Resources */,
 				213D5D4E1BF445D0008D9C25 /* no@2x.png in Resources */,
 				21F7FA1C1BF5CC9800CFB9A7 /* chakan@2x.png in Resources */,
@@ -487,6 +514,7 @@
 				213D5D471BF43CA2008D9C25 /* LoginViewController.xib in Resources */,
 				213D5D4B1BF441EF008D9C25 /* backgroud@2x.png in Resources */,
 				21F7FA291BF5E47800CFB9A7 /* SetingViewController.xib in Resources */,
+				21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */,
 				21F7FA231BF5D9C400CFB9A7 /* user@2x.png in Resources */,
 				21F7FA071BF5918400CFB9A7 /* LeftMenuViewController.xib in Resources */,
 				21F7FA171BF5CC0800CFB9A7 /* headIcon@2x.png in Resources */,
@@ -565,6 +593,7 @@
 				21F7FA281BF5E47800CFB9A7 /* SetingViewController.m in Sources */,
 				21F7FA141BF5C34F00CFB9A7 /* LeftTableViewCell.m in Sources */,
 				213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */,
+				21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */,
 				21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */,
 				21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
@@ -574,6 +603,7 @@
 				213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */,
 				21FE20711BF19A71002B08FC /* main.m in Sources */,
 				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
+				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
 				21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */,
 				21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */,
 				213D5D461BF43CA2008D9C25 /* LoginViewController.m in Sources */,
@@ -710,6 +740,7 @@
 			baseConfigurationReference = 756F6C675D356848EE770230 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YiNongXianTests/PrefixHeader.pch;
@@ -727,6 +758,7 @@
 			baseConfigurationReference = 82E19ED6D8142DEF0A087043 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YiNongXianTests/PrefixHeader.pch;

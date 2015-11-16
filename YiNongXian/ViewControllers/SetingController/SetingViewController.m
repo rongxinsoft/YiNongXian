@@ -19,11 +19,7 @@
     self.navigationController.navigationBar.hidden=NO;
     self.navigationItem.title=@"系统设置";
 
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     
-  @{NSFontAttributeName:[UIFont systemFontOfSize:18],
     
-    NSForegroundColorAttributeName:[UIColor whiteColor]}];
     // Do any additional setup after loading the view from its nib.
 }
 

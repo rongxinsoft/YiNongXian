@@ -23,7 +23,7 @@
         self.layer.masksToBounds = YES;
         self.backgroundColor = [UIColor blueColor];
 
-        
+        [self change];
     }
     return self;
 }

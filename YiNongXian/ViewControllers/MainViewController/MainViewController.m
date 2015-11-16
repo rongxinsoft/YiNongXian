@@ -27,7 +27,7 @@
 {
     
     self.swipeController.navigationController.navigationBar.hidden=NO;
-    
+    self.swipeController.navigationItem.title=@"首页";
     UIImage* backImage = [UIImage imageNamed:@"leftButoom@2x.png"];
     CGRect backframe = CGRectMake(0,0,25,25);
     UIButton* backButton= [[UIButton alloc] initWithFrame:backframe];
@@ -57,7 +57,6 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

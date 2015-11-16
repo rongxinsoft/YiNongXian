@@ -7,7 +7,10 @@
 //
 
 #import "LeftMenuViewController.h"
+#import "RepordViewController.h"
 #import "LeftTableViewCell.h"
+#import "UIViewController+RNSwipeViewController.h"
+#import "RNSwipeViewController.h"
 @interface LeftMenuViewController ()
 
 @end
@@ -16,8 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,6 +32,22 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return 5;
+            break;
+        case 2:
+            return 4;
+            break;
+        case 3:
+            return 4;
+            break;
+        default:
+            break;
+    }
     return 3;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -41,6 +58,32 @@
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"LeftTableViewCell" owner:self options:nil] objectAtIndex:0];
     }
+    switch (indexPath.section) {
+        case 0:
+        {
+            cell.celltitle.text=@"上报中心(0)";
+        }
+            break;
+        case 1:{
+            NSArray * ary=@[@"任务池查询",@"委托任务池查询",@"投保单查询",@"待采集任务(0)",@"已上报任务(0)"];
+            cell.celltitle.text=ary[indexPath.row];
+        }
+             break;
+        case 2:{
+            NSArray * ary1=@[@"委托任务池查询",@"案件查询",@"处理中(0)",@"已完成(0)"];
+            cell.celltitle.text=ary1[indexPath.row];
+        }
+             break;
+        case 3:
+        {
+            NSArray * ary2=@[@"测亩仪",@"水印相机",@"航拍助手",@"面积换算器"];
+            cell.celltitle.text=ary2[indexPath.row];
+        }
+             break;
+        default:
+            break;
+    }
+    
   //  改变UITableViewCell选中时背景色：
     UIColor *color = [[UIColor alloc]initWithRed:153/255.0 green:204/255.0 blue:255/255.0 alpha:1.0];
     //通过RGB来定义自己的颜色
@@ -115,6 +158,18 @@
             break;
     }
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section==0) {
+         RepordViewController * respordVc=[[RepordViewController alloc]init];
+        [self.navigationController pushViewController:respordVc animated:YES];
+    }
+    
+//    RepordViewController * respordVc=[[RepordViewController alloc]init];
+//    respordVc.view.frame=self.swipeController.centerViewController.view.frame;
+//    [self.swipeController.centerViewController addChildViewController:respordVc];
+//    [self.swipeController.centerViewController.view addSubview:respordVc.view];
+//    self.swipeController.centerViewController =respordVc;
+}
 
 @end

@@ -21,7 +21,10 @@
       LoginViewController * LogvC=[[LoginViewController alloc]init];
     UINavigationController * navC=[[UINavigationController alloc]initWithRootViewController:LogvC];
     navC.navigationBar.barTintColor=AppMainColor;
-
+    [navC.navigationBar setTitleTextAttributes:
+     @{NSFontAttributeName:[UIFont systemFontOfSize:18],
+       
+       NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.window.rootViewController=navC;
     
     [self.window makeKeyAndVisible];

@@ -18,6 +18,7 @@ BOOL isTap;
 @synthesize unameText,upasswordText,yzmText,yzmView;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.yzmView changeView];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -65,8 +66,10 @@ BOOL isTap;
     self.view.frame = CGRectOffset(self.view.frame, 0, movement);
     [UIView commitAnimations];
 }
+#pragma mark-设置按钮 ／记住密码按钮
 
-- (IBAction)setTap:(id)sender {
+- (IBAction)setTap:(id)sender
+{
     SetingViewController * setVc=[[SetingViewController alloc]init];
     [self.navigationController pushViewController:setVc  animated:YES];
 }
@@ -86,6 +89,38 @@ BOOL isTap;
 //        self.getCodeOutlet.backgroundColor = MAINCOLOR;
         isTap = NO;
     }
+}
+
+#pragma mark-验证码检查／验证码只允许4位
+-(void)checkAction
+{
+    if ([yzmText.text isEqualToString:yzmView.changeString]) {
+        UIAlertView *alview = [[UIAlertView alloc] initWithTitle:@"ROFLOL" message:@"LOL" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alview show];
+    }
+    else
+    {
+        CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
+        anim.repeatCount = 1;
+        anim.values = @[@-20, @20, @-20];
+        [yzmView.layer addAnimation:anim forKey:nil];
+        [yzmText.layer addAnimation:anim forKey:nil];
+    }
+}
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+{
+    if (yzmText ==textField) {
+        NSString * toBeString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+        if (yzmText)
+        {
+            if ([toBeString length] > 4) {
+                yzmText.text = [toBeString substringToIndex:4];
+                return NO;
+            }
+        }
+    }
+   
+    return YES;
 }
 
 @end
