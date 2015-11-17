@@ -9,7 +9,10 @@
 #import "MainViewController.h"
 #import "UIViewController+RNSwipeViewController.h"
 #import "RNSwipeViewController.h"
-
+#import "ListSearchTableViewController.h"
+#import "TaskpoolsTableViewController.h"
+#import "LeftMenuViewController.h"
+#import "MainTableViewCell.h"
 @interface MainViewController ()
 
 
@@ -19,6 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+   
+//    TaskpoolsTableViewController *  taskpoolsVC=[[TaskpoolsTableViewController alloc]init];
+//    taskpoolsVC.view.frame=self.view.frame;
+//    [self addChildViewController:taskpoolsVC];
+//    ListSearchTableViewController* listVC=[[ListSearchTableViewController alloc]init];
+//     listVC.view.frame=self.view.frame;
+//    [self addChildViewController:listVC];
+//    self.currentVC=taskpoolsVC;
+//    [self.view addSubview:taskpoolsVC.view];
     [self creatNav];
     
 }
@@ -55,10 +68,40 @@
     
   
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 100;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    tableView.separatorStyle=UITableViewCellSelectionStyleNone;
+    static NSString *CellIdentifier = @"MainTableViewCell";
+    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"MainTableViewCell" owner:self options:nil] objectAtIndex:0];
+    }
+    return cell;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 230;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
+{
+    
+}
 
 
 @end

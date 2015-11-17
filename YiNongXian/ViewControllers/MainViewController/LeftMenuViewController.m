@@ -8,17 +8,20 @@
 
 #import "LeftMenuViewController.h"
 #import "RepordViewController.h"
+#import "TaskpoolsTableViewController.h"
+#import "ListSearchTableViewController.h"
 #import "LeftTableViewCell.h"
 #import "UIViewController+RNSwipeViewController.h"
 #import "RNSwipeViewController.h"
 @interface LeftMenuViewController ()
 
+@property(strong,nonatomic)UIViewController * currentVC;
 @end
 
 @implementation LeftMenuViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -164,12 +167,16 @@
          RepordViewController * respordVc=[[RepordViewController alloc]init];
         [self.navigationController pushViewController:respordVc animated:YES];
     }
-    
-//    RepordViewController * respordVc=[[RepordViewController alloc]init];
-//    respordVc.view.frame=self.swipeController.centerViewController.view.frame;
-//    [self.swipeController.centerViewController addChildViewController:respordVc];
-//    [self.swipeController.centerViewController.view addSubview:respordVc.view];
-//    self.swipeController.centerViewController =respordVc;
+    else if(indexPath.section==1)
+    {
+        if (self.swipeController.visibleState == RNSwipeVisibleLeft)
+        {
+            
+            [self.swipeController resetView];
+            
+        }
+    }
 }
+
 
 @end
