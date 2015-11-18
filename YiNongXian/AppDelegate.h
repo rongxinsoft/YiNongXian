@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    NSString * POSTURL;
+}
+@property(strong,nonatomic)NSString * POSTURL;
 @property (strong, nonatomic) UIWindow *window;
 
 

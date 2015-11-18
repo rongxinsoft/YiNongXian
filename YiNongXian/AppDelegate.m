@@ -13,10 +13,10 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize POSTURL;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    POSTURL=@"http://116.228.131.241:8080/aims";
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
       LoginViewController * LogvC=[[LoginViewController alloc]init];
     UINavigationController * navC=[[UINavigationController alloc]initWithRootViewController:LogvC];

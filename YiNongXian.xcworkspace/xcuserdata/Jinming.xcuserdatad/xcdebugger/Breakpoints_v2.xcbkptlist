@@ -19,29 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YiNongXian/ViewControllers/insuredViewController/ListSearchTableViewController.m"
-            timestampString = "469434081.370331"
+            filePath = "YiNongXian/ViewModel/LoginViewModel.m"
+            timestampString = "469528854.906615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "YiNongXian/ViewControllers/insuredViewController/TaskpoolsTableViewController.m"
-            timestampString = "469434093.515585"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-fetchValueSuccessWithDic:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -7,6 +7,7 @@
 //
 
 #import "NetRequestClass.h"
+#import "Encrpt.h"
 
 @interface NetRequestClass ()
 
@@ -88,13 +89,34 @@
                      WithFailureBlock: (FailureBlock)failureBlock
 {
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+ 
+    //版本
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     
-    AFHTTPRequestOperation *op = [manager POST:requestURLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+    [ manager.requestSerializer setValue:[infoDictionary objectForKey:@"CFBundleShortVersionString"] forHTTPHeaderField:@"VersionCode"];
+    //设备号
+    [manager.requestSerializer setValue: [UIDevice currentDevice].model forHTTPHeaderField:@"EquipmentType"];
+    //唯一标识
+    NSString *identifierForVendor = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    [ manager.requestSerializer setValue:identifierForVendor forHTTPHeaderField:@"ClientId"];
+    
+    [ manager.requestSerializer setValue:@"" forHTTPHeaderField:@"SessionKey"];
+    AFHTTPRequestOperation *op = [manager POST:requestURLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject){
+         NSMutableString *str=[[NSMutableString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         
-        DDLog(@"%@", dic);
+        if(![str isEqualToString:@""]&&str!=nil)
+        {
+            Encrpt * encrpt=[[Encrpt alloc]initWithKey:nil];
+            NSString * dsencrpt=[encrpt decryptWithString:str];
+            NSData * data=[dsencrpt dataUsingEncoding:NSUTF8StringEncoding];
+            NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            DDLog(@"%@", dic);
+            
+            block(dic);
+        }
+       
         
-        block(dic);
+        
         /***************************************
          在这做判断如果有dic里有errorCode
          调用errorBlock(dic)
@@ -111,7 +133,12 @@
 
 }
 
-
+-(NSString *)URLDecodedString:(NSString *)str
+{
+    NSString *decodedString=(__bridge_transfer NSString *)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)str, CFSTR(""), CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding));
+    
+    return decodedString;
+}
 
 
 @end

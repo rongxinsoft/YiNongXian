@@ -20,12 +20,12 @@
 #import "AFNetworking.h"
 #import "UIKit+AFNetworking.h"
 #import "Config.h"
-
+#import "WCAlertView.h"
 //#import "NetRequestClass.h"
 #import "SVProgressHUD.h"
 #define DeviceWidth [UIScreen mainScreen].bounds.size.width
 #define DeviceHeight [UIScreen mainScreen].bounds.size.height
-
+#define DELEGATE [[UIApplication sharedApplication] delegate]
 #define AppMainColor [UIColor colorWithRed:0/255.0 green:49/255.0 blue:105/255.0 alpha:1.000]
 #define AppLineColor [UIColor colorWithWhite:0.915 alpha:1.000]
 #define AppLittleBarColor [UIColor colorWithWhite:0.964 alpha:1.000]

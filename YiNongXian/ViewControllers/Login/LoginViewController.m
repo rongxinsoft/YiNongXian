@@ -10,6 +10,8 @@
 #import "SwichViewController.h"
 #import "PooCodeView.h"
 #import "SetingViewController.h"
+#import "LoginViewModel.h"
+
 @interface LoginViewController ()
 
 @end
@@ -33,7 +35,27 @@ BOOL isTap;
 }
 #pragma mark-登录方法/换二维码图片
 - (IBAction)login:(id)sender {
-    [self.navigationController pushViewController:[[SwichViewController alloc]init] animated:YES];
+    int a=[self loginValidation];
+    if (a==1) {
+        LoginViewModel *publicViewModel = [[LoginViewModel alloc] init];
+        [publicViewModel setBlockWithReturnBlock:^(id returnValue)
+         {
+             [SVProgressHUD dismiss];
+             [self.navigationController pushViewController:[[SwichViewController alloc]init] animated:YES];
+             //        [self.tableView reloadData];
+             //        DDLog(@"%@",_publicModelArray);
+             
+         } WithErrorBlock:^(id errorCode) {
+             
+             [SVProgressHUD dismiss];
+         } WithFailureBlock:^{
+             [SVProgressHUD dismiss];
+             
+
+         }];
+        [publicViewModel loginRequstAndUname:unameText.text andPassword:upasswordText.text];
+        [SVProgressHUD showWithStatus:@"正在登录……" maskType:SVProgressHUDMaskTypeBlack];
+    }
 }
 
 - (IBAction)changeYzm:(id)sender {
@@ -74,16 +96,15 @@ BOOL isTap;
     [self.navigationController pushViewController:setVc  animated:YES];
 }
 
-- (IBAction)isRememberTap:(UIButton *)sender {
+- (IBAction)isRememberTap:(UIButton *)sender
+{
     
     if (isTap == NO) {
         [ self.isAgreeImage setImage:[UIImage imageNamed:@"ok"]  forState:UIControlStateNormal];
-       
 //        self.getCodeOutlet.enabled=NO;
 //        self.getCodeOutlet.backgroundColor = [UIColor lightGrayColor];
         isTap = YES;
     }else{
-        
         [ self.isAgreeImage setImage:[UIImage imageNamed:@"no"]  forState:UIControlStateNormal];
 //        self.getCodeOutlet.enabled=YES;
 //        self.getCodeOutlet.backgroundColor = MAINCOLOR;
@@ -92,19 +113,14 @@ BOOL isTap;
 }
 
 #pragma mark-验证码检查／验证码只允许4位
--(void)checkAction
+-(BOOL )checkAction
 {
     if ([yzmText.text isEqualToString:yzmView.changeString]) {
-        UIAlertView *alview = [[UIAlertView alloc] initWithTitle:@"ROFLOL" message:@"LOL" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alview show];
+        return YES;
     }
     else
     {
-        CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
-        anim.repeatCount = 1;
-        anim.values = @[@-20, @20, @-20];
-        [yzmView.layer addAnimation:anim forKey:nil];
-        [yzmText.layer addAnimation:anim forKey:nil];
+        return NO;
     }
 }
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
@@ -122,5 +138,25 @@ BOOL isTap;
    
     return YES;
 }
+-(int)loginValidation
 
+{
+    BOOL a=[self checkAction];
+    if ([unameText.text isEqualToString:@""]||unameText.text==nil) {
+        [WCAlertView showAlertWithTitle:@"帐号不可为空" message:@"请输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+      
+    }else if ([upasswordText.text isEqualToString:@""]||upasswordText.text==nil)
+    {
+        [WCAlertView showAlertWithTitle:@"密码不可为空" message:@"请输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+      
+    }else if (a==NO)
+    {
+        [WCAlertView showAlertWithTitle:@"验证码错误" message:@"请重新输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        
+    }else
+    {
+        return 1;
+    }
+    return 0;
+}
 @end
