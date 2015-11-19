@@ -22,23 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
-   
-//    TaskpoolsTableViewController *  taskpoolsVC=[[TaskpoolsTableViewController alloc]init];
-//    taskpoolsVC.view.frame=self.view.frame;
-//    [self addChildViewController:taskpoolsVC];
-//    ListSearchTableViewController* listVC=[[ListSearchTableViewController alloc]init];
-//     listVC.view.frame=self.view.frame;
-//    [self addChildViewController:listVC];
-//    self.currentVC=taskpoolsVC;
-//    [self.view addSubview:taskpoolsVC.view];
     [self creatNav];
     
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"=--=-=%@",self.add);
 }
 #pragma mark-nav
 -(void)creatNav
 {
-    
     self.swipeController.navigationController.navigationBar.hidden=NO;
     self.swipeController.navigationItem.title=@"首页";
     UIImage* backImage = [UIImage imageNamed:@"leftButoom@2x.png"];
@@ -68,6 +61,7 @@
     
   
 }
+#pragma mark-table
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -87,13 +81,10 @@
     }
     return cell;
 }
-
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 230;
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

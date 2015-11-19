@@ -156,7 +156,7 @@
                         <constraint firstAttribute="height" constant="22" id="FYV-IU-bGV"/>
                         <constraint firstAttribute="width" constant="19" id="Ouv-mP-sqF"/>
                     </constraints>
-                    <state key="normal" image="ok.png"/>
+                    <state key="normal" image="no.png"/>
                     <connections>
                         <action selector="isRememberTap:" destination="-1" eventType="touchUpInside" id="adN-He-VjJ"/>
                     </connections>
@@ -185,16 +185,29 @@
                         <constraint firstAttribute="height" constant="40" id="m0k-mM-MJU"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="记住密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXb-uW-o9Y">
+                    <rect key="frame" x="549" y="505" width="124" height="21"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="CJe-v5-W66"/>
+                        <constraint firstAttribute="width" constant="124" id="XfD-ey-NGR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rhC-Rj-Lbh" firstAttribute="top" secondItem="adO-3n-BFO" secondAttribute="bottom" constant="25" id="1RI-NM-7Uk"/>
                 <constraint firstAttribute="trailing" secondItem="Ytg-9x-xfF" secondAttribute="trailing" constant="212" id="4Ma-T6-MR5"/>
+                <constraint firstItem="QXb-uW-o9Y" firstAttribute="leading" secondItem="m6V-Lt-Gxl" secondAttribute="trailing" constant="7" id="5bS-Td-M9Z"/>
                 <constraint firstAttribute="bottom" secondItem="XBZ-5g-g92" secondAttribute="bottom" id="7fZ-L5-vIe"/>
                 <constraint firstItem="XBZ-5g-g92" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DAT-5B-ZZ3"/>
                 <constraint firstAttribute="trailing" secondItem="8Mi-s9-1UV" secondAttribute="trailing" constant="212" id="Ej9-Ns-V3B"/>
                 <constraint firstAttribute="trailing" secondItem="fTp-99-9fk" secondAttribute="trailing" constant="212" id="Ejb-6A-78E"/>
+                <constraint firstItem="QXb-uW-o9Y" firstAttribute="top" secondItem="rhC-Rj-Lbh" secondAttribute="bottom" constant="25" id="FRG-g8-VfF"/>
                 <constraint firstItem="OdM-ND-0Hr" firstAttribute="leading" secondItem="8Mi-s9-1UV" secondAttribute="leading" id="Fpj-fC-iFZ"/>
                 <constraint firstAttribute="trailing" secondItem="rhC-Rj-Lbh" secondAttribute="trailing" constant="212" id="GLl-hz-CWB"/>
                 <constraint firstItem="m6V-Lt-Gxl" firstAttribute="top" secondItem="rhC-Rj-Lbh" secondAttribute="bottom" constant="24" id="Kzn-E9-KNL"/>
@@ -217,7 +230,7 @@
     </objects>
     <resources>
         <image name="backgroud.png" width="1024" height="768"/>
-        <image name="ok.png" width="19" height="19"/>
+        <image name="no.png" width="19" height="19"/>
         <image name="password.png" width="24" height="24"/>
         <image name="user.png" width="24" height="24"/>
     </resources>

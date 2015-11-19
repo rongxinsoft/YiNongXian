@@ -100,7 +100,9 @@
     NSString *identifierForVendor = [[UIDevice currentDevice].identifierForVendor UUIDString];
     [ manager.requestSerializer setValue:identifierForVendor forHTTPHeaderField:@"ClientId"];
     
-    [ manager.requestSerializer setValue:@"" forHTTPHeaderField:@"SessionKey"];
+    
+    NSString * SessionKey=[[NSUserDefaults standardUserDefaults]objectForKey:@"SessionKey"];
+    [ manager.requestSerializer setValue:SessionKey forHTTPHeaderField:@"SessionKey"];
     AFHTTPRequestOperation *op = [manager POST:requestURLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject){
          NSMutableString *str=[[NSMutableString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         

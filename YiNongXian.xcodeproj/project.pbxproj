@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212A2A991BFD60E5000856DB /* SXDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 212A2A971BFD60E5000856DB /* SXDatabase.m */; };
 		212C19361BFAC2FC00A568BB /* ListSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212C19341BFAC2FC00A568BB /* ListSearchTableViewController.m */; };
 		212C19371BFAC2FC00A568BB /* ListSearchTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 212C19351BFAC2FC00A568BB /* ListSearchTableViewController.xib */; };
 		212C193B1BFAC31F00A568BB /* TaskpoolsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212C19391BFAC31F00A568BB /* TaskpoolsTableViewController.m */; };
@@ -80,6 +81,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		212A2A971BFD60E5000856DB /* SXDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXDatabase.m; sourceTree = "<group>"; };
+		212A2A981BFD60E5000856DB /* SXDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXDatabase.h; sourceTree = "<group>"; };
 		212C19331BFAC2FC00A568BB /* ListSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSearchTableViewController.h; sourceTree = "<group>"; };
 		212C19341BFAC2FC00A568BB /* ListSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSearchTableViewController.m; sourceTree = "<group>"; };
 		212C19351BFAC2FC00A568BB /* ListSearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListSearchTableViewController.xib; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 		213D5D231BF42615008D9C25 /* Resource  */ = {
 			isa = PBXGroup;
 			children = (
+				212A2A981BFD60E5000856DB /* SXDatabase.h */,
+				212A2A971BFD60E5000856DB /* SXDatabase.m */,
 				21E409951BFC7A7700F735B5 /* WCAlertView */,
 				21E4098E1BFC2A8700F735B5 /* Encrpt.m */,
 				21E4098F1BFC2A8700F735B5 /* Encrpt.h */,
@@ -684,6 +689,7 @@
 				213D5D3E1BF42DE1008D9C25 /* NetRequestClass.m in Sources */,
 				212C19361BFAC2FC00A568BB /* ListSearchTableViewController.m in Sources */,
 				213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */,
+				212A2A991BFD60E5000856DB /* SXDatabase.m in Sources */,
 				21FE20711BF19A71002B08FC /* main.m in Sources */,
 				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
 				212C19401BFB002A00A568BB /* testViewController.m in Sources */,

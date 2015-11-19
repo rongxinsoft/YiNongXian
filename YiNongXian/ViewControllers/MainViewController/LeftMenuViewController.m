@@ -13,6 +13,7 @@
 #import "LeftTableViewCell.h"
 #import "UIViewController+RNSwipeViewController.h"
 #import "RNSwipeViewController.h"
+#import "MainViewController.h"
 @interface LeftMenuViewController ()
 
 @property(strong,nonatomic)UIViewController * currentVC;
@@ -172,8 +173,11 @@
         if (self.swipeController.visibleState == RNSwipeVisibleLeft)
         {
             
-            [self.swipeController resetView];
-            
+             [self.swipeController resetView];
+            MainViewController * main=[[MainViewController alloc]init];
+            main.add=[NSString stringWithFormat:@"%ld",indexPath.row];
+            NSLog(@"%ld",indexPath.row);
+           
         }
     }
 }
