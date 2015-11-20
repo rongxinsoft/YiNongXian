@@ -15,6 +15,24 @@
 
 
 @implementation NetRequestClass
+
++(NSDictionary *)dataProcessing:(NSDictionary *)dic
+{
+    
+    Encrpt * encrpy=[[Encrpt alloc]initWithKey:nil];
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:nil];
+    NSString * josnStr=[[NSString alloc]
+                        initWithData:jsonData encoding:NSUTF8StringEncoding];
+    if (josnStr!=nil&&![josnStr isEqualToString:@""]) {
+        NSString * postEncrpy=[encrpy encryptWithString:josnStr];
+        NSDictionary * dic=@{@"json":postEncrpy};
+        return dic;
+    }else
+    {
+        return nil;
+    }
+}
 #pragma 监测网络的可链接性
 + (BOOL) netWorkReachabilityWithURLString:(NSString *) strUrl
 {

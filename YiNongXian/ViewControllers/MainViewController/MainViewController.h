@@ -10,5 +10,5 @@
 
 @interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(strong,nonatomic)NSString * add;
+
 @end

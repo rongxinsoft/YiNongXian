@@ -174,9 +174,10 @@
         {
             
              [self.swipeController resetView];
-            MainViewController * main=[[MainViewController alloc]init];
-            main.add=[NSString stringWithFormat:@"%ld",indexPath.row];
-            NSLog(@"%ld",indexPath.row);
+            //typeCount 区分点击哪行
+            self.swipeController.typeCount=(int)indexPath.row+100;
+           
+         
            
         }
     }

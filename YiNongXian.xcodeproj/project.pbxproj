@@ -29,6 +29,8 @@
 		213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D591BF46B49008D9C25 /* MainViewController.xib */; };
 		213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D651BF4973D008D9C25 /* PooCodeView.m */; };
 		214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214EEBDC1BF9DD27003282D9 /* Images.xcassets */; };
+		21E3BFF81BFEBD730091250B /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BFF71BFEBD730091250B /* MainModel.m */; };
+		21E3BFFF1BFEC47F0091250B /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BFFE1BFEC47F0091250B /* MainViewModel.m */; };
 		21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E4098E1BFC2A8700F735B5 /* Encrpt.m */; };
 		21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409931BFC716100F735B5 /* LoginViewModel.m */; };
 		21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409971BFC7A7700F735B5 /* WCAlertView.m */; };
@@ -81,8 +83,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		212A2A971BFD60E5000856DB /* SXDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXDatabase.m; sourceTree = "<group>"; };
-		212A2A981BFD60E5000856DB /* SXDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXDatabase.h; sourceTree = "<group>"; };
+		212A2A971BFD60E5000856DB /* SXDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SXDatabase.m; path = "../../Resource /SXDatabase.m"; sourceTree = "<group>"; };
+		212A2A981BFD60E5000856DB /* SXDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SXDatabase.h; path = "../../Resource /SXDatabase.h"; sourceTree = "<group>"; };
 		212C19331BFAC2FC00A568BB /* ListSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListSearchTableViewController.h; sourceTree = "<group>"; };
 		212C19341BFAC2FC00A568BB /* ListSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListSearchTableViewController.m; sourceTree = "<group>"; };
 		212C19351BFAC2FC00A568BB /* ListSearchTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListSearchTableViewController.xib; sourceTree = "<group>"; };
@@ -114,8 +116,12 @@
 		213D5D641BF4973D008D9C25 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
 		213D5D651BF4973D008D9C25 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
 		214EEBDC1BF9DD27003282D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		21E4098E1BFC2A8700F735B5 /* Encrpt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrpt.m; sourceTree = "<group>"; };
-		21E4098F1BFC2A8700F735B5 /* Encrpt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encrpt.h; sourceTree = "<group>"; };
+		21E3BFF61BFEBD730091250B /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
+		21E3BFF71BFEBD730091250B /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		21E3BFFD1BFEC47F0091250B /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
+		21E3BFFE1BFEC47F0091250B /* MainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
+		21E4098E1BFC2A8700F735B5 /* Encrpt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Encrpt.m; path = "../../Resource /Encrpt.m"; sourceTree = "<group>"; };
+		21E4098F1BFC2A8700F735B5 /* Encrpt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Encrpt.h; path = "../../Resource /Encrpt.h"; sourceTree = "<group>"; };
 		21E409921BFC716100F735B5 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		21E409931BFC716100F735B5 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		21E409961BFC7A7700F735B5 /* WCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAlertView.h; sourceTree = "<group>"; };
@@ -225,11 +231,6 @@
 		213D5D231BF42615008D9C25 /* Resource  */ = {
 			isa = PBXGroup;
 			children = (
-				212A2A981BFD60E5000856DB /* SXDatabase.h */,
-				212A2A971BFD60E5000856DB /* SXDatabase.m */,
-				21E409951BFC7A7700F735B5 /* WCAlertView */,
-				21E4098E1BFC2A8700F735B5 /* Encrpt.m */,
-				21E4098F1BFC2A8700F735B5 /* Encrpt.h */,
 				213D5D241BF42615008D9C25 /* images */,
 			);
 			name = "Resource ";
@@ -259,6 +260,7 @@
 		213D5D351BF42D56008D9C25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				21E3BFF51BFEBD540091250B /* mainModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -279,6 +281,7 @@
 		213D5D371BF42D56008D9C25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21E3BFF91BFEBF840091250B /* MainViewModel */,
 				21E409911BFC716100F735B5 /* LoginViewModel */,
 			);
 			path = ViewModel;
@@ -321,6 +324,36 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
+		21E3BFF41BFEB6D00091250B /* ThirdTools */ = {
+			isa = PBXGroup;
+			children = (
+				212A2A981BFD60E5000856DB /* SXDatabase.h */,
+				212A2A971BFD60E5000856DB /* SXDatabase.m */,
+				21E409951BFC7A7700F735B5 /* WCAlertView */,
+				21E4098E1BFC2A8700F735B5 /* Encrpt.m */,
+				21E4098F1BFC2A8700F735B5 /* Encrpt.h */,
+			);
+			path = ThirdTools;
+			sourceTree = "<group>";
+		};
+		21E3BFF51BFEBD540091250B /* mainModel */ = {
+			isa = PBXGroup;
+			children = (
+				21E3BFF61BFEBD730091250B /* MainModel.h */,
+				21E3BFF71BFEBD730091250B /* MainModel.m */,
+			);
+			name = mainModel;
+			sourceTree = "<group>";
+		};
+		21E3BFF91BFEBF840091250B /* MainViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				21E3BFFD1BFEC47F0091250B /* MainViewModel.h */,
+				21E3BFFE1BFEC47F0091250B /* MainViewModel.m */,
+			);
+			path = MainViewModel;
+			sourceTree = "<group>";
+		};
 		21E409911BFC716100F735B5 /* LoginViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +369,8 @@
 				21E409961BFC7A7700F735B5 /* WCAlertView.h */,
 				21E409971BFC7A7700F735B5 /* WCAlertView.m */,
 			);
-			path = WCAlertView;
+			name = WCAlertView;
+			path = "../../Resource /WCAlertView";
 			sourceTree = "<group>";
 		};
 		21E8D9721BF98C8600CE757D /* RepordViewController */ = {
@@ -416,6 +450,7 @@
 		21FE206E1BF19A71002B08FC /* YiNongXian */ = {
 			isa = PBXGroup;
 			children = (
+				21E3BFF41BFEB6D00091250B /* ThirdTools */,
 				213D5D231BF42615008D9C25 /* Resource  */,
 				21F7F9F51BF58F9700CFB9A7 /* RNSwipeViewController */,
 				213D5D3B1BF42DD1008D9C25 /* Request */,
@@ -674,6 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E3BFFF1BFEC47F0091250B /* MainViewModel.m in Sources */,
 				21F7FA281BF5E47800CFB9A7 /* SetingViewController.m in Sources */,
 				21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */,
 				21F7FA141BF5C34F00CFB9A7 /* LeftTableViewCell.m in Sources */,
@@ -696,6 +732,7 @@
 				21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */,
 				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
 				212C193B1BFAC31F00A568BB /* TaskpoolsTableViewController.m in Sources */,
+				21E3BFF81BFEBD730091250B /* MainModel.m in Sources */,
 				21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */,
 				21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */,
 				213D5D461BF43CA2008D9C25 /* LoginViewController.m in Sources */,
