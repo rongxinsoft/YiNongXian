@@ -1,35 +1,26 @@
 //
-//  MainViewModel.m
+//  SearchViewModel.m
 //  YiNongXian
 //
-//  Created by 索金铭 on 15/11/20.
+//  Created by 索金铭 on 15/11/22.
 //  Copyright © 2015年 bxlt. All rights reserved.
 //
 
-#import "MainViewModel.h"
-#import "NetRequestClass.h"
+#import "SearchViewModel.h"
 #import "AppDelegate.h"
+#import "NetRequestClass.h"
 #import "MainModel.h"
-@implementation MainViewModel
--(void)requstMainDataAndUserName:(NSString *)userName andAgriCategory:(NSString *)agriCategory andrtotal:(NSString *)rtotal andPage:(NSString *)page andType:(int)typeCount
+@implementation SearchViewModel
+-(void)requestSearchAndsearchId:(NSString *)searchId andUserName:(NSString *)userName andRtotal:(NSString *)rtotal andAgriCategory:(NSString*)agriCategory
 {
     AppDelegate * delegate=DELEGATE;
-    NSString * url;
-    if (typeCount==100)
-    {
-       url =[NSString stringWithFormat:@"%@/ply/queryPolicyList",delegate.POSTURL];
-    }else if(typeCount==101)
-    {
-        url=[NSString stringWithFormat:@"%@/ply/queryDelegatePly",delegate.POSTURL];
-    }
-    
-    NSDictionary * requestDic=@{@"userLoginCode":userName,@"agriCategory":agriCategory,@"rtotal":rtotal,@"pageNum":page};
+    NSString * url =[NSString stringWithFormat:@"%@/ply/queryPolicy",delegate.POSTURL];
+    NSDictionary * requestDic=@{@"policyNo":searchId,@"userLoginCode":userName,@"rtotal":@"20",@"agriCategory":agriCategory};
     NSDictionary * encryDic=[NetRequestClass dataProcessing:requestDic];
     if (encryDic !=nil) {
-      
         [NetRequestClass NetRequestPOSTWithRequestURL:url WithParameter:encryDic WithReturnValeuBlock:^(id returnValue) {
             DDLog(@"0909009%@", returnValue);
-            [self fetchValueSuccessWithDic:returnValue andType:typeCount ];
+            [self fetchValueSuccessWithDic:returnValue];
             
         } WithErrorCodeBlock:^(id errorCode) {
             DDLog(@"%@", errorCode);
@@ -42,11 +33,12 @@
         }];
     }else
     {
-          [WCAlertView showAlertWithTitle:@"数据错误" message:@"请重新操作" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [WCAlertView showAlertWithTitle:@"数据错误" message:@"请重新操作" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     }
     
 }
--(void)fetchValueSuccessWithDic: (NSDictionary *) returnValue andType:(int)typeCount
+
+-(void)fetchValueSuccessWithDic: (NSDictionary *) returnValue
 {
     
     if (returnValue!=nil) {
@@ -54,14 +46,7 @@
         if ([errcodeStr isEqualToString:@"200"])
         {
             NSDictionary * bodyDic=[returnValue objectForKey:@"Body"];
-            NSArray * policyAry;
-            if (typeCount==100) {
-              policyAry  =[bodyDic objectForKey:@"policyResponseList"];
-            }else
-            {
-                 policyAry  =[bodyDic objectForKey:@"Items"];
-            }
-            
+            NSArray * policyAry=[bodyDic objectForKey:@"policyResponseList"];
             NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:100];
             for (NSDictionary * dic  in policyAry) {
                 MainModel * model=[[MainModel alloc]init];
@@ -74,7 +59,6 @@
                 model.orgName=[dic objectForKey:@"orgName"];
                 model.commInfo=[dic objectForKey:@"commInfo"];
                 model.agriCategory=[dic objectForKey:@"agriCategory"];
-                model.delegatePerson=[dic objectForKey:@"delegatePerson"];
                 [returnArray addObject:model];
             }
             self.returnBlock(returnArray);
@@ -95,7 +79,7 @@
 #pragma 对网路异常进行处理
 -(void) netFailure
 {
-  [WCAlertView showAlertWithTitle:@"网络异常" message:@"请检查网络" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [WCAlertView showAlertWithTitle:@"网络异常" message:@"请检查网络" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     self.failureBlock();
 }
 

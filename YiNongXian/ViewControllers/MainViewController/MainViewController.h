@@ -10,5 +10,7 @@
 
 @interface MainViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property(strong,nonatomic)UITextField * searchText;
+@property(strong,nonatomic)UIView * searchView;
+-(void)headerRequest;
 @end

@@ -30,7 +30,9 @@
 }
 
 - (void)swipeController:(RNSwipeViewController *)swipeController didShowController:(UIViewController *)controller {
-    NSLog(@"did show");
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

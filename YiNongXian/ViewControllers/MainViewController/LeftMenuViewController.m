@@ -8,12 +8,11 @@
 
 #import "LeftMenuViewController.h"
 #import "RepordViewController.h"
-#import "TaskpoolsTableViewController.h"
-#import "ListSearchTableViewController.h"
 #import "LeftTableViewCell.h"
 #import "UIViewController+RNSwipeViewController.h"
 #import "RNSwipeViewController.h"
 #import "MainViewController.h"
+#import "MJRefresh.h"
 @interface LeftMenuViewController ()
 
 @property(strong,nonatomic)UIViewController * currentVC;
@@ -22,7 +21,7 @@
 @implementation LeftMenuViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
 }
 
 - (void)didReceiveMemoryWarning {
@@ -122,12 +121,15 @@
 }
 #pragma 点击方法 种植、养殖 、林业
 - (IBAction)plantAction:(id)sender {
+    self.swipeController.AgriCategoryType=1;
     [self changeColor:0];
 }
 - (IBAction)farmAction:(id)sender {
+     self.swipeController.AgriCategoryType=2;
      [self changeColor:1];
 }
 - (IBAction)forestryAction:(id)sender {
+     self.swipeController.AgriCategoryType=3;
      [self changeColor:2];
 }
 -(void) changeColor:(int)i
@@ -165,6 +167,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section==0) {
+           self.swipeController.typeCount=0;
          RepordViewController * respordVc=[[RepordViewController alloc]init];
         [self.navigationController pushViewController:respordVc animated:YES];
     }
@@ -172,13 +175,15 @@
     {
         if (self.swipeController.visibleState == RNSwipeVisibleLeft)
         {
-            
-             [self.swipeController resetView];
+           
+              self.swipeController.typeCount=(int)indexPath.row+100;
+            [self.swipeController resetView];
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"STARTREQUEST" object:self];
+          //  [respordVc headerRequest];
             //typeCount 区分点击哪行
-            self.swipeController.typeCount=(int)indexPath.row+100;
-           
-         
-           
+          
+ 
         }
     }
 }

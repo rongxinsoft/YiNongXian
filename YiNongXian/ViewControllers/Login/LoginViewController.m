@@ -173,6 +173,9 @@ BOOL isTap;
 }
 -(int)loginValidation
 {
+    return 1;//开发阶段 不用验证
+    
+    
     BOOL a=[self checkAction];
     if ([unameText.text isEqualToString:@""]||unameText.text==nil) {
         [WCAlertView showAlertWithTitle:@"帐号不可为空" message:@"请输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
