@@ -62,10 +62,10 @@ BOOL isTap;
             [self.navigationController pushViewController:[[SwichViewController alloc]init] animated:YES];
             }else if (a==2)
             {
-                [WCAlertView showAlertWithTitle:@"账户密码本地验证失败" message:@"请重试" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [SVProgressHUD showErrorWithStatus:@"账户密码本地验证失败,请重试"];
             } else
             {
-                  [WCAlertView showAlertWithTitle:@"数据库无此用户" message:@"请重试" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                 [SVProgressHUD showErrorWithStatus:@"数据库无此用户,请重试"];
             }
          }];
         if (isTap==YES) {
@@ -178,13 +178,13 @@ BOOL isTap;
     
     BOOL a=[self checkAction];
     if ([unameText.text isEqualToString:@""]||unameText.text==nil) {
-        [WCAlertView showAlertWithTitle:@"帐号不可为空" message:@"请输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [SVProgressHUD showInfoWithStatus:@"帐号不可为空,请输入"];
     }else if ([upasswordText.text isEqualToString:@""]||upasswordText.text==nil)
     {
-        [WCAlertView showAlertWithTitle:@"密码不可为空" message:@"请输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [SVProgressHUD showInfoWithStatus:@"密码不可为空,请输入"];
     }else if (a==NO)
     {
-        [WCAlertView showAlertWithTitle:@"验证码错误" message:@"请重新输入" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [SVProgressHUD showInfoWithStatus:@"验证码错误,请重新输入"];
     }else
     {
         return 1;

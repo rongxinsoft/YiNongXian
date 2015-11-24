@@ -1,23 +1,24 @@
 //
-//  SearchViewModel.m
+//  DownloadShapeViewModel.m
 //  YiNongXian
 //
-//  Created by 索金铭 on 15/11/22.
+//  Created by 索金铭 on 15/11/24.
 //  Copyright © 2015年 bxlt. All rights reserved.
 //
 
-#import "SearchViewModel.h"
+#import "DownloadShapeViewModel.h"
 #import "AppDelegate.h"
 #import "NetRequestClass.h"
-#import "MainModel.h"
-@implementation SearchViewModel
--(void)requestSearchAndsearchId:(NSString *)searchId andUserName:(NSString *)userName andRtotal:(NSString *)rtotal andAgriCategory:(NSString*)agriCategory
+#import "ShapeModel.h"
+@implementation DownloadShapeViewModel
+-(void)requestShopeAndPly_Id:(NSString *)Ply_Id
 {
     AppDelegate * delegate=DELEGATE;
-    NSString * url =[NSString stringWithFormat:@"%@/ply/queryPolicy",delegate.POSTURL];
-    NSDictionary * requestDic=@{@"policyNo":searchId,@"userLoginCode":userName,@"rtotal":@"20",@"agriCategory":agriCategory};
+    NSString * url =[NSString stringWithFormat:@"%@/Shape/FindShapes",delegate.POSTURL];
+    NSDictionary * requestDic=@{@"Ply_Id":Ply_Id};
     NSDictionary * encryDic=[NetRequestClass dataProcessing:requestDic];
     if (encryDic !=nil) {
+        
         [NetRequestClass NetRequestPOSTWithRequestURL:url WithParameter:encryDic WithReturnValeuBlock:^(id returnValue) {
             DDLog(@"0909009%@", returnValue);
             [self fetchValueSuccessWithDic:returnValue];
@@ -33,11 +34,10 @@
         }];
     }else
     {
-        [SVProgressHUD showInfoWithStatus:@"数据错误,请稍候重试"];
+        [SVProgressHUD showInfoWithStatus:@"数据错误，请稍候重试"];
     }
     
 }
-
 -(void)fetchValueSuccessWithDic: (NSDictionary *) returnValue
 {
     
@@ -46,19 +46,20 @@
         if ([errcodeStr isEqualToString:@"200"])
         {
             NSDictionary * bodyDic=[returnValue objectForKey:@"Body"];
-            NSArray * policyAry=[bodyDic objectForKey:@"policyResponseList"];
+            NSArray *  policyAry  =[bodyDic objectForKey:@"Items"];
             NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:100];
             for (NSDictionary * dic  in policyAry) {
-                MainModel * model=[[MainModel alloc]init];
-                model.policyId=[dic objectForKey:@"policyId"];
-                model.proposalNo=[dic objectForKey:@"proposalNo"];
-                model.proposalDate=[dic objectForKey:@"proposalDate"];
-                model.area=[dic objectForKey:@"area"];
-                model.productName=[dic objectForKey:@"productName"];
-                model.orgCode=[dic objectForKey:@"organizationCode"];
-                model.orgName=[dic objectForKey:@"orgName"];
-                model.commInfo=[dic objectForKey:@"commInfo"];
-                model.agriCategory=[dic objectForKey:@"agriCategory"];
+                ShapeModel * model=[[ShapeModel alloc]init];
+                model.APP_ID=[dic objectForKey:@"APP_ID"];
+                model.CREATED_BY=[dic objectForKey:@"CREATED_BY"];
+                model.CREATED_TM=[dic objectForKey:@"CREATED_TM"];
+                model.DAMAGELEVEL=[dic objectForKey:@"DAMAGELEVEL"];
+                model.SHAPE=[dic objectForKey:@"SHAPE"];
+                model.T_ID=[dic objectForKey:@"T_ID"];
+                model.WGS84_SHAPE=[dic objectForKey:@"WGS84_SHAPE"];
+                model.PLY_ID=[dic objectForKey:@"PLY_ID"];
+                model.STATUS=[dic objectForKey:@"STATUS"];
+                model.AREA=[dic objectForKey:@"AREA"];
                 [returnArray addObject:model];
             }
             self.returnBlock(returnArray);
@@ -79,9 +80,8 @@
 #pragma 对网路异常进行处理
 -(void) netFailure
 {
-    [SVProgressHUD showInfoWithStatus:@"网络异常,请检查网络"];
+    [SVProgressHUD showErrorWithStatus:@"网络异常"];
     self.failureBlock();
 }
-
 
 @end

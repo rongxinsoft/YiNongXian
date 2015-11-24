@@ -1,22 +1,22 @@
 //
-//  EntrustViewModel.m
+//  LockViewModel.m
 //  YiNongXian
 //
-//  Created by 索金铭 on 15/11/23.
+//  Created by 索金铭 on 15/11/24.
 //  Copyright © 2015年 bxlt. All rights reserved.
 //
 
-#import "EntrustViewModel.h"
+#import "LockViewModel.h"
 #import "AppDelegate.h"
 #import "NetRequestClass.h"
-@implementation EntrustViewModel
--(void)entrustRequestAnddelegateId:(NSString *)delegateId andDelegatePerson:(NSString *)delegatePerson andBeDelegatedPerson:(NSString *)beDelegatedPerson
+@implementation LockViewModel
+-(void)LockRequestAndLockType:(NSString *)lockType andbussinessId:(NSString *)bussinessId andstatus:(NSString *)status andDescription:(NSString *)description
 {
     AppDelegate * delegate=DELEGATE;
     NSString * url;
-    url=[NSString stringWithFormat:@"%@/ply/delegatePly",delegate.POSTURL];
+    url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
     
-    NSDictionary * requestDic=@{@"delegateId":delegateId,@"delegatePerson":delegatePerson,@"beDelegatedPerson":beDelegatedPerson};
+    NSDictionary * requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
     NSDictionary * encryDic=[NetRequestClass dataProcessing:requestDic];
     if (encryDic !=nil) {
         
@@ -45,7 +45,6 @@
         NSString * errcodeStr=[[returnValue objectForKey:@"Head"]objectForKey:@"ErrCode"];
         if ([errcodeStr isEqualToString:@"200"])
         {
-
             self.returnBlock(nil);
         } else
         {
@@ -65,10 +64,8 @@
 -(void) netFailure
 {
     [SVProgressHUD showErrorWithStatus:@"网络异常，请检查网络"];
-
     self.failureBlock();
 }
-
 
 
 @end

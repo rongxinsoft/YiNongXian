@@ -34,4 +34,8 @@
                      andDelegatePerson:(NSString *)delegatePerson;
 //认领校验
 +(int)checkPLYID:(NSString *)policyId;
+// 图斑表数据更新插入数据
++(void)insertIntoTShapeTableWithTID:(NSMutableArray *)shapeAry;
+//获取待采集任务
++ (NSMutableArray *)getWillcollect:(NSString*)status;
 @end

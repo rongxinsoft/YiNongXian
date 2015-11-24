@@ -17,20 +17,23 @@
 #import "SearchViewModel.h"
 #import "EntrustViewModel.h"
 #import "SXDatabase.h"
+#import "DownloadShapeViewModel.h"
+#import "LockViewModel.h"
+
 static int RefreshCount = 2;//上拉加载基数
 @interface MainViewController ()
 @property (strong, nonatomic) NSMutableArray *recerveArray;//获取网络数据数组
 @end
 
 @implementation MainViewController
-@synthesize recerveArray,searchView;
+@synthesize recerveArray,shapeAry;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatNav];
     [self freshAction];
     self.swipeController.AgriCategoryType=1;
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(beginRefreshing) name:@"STARTREQUEST" object:nil];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(StartRefresh) name:@"STARTREQUEST" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(taskAction) name:@"SELECTSQLITE" object:nil];
 }
 #pragma 刷新、、、加载
 -(void)freshAction
@@ -42,13 +45,13 @@ static int RefreshCount = 2;//上拉加载基数
         [self headerRequest];
     }];
     // 马上进入刷新状态
-   // [self.tableView.mj_header beginRefreshing];
     self.tableView.mj_footer=[MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         [self footerRequest];
     }];
 }
--(void)beginRefreshing
+-(void)StartRefresh
 {
+    
     if (self.swipeController.typeCount==102) {
         recerveArray=nil;
         [self.tableView reloadData];
@@ -57,9 +60,20 @@ static int RefreshCount = 2;//上拉加载基数
     // 马上进入刷新状态
      [self.tableView.mj_header beginRefreshing];
     }
+    NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:0];
+    [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 -(void)headerRequest
 {
+    if (self.swipeController.typeCount==102) {
+        recerveArray=nil;
+        [self.tableView.mj_header setHidden:YES];
+        [self.tableView.mj_footer setHidden:YES];
+        return;
+    }
+    [self.tableView.mj_header setHidden:NO];
+    [self.tableView.mj_footer setHidden:NO];
+    [self.tableView.mj_footer endRefreshing];
     MainViewModel * mainModel = [[MainViewModel alloc] init];
     [mainModel setBlockWithReturnBlock:^(id returnValue)
     {
@@ -69,8 +83,9 @@ static int RefreshCount = 2;//上拉加载基数
             [self.tableView reloadData];
         }else
         {
-            [WCAlertView showAlertWithTitle:returnValue message:returnValue customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [SVProgressHUD showInfoWithStatus:returnValue];
             [self.tableView.mj_header endRefreshing];
+             [self.tableView reloadData];
         }
       
     } WithErrorBlock:^(id errorCode) {
@@ -83,10 +98,12 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(void)footerRequest
 {
+    if (self.swipeController.typeCount==103) {
+        [self.tableView.mj_footer endRefreshing];
+        return;
+    }
     MainViewModel * mainModel = [[MainViewModel alloc] init];
     [mainModel setBlockWithReturnBlock:^(id returnValue) {
-      
-        
         if ([returnValue isKindOfClass:[NSArray class]] ) {
             NSMutableArray * ary=returnValue;
             if (ary!=nil &&ary.count!=0) {
@@ -97,19 +114,27 @@ static int RefreshCount = 2;//上拉加载基数
             [self.tableView reloadData];
         }else
         {
-            [WCAlertView showAlertWithTitle:returnValue message:returnValue customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [SVProgressHUD showInfoWithStatus:returnValue];
             [self.tableView.mj_footer endRefreshing];
         }
         
     } WithErrorBlock:^(id errorCode) {
-        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     } WithFailureBlock:^{
-        [self.tableView.mj_header endRefreshing];
+        [self.tableView.mj_footer endRefreshing];
     }];
     NSString * CountStr=[NSString stringWithFormat:@"%d",RefreshCount];
     NSString *AgriCategoryType=[NSString stringWithFormat:@"%i",self.swipeController.AgriCategoryType];
     [mainModel requstMainDataAndUserName:USERNAME andAgriCategory:AgriCategoryType andrtotal:@"20" andPage:CountStr andType:self.swipeController.typeCount];
 }
+#pragma mark-数据库本地任务
+-(void)taskAction
+{
+    [self.tableView.mj_header setHidden:YES];
+    recerveArray=[SXDatabase getWillcollect:@"1"];
+    [self.tableView reloadData];
+}
+
 #pragma mark-nav
 -(void)creatNav
 {
@@ -192,9 +217,6 @@ static int RefreshCount = 2;//上拉加载基数
         cell.L_entrustBtn.tag=2*indexPath.row;
         [cell.R_entrustBtn addTarget:self action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
         cell.R_entrustBtn.tag=2*indexPath.row+1;
-        
-        
-        
         //认领按钮
         [cell.L_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
         cell.L_entrust.tag=2*indexPath.row;
@@ -210,23 +232,26 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if (self.swipeController.typeCount==102) {
-        searchView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, DeviceWidth-80, 50)];
-        self.searchText=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 500, 50)];
+    
+        UIView *   ssearchView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, DeviceWidth-80, 50)];
+        ssearchView.layer.masksToBounds = YES;
+        ssearchView.layer.cornerRadius = 6.0;
+        ssearchView.layer.borderWidth = 1.0;
+        ssearchView.layer.borderColor = AppLineColor.CGColor;
+    
+       self.searchText=[[UITextField alloc]initWithFrame:CGRectMake(0, 0, 500, 50)];
+    
         self.searchText.placeholder=@"请输入搜索的ID";
-        self.searchText.backgroundColor=AppLineColor;
-        UIButton * searchBtn=[[UIButton alloc]initWithFrame:CGRectMake(self.searchText.frame.size.width, 0, 50, 50)];
-        searchBtn.backgroundColor=AppLineColor;
+        self.searchText.backgroundColor=[UIColor whiteColor];
+        UIButton * searchBtn=[[UIButton alloc]initWithFrame:CGRectMake(DeviceWidth-50, 0, 50, 50)];
+    
         [searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
+        [searchBtn setBackgroundColor:AppLineColor];
         [searchBtn addTarget:self action:@selector(searchTap) forControlEvents:UIControlEventTouchUpInside];
-        [searchView addSubview:searchBtn];
-        [searchView addSubview:self.searchText];
-        return searchView;
-    }else
-    {
-        [searchView removeFromSuperview];
-        return nil;
-    }
+        [ssearchView addSubview:searchBtn];
+        [ssearchView addSubview:self.searchText];
+        return ssearchView;
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -253,10 +278,11 @@ static int RefreshCount = 2;//上拉加载基数
             [entrustModel setBlockWithReturnBlock:^(id returnValue) {
                 [SVProgressHUD dismiss];
                 if (returnValue==nil) {
-                      [WCAlertView showAlertWithTitle:@"委托成功" message:nil customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [SVProgressHUD showSuccessWithStatus:@"委托成功"];
                 }else
                 {
-                     [WCAlertView showAlertWithTitle:returnValue message:nil customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [SVProgressHUD showInfoWithStatus:returnValue];
+            
                 }
             } WithErrorBlock:^(id errorCode) {
                 [SVProgressHUD dismiss];
@@ -274,20 +300,19 @@ static int RefreshCount = 2;//上拉加载基数
 -(void)searchTap
 {
     if ([self.searchText.text isEqualToString:@""]) {
-        [WCAlertView showAlertWithTitle:@"搜索内容不可为空" message:nil customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [SVProgressHUD showInfoWithStatus:@"搜索内容不可为空，请重新输入"];
+        return;
     }
-  
         SearchViewModel * searchModel = [[SearchViewModel alloc] init];
         [searchModel setBlockWithReturnBlock:^(id returnValue) {
             [SVProgressHUD dismiss];
            if (![returnValue isKindOfClass:[NSArray class]]||[returnValue isKindOfClass:[NSNull class]]) {
-                [WCAlertView showAlertWithTitle:@"未查询到相应结果" message:returnValue customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+               [SVProgressHUD showInfoWithStatus:returnValue];
             }else
                 {
-            recerveArray = returnValue;
-            [self.tableView reloadData];
+                    recerveArray = returnValue;
+                    [self.tableView reloadData];
                 }
-        
         } WithErrorBlock:^(id errorCode) {
             [SVProgressHUD dismiss];
         } WithFailureBlock:^{
@@ -295,19 +320,38 @@ static int RefreshCount = 2;//上拉加载基数
         }];
         NSString *AgriCategoryType=[NSString stringWithFormat:@"%i",self.swipeController.AgriCategoryType];
         [searchModel requestSearchAndsearchId:self.searchText.text andUserName:USERNAME andRtotal:@"1" andAgriCategory:AgriCategoryType];
-    [SVProgressHUD showWithStatus:@"正在搜索……" maskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showWithStatus:@"正在搜索……" maskType:SVProgressHUDMaskTypeBlack];
     
 }
-#pragma mark-认领
+#pragma mark-认领--枷锁
 -(void)recerveTap:(UIButton *)sender
 {
-    MainModel * mainModel=recerveArray[sender.tag];
+     MainModel * mainModel=recerveArray[sender.tag];
     int a=[SXDatabase checkPLYID:mainModel.policyId];
     switch (a) {
         case 0:
+        {
+            DownloadShapeViewModel * shapeVM= [[DownloadShapeViewModel alloc]init];
+            [shapeVM setBlockWithReturnBlock:^(id returnValue)
+             {
+                 if ([returnValue isKindOfClass:[NSArray class]]&&returnValue
+                     !=nil)
+                 {
+                     shapeAry=returnValue;
+                     [self lockAction:sender.tag];
+                 }else
+                 {
+                     [SVProgressHUD showInfoWithStatus:returnValue];
+                 }
+             } WithErrorBlock:^(id errorCode) {
+             } WithFailureBlock:^{
+             }];
+            [shapeVM requestShopeAndPly_Id:mainModel.policyId];
+        }
             //下载图班  申请枷锁  存表
             break;
         case 1:
+            
             //该保单已在待采集列表中 不可认领
             break;
         case 2:
@@ -315,11 +359,33 @@ static int RefreshCount = 2;//上拉加载基数
             break;
         case 3:
             //已上报  更新与这条数据相关的图班数据   申请枷锁 数据存入表
-            
             break;
         default:
             break;
     }
+}
+-(void)lockAction:(long)bussinessId
+{
+    LockViewModel * lockVM=[[LockViewModel alloc]init];
+    MainModel * mainModel=recerveArray[bussinessId];
+    [lockVM setBlockWithReturnBlock:^(id returnValue)
+     {
+         if (returnValue==nil) {
+             [SXDatabase insertIntoTPLYTableWithPolicyId:mainModel.policyId andProposalNo:mainModel.proposalNo andProposalDate:mainModel.proposalDate andOrgCode:mainModel.orgCode andArea:mainModel.area andProductName:mainModel.productName andOrgName:mainModel.orgName andComminfo:mainModel.commInfo andAgriCategory:mainModel.agriCategory andStatus:@"1" andDelegatePerson:mainModel.delegatePerson];
+             [SXDatabase insertIntoTShapeTableWithTID:shapeAry];
+             [SVProgressHUD showSuccessWithStatus:@"认领成功"];
+             [self StartRefresh];
+             [[NSNotificationCenter defaultCenter]
+              postNotificationName:@"reloadTabelData" object:self];
+             
+         }else
+         {
+             [SVProgressHUD showInfoWithStatus:returnValue];
+         }
+     } WithErrorBlock:^(id errorCode) {
+     } WithFailureBlock:^{
+     }];
+    [lockVM LockRequestAndLockType:@"1" andbussinessId:mainModel.policyId andstatus:@"1" andDescription:nil];
 }
 #pragma mark-隐藏键盘
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

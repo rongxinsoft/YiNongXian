@@ -13,6 +13,7 @@
                 <outlet property="forestryView" destination="Bq8-Zt-Z5L" id="MfK-EA-p7Q"/>
                 <outlet property="plantTap" destination="DTi-Zj-fQP" id="mJ7-Fc-Roq"/>
                 <outlet property="plantingView" destination="Uag-Y3-sDu" id="Tix-fE-qwn"/>
+                <outlet property="tableView" destination="ZnJ-H3-bBc" id="hWo-Db-eZp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,7 +33,7 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ZnJ-H3-bBc">
                     <rect key="frame" x="0.0" y="137" width="320" height="631"/>
                     <animations/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="DHm-AS-5h3"/>
                         <outlet property="delegate" destination="-1" id="alQ-mx-8Zg"/>

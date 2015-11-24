@@ -42,7 +42,7 @@
         }];
     }else
     {
-          [WCAlertView showAlertWithTitle:@"数据错误" message:@"请重新操作" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [SVProgressHUD showInfoWithStatus:@"数据错误，请稍候重试"];
     }
     
 }
@@ -95,7 +95,7 @@
 #pragma 对网路异常进行处理
 -(void) netFailure
 {
-  [WCAlertView showAlertWithTitle:@"网络异常" message:@"请检查网络" customizationBlock:nil completionBlock:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [SVProgressHUD showErrorWithStatus:@"网络异常"];
     self.failureBlock();
 }
 

@@ -9,6 +9,8 @@
 #import "SXDatabase.h"
 #import "FMDatabase.h"
 #import "Encrpt.h"
+#import "ShapeModel.h"
+#import "MainModel.h"
 FMDatabase * db;
 @implementation SXDatabase
 
@@ -75,12 +77,12 @@ FMDatabase * db;
     if([rs next])
     {
         
-        int result = [db executeUpdate:[NSString stringWithFormat:@"update P_USER set F_UserName = '%@',F_Password = '%@',F_Rname = '%@',F_OrgCode='%@',F_Rights = '%@',F_RegionCode = '%@'",F_UserName,F_Password,F_Rname,F_OrgCode,F_Rights,F_RegionCode]];
+         [db executeUpdate:[NSString stringWithFormat:@"update P_USER set F_UserName = '%@',F_Password = '%@',F_Rname = '%@',F_OrgCode='%@',F_Rights = '%@',F_RegionCode = '%@'",F_UserName,F_Password,F_Rname,F_OrgCode,F_Rights,F_RegionCode]];
         return;
     }
     //向数据库中插入一条数据
     else{
-        int result = [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO  P_USER ( F_UserName,F_Password ,F_Rname ,F_OrgCode,F_Rights ,F_RegionCode )VALUES ('%@','%@','%@','%@','%@','%@')",F_UserName,F_Password,F_Rname,F_OrgCode,F_Rights,F_RegionCode]];
+         [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO  P_USER ( F_UserName,F_Password ,F_Rname ,F_OrgCode,F_Rights ,F_RegionCode )VALUES ('%@','%@','%@','%@','%@','%@')",F_UserName,F_Password,F_Rname,F_OrgCode,F_Rights,F_RegionCode]];
         
     }
 }
@@ -98,7 +100,6 @@ FMDatabase * db;
                             andAgriCategory:(NSString *)agriCategory
                             andStatus:(NSString *)status
                            andDelegatePerson:(NSString *)delegatePerson
-
 
 {
     if (!db) {
@@ -119,12 +120,12 @@ FMDatabase * db;
     if([rs next])
     {
         
-        int result = [db executeUpdate:[NSString stringWithFormat:@"update T_PLY set policyId = '%@',proposalNo = '%@',proposalDate = '%@',area='%@',productName = '%@',organizationCode = '%@',orgName = '%@',commInfo = '%@',agriCategory = '%@',status = '%@',delegatePerson = '%@' " ,policyId,proposalNo,proposalDate,area,productName,OrgCode,orgName,comminfo,agriCategory,status,delegatePerson]];
+         [db executeUpdate:[NSString stringWithFormat:@"update T_PLY set policyId = '%@',proposalNo = '%@',proposalDate = '%@',area='%@',productName = '%@',organizationCode = '%@',orgName = '%@',commInfo = '%@',agriCategory = '%@',status = '%@',delegatePerson = '%@'",policyId,proposalNo,proposalDate,area,productName,OrgCode,orgName,comminfo,agriCategory,status,delegatePerson]];
         return;
     }
     //向数据库中插入一条数据
     else{
-        int result = [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO  T_PLY (policyId,proposalNo,proposalDate,area,productName ,organizationCode ,orgName,commInfo ,agriCategory ,status,delegatePerson)VALUES ('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",policyId,proposalNo,proposalDate,area,productName,OrgCode,orgName,comminfo,agriCategory,status,delegatePerson]];
+        [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO  T_PLY (policyId,proposalNo,proposalDate,area,productName ,organizationCode ,orgName,commInfo ,agriCategory ,status,delegatePerson)VALUES ('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",policyId,proposalNo,proposalDate,area,productName,OrgCode,orgName,comminfo,agriCategory,status,delegatePerson]];
         
     }
 }
@@ -168,6 +169,69 @@ FMDatabase * db;
     
     return 0;
 }
+
+// 图斑表数据更新插入数据
++(void)insertIntoTShapeTableWithTID:(NSMutableArray *)shapeAry
+
+
+{
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
+    
+    [db setShouldCacheStatements:YES];
+    [self creatTable];
+    if (shapeAry!=nil&&[shapeAry isKindOfClass:[NSArray class]]&&shapeAry.count!=0) {
+        ShapeModel * shapeModel=shapeAry[0];
+        NSString *sqlStr;
+        sqlStr = [NSString stringWithFormat:@"delete from T_Shape where PLY_ID ='%@'", shapeModel.PLY_ID];
+        [db executeUpdate:sqlStr];
+        for (int i=0; i<shapeAry.count; i++) {
+            ShapeModel * shapModel=shapeAry[i];
+             [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO  T_Shape (T_ID,APP_ID,PLY_ID,SHAPE,WGS84_SHAPE,STATUS,CREATED_TM,CREATED_BY,CTEATE_TYPE,UPLOAD_STATUS,AREA,DAMAGELEVEL)VALUES ('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",shapModel.T_ID,shapModel.APP_ID ,shapModel.PLY_ID,shapModel.SHAPE,shapModel.WGS84_SHAPE,shapModel.STATUS,shapModel.CREATED_TM,shapModel.CREATED_BY,shapModel.CTEATE_TYPE,shapModel.UPLOAD_STATUS,shapModel.AREA,shapModel.DAMAGELEVEL]];
+        }
+    }
+
+}
+//将要采集数据
++ (NSMutableArray *)getWillcollect:(NSString*)status
+{
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return nil;
+    }
+    [db setShouldCacheStatements:YES];
+    
+    NSMutableArray * allDatarray = [[NSMutableArray alloc] initWithCapacity:50];
+    //定义一个结果集，存放查询的数据
+    FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from T_PLY where status = '%@'", status]];
+    //判断结果集中是否有数据，如果有则取出数据
+    while ([rs next]) {
+    
+        
+        MainModel *mainModel = [[MainModel alloc] init];
+        mainModel.productName = [rs stringForColumn:@"productName"];
+        mainModel.proposalDate = [rs stringForColumn:@"proposalDate"];
+        mainModel.proposalNo= [rs stringForColumn:@"proposalNo"];
+        mainModel.area = [rs stringForColumn:@"area"];
+        mainModel.policyId=[rs stringForColumn:@"policyId"];
+        [allDatarray addObject:mainModel];
+        
+    }
+    return allDatarray ;
+}
+
+
+
 //验证本地登录
 +(int)LocalCheckandUname:(NSString *)username andPassword:(NSString *)passWord
 
@@ -186,8 +250,6 @@ FMDatabase * db;
     if ([rs next])
     {
         NSString * Upassword=[rs stringForColumn:@"F_Password"];
-        
-        
         if ([passWord isEqualToString:Upassword])
         {
             return 1;
@@ -196,7 +258,6 @@ FMDatabase * db;
         {
             return 2;
         }
-
     }else
     {
         return 0;

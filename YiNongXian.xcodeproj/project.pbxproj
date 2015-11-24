@@ -26,6 +26,9 @@
 		21E307291C01FE3500646B2D /* SearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E307281C01FE3500646B2D /* SearchViewModel.m */; };
 		21E3BFF81BFEBD730091250B /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BFF71BFEBD730091250B /* MainModel.m */; };
 		21E3BFFF1BFEC47F0091250B /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BFFE1BFEC47F0091250B /* MainViewModel.m */; };
+		21E403BE1C040EF4005D1DDD /* ShapeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E403BD1C040EF4005D1DDD /* ShapeModel.m */; };
+		21E403C11C041402005D1DDD /* DownloadShapeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E403C01C041402005D1DDD /* DownloadShapeViewModel.m */; };
+		21E403C51C043244005D1DDD /* LockViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E403C41C043244005D1DDD /* LockViewModel.m */; };
 		21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E4098E1BFC2A8700F735B5 /* Encrpt.m */; };
 		21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409931BFC716100F735B5 /* LoginViewModel.m */; };
 		21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409971BFC7A7700F735B5 /* WCAlertView.m */; };
@@ -109,6 +112,12 @@
 		21E3BFF71BFEBD730091250B /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		21E3BFFD1BFEC47F0091250B /* MainViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewModel.h; sourceTree = "<group>"; };
 		21E3BFFE1BFEC47F0091250B /* MainViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewModel.m; sourceTree = "<group>"; };
+		21E403BC1C040EF4005D1DDD /* ShapeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeModel.h; sourceTree = "<group>"; };
+		21E403BD1C040EF4005D1DDD /* ShapeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeModel.m; sourceTree = "<group>"; };
+		21E403BF1C041402005D1DDD /* DownloadShapeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadShapeViewModel.h; sourceTree = "<group>"; };
+		21E403C01C041402005D1DDD /* DownloadShapeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadShapeViewModel.m; sourceTree = "<group>"; };
+		21E403C31C043244005D1DDD /* LockViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LockViewModel.h; sourceTree = "<group>"; };
+		21E403C41C043244005D1DDD /* LockViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LockViewModel.m; sourceTree = "<group>"; };
 		21E4098E1BFC2A8700F735B5 /* Encrpt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Encrpt.m; path = "../../Resource /Encrpt.m"; sourceTree = "<group>"; };
 		21E4098F1BFC2A8700F735B5 /* Encrpt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Encrpt.h; path = "../../Resource /Encrpt.h"; sourceTree = "<group>"; };
 		21E409921BFC716100F735B5 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
@@ -242,6 +251,7 @@
 		213D5D351BF42D56008D9C25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				21E403BB1C040EE0005D1DDD /* ShapeModel */,
 				21E3BFF51BFEBD540091250B /* mainModel */,
 			);
 			path = Model;
@@ -263,8 +273,9 @@
 		213D5D371BF42D56008D9C25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21E403C21C04322B005D1DDD /* LockViewModel */,
 				21E307261C01FE1C00646B2D /* searchViewModel */,
-				21E3BFF91BFEBF840091250B /* MainViewModel */,
+				21E3BFF91BFEBF840091250B /* insuredViewModel */,
 				21E409911BFC716100F735B5 /* LoginViewModel */,
 			);
 			path = ViewModel;
@@ -337,15 +348,36 @@
 			name = mainModel;
 			sourceTree = "<group>";
 		};
-		21E3BFF91BFEBF840091250B /* MainViewModel */ = {
+		21E3BFF91BFEBF840091250B /* insuredViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				21E3BFFD1BFEC47F0091250B /* MainViewModel.h */,
 				21E3BFFE1BFEC47F0091250B /* MainViewModel.m */,
 				21E665FE1C02E1F400B35D74 /* EntrustViewModel.h */,
 				21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */,
+				21E403BF1C041402005D1DDD /* DownloadShapeViewModel.h */,
+				21E403C01C041402005D1DDD /* DownloadShapeViewModel.m */,
 			);
+			name = insuredViewModel;
 			path = MainViewModel;
+			sourceTree = "<group>";
+		};
+		21E403BB1C040EE0005D1DDD /* ShapeModel */ = {
+			isa = PBXGroup;
+			children = (
+				21E403BC1C040EF4005D1DDD /* ShapeModel.h */,
+				21E403BD1C040EF4005D1DDD /* ShapeModel.m */,
+			);
+			path = ShapeModel;
+			sourceTree = "<group>";
+		};
+		21E403C21C04322B005D1DDD /* LockViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				21E403C31C043244005D1DDD /* LockViewModel.h */,
+				21E403C41C043244005D1DDD /* LockViewModel.m */,
+			);
+			path = LockViewModel;
 			sourceTree = "<group>";
 		};
 		21E409911BFC716100F735B5 /* LoginViewModel */ = {
@@ -708,6 +740,7 @@
 				21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */,
 				21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */,
 				21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */,
+				21E403BE1C040EF4005D1DDD /* ShapeModel.m in Sources */,
 				21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
 				21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */,
@@ -720,9 +753,11 @@
 				21FE20711BF19A71002B08FC /* main.m in Sources */,
 				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
 				21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */,
+				21E403C51C043244005D1DDD /* LockViewModel.m in Sources */,
 				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
 				21E3BFF81BFEBD730091250B /* MainModel.m in Sources */,
 				21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */,
+				21E403C11C041402005D1DDD /* DownloadShapeViewModel.m in Sources */,
 				21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */,
 				21E307291C01FE3500646B2D /* SearchViewModel.m in Sources */,
 				213D5D461BF43CA2008D9C25 /* LoginViewController.m in Sources */,

@@ -13,6 +13,7 @@
 #import "RNSwipeViewController.h"
 #import "MainViewController.h"
 #import "MJRefresh.h"
+#import "SXDatabase.h"
 @interface LeftMenuViewController ()
 
 @property(strong,nonatomic)UIViewController * currentVC;
@@ -21,7 +22,7 @@
 @implementation LeftMenuViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+   [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reloadTabelData) name:@"reloadTabelData" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +69,9 @@
         }
             break;
         case 1:{
-            NSArray * ary=@[@"任务池查询",@"委托任务池查询",@"投保单查询",@"待采集任务(0)",@"已上报任务(0)"];
+            NSArray * arys=[SXDatabase getWillcollect:@"1"];
+            NSString * willCollet=[NSString stringWithFormat:@"待采集任务(%lu)",(unsigned long)arys.count];
+            NSArray * ary=@[@"任务池查询",@"委托任务池查询",@"投保单查询",willCollet,@"已上报任务(0)"];
             cell.celltitle.text=ary[indexPath.row];
         }
              break;
@@ -121,14 +124,20 @@
 }
 #pragma 点击方法 种植、养殖 、林业
 - (IBAction)plantAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"STARTREQUEST" object:self];
     self.swipeController.AgriCategoryType=1;
     [self changeColor:0];
 }
 - (IBAction)farmAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"STARTREQUEST" object:self];
      self.swipeController.AgriCategoryType=2;
      [self changeColor:1];
 }
 - (IBAction)forestryAction:(id)sender {
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"STARTREQUEST" object:self];
      self.swipeController.AgriCategoryType=3;
      [self changeColor:2];
 }
@@ -176,17 +185,24 @@
         if (self.swipeController.visibleState == RNSwipeVisibleLeft)
         {
            
-              self.swipeController.typeCount=(int)indexPath.row+100;
+            
+            self.swipeController.typeCount=(int)indexPath.row+100;
             [self.swipeController resetView];
+            if (indexPath.row==3) {
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"SELECTSQLITE" object:self];
+            }else
+            {
             [[NSNotificationCenter defaultCenter]
              postNotificationName:@"STARTREQUEST" object:self];
-          //  [respordVc headerRequest];
-            //typeCount 区分点击哪行
-          
- 
+            }
+
         }
     }
 }
-
+-(void)reloadTabelData
+{
+    [self.tableView reloadData];
+}
 
 @end

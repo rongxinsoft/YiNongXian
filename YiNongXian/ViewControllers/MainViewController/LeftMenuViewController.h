@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *forestryView;
 @property (weak, nonatomic) IBOutlet UIButton *forestryTap;
 - (IBAction)forestryAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end
