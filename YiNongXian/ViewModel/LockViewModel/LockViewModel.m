@@ -10,16 +10,23 @@
 #import "AppDelegate.h"
 #import "NetRequestClass.h"
 @implementation LockViewModel
--(void)LockRequestAndLockType:(NSString *)lockType andbussinessId:(NSString *)bussinessId andstatus:(NSString *)status andDescription:(NSString *)description
+-(void)LockRequestAndLockType:(NSString *)lockType andbussinessId:(NSString *)bussinessId andstatus:(NSString *)status andDescription:(NSString *)description andType:(int)type
 {
     AppDelegate * delegate=DELEGATE;
-    NSString * url;
-    url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
     
-    NSDictionary * requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
-    NSDictionary * encryDic=[NetRequestClass dataProcessing:requestDic];
+    NSString * url;
+    NSDictionary * requestDic;
+    NSDictionary * encryDic;
+    if (type==100 ||type==103) {
+        url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
+    requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
+        encryDic=[NetRequestClass dataProcessing:requestDic];
+    }else
+    {
+         url=[NSString stringWithFormat:@"%@/ply/claimPly",delegate.POSTURL];
+        encryDic=[NetRequestClass dataStrProcessing:bussinessId];
+    }
     if (encryDic !=nil) {
-        
         [NetRequestClass NetRequestPOSTWithRequestURL:url WithParameter:encryDic WithReturnValeuBlock:^(id returnValue) {
             DDLog(@"0909009%@", returnValue);
             [self fetchValueSuccessWithDic:returnValue];
@@ -27,11 +34,9 @@
         } WithErrorCodeBlock:^(id errorCode) {
             DDLog(@"%@", errorCode);
             [self errorCodeWithDic:errorCode];
-            
         } WithFailureBlock:^{
             [self netFailure];
             DDLog(@"网络异常");
-            
         }];
     }else
     {
@@ -59,7 +64,6 @@
 {
     self.errorBlock(errorDic);
 }
-
 #pragma 对网路异常进行处理
 -(void) netFailure
 {

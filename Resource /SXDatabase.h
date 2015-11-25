@@ -38,4 +38,6 @@
 +(void)insertIntoTShapeTableWithTID:(NSMutableArray *)shapeAry;
 //获取待采集任务
 + (NSMutableArray *)getWillcollect:(NSString*)status;
+//删除数据库与policyId有关所有数据
++(void)deletePLYwithPolicyID:(NSString *)policyId;
 @end

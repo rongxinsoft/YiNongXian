@@ -20,19 +20,15 @@
     self.centerViewController=[[MainViewController alloc]init];
     self.leftViewController=[[LeftMenuViewController alloc]init];
     [self showLeft];
-
     self.swipeDelegate=self;
     // Do any additional setup after loading the view.
 }
 #pragma mark - Swipe delegate
 - (void)swipeController:(RNSwipeViewController *)swipeController willShowController:(UIViewController *)controller {
-    NSLog(@"will show");
 }
 
 - (void)swipeController:(RNSwipeViewController *)swipeController didShowController:(UIViewController *)controller {
 
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

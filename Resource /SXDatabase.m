@@ -77,7 +77,7 @@ FMDatabase * db;
     if([rs next])
     {
         
-         [db executeUpdate:[NSString stringWithFormat:@"update P_USER set F_UserName = '%@',F_Password = '%@',F_Rname = '%@',F_OrgCode='%@',F_Rights = '%@',F_RegionCode = '%@'",F_UserName,F_Password,F_Rname,F_OrgCode,F_Rights,F_RegionCode]];
+         [db executeUpdate:[NSString stringWithFormat:@"update P_USER set F_Password = '%@',F_Rname = '%@',F_OrgCode='%@',F_Rights = '%@',F_RegionCode = '%@' where F_UserName = '%@'",F_Password,F_Rname,F_OrgCode,F_Rights,F_RegionCode,F_UserName]];
         return;
     }
     //向数据库中插入一条数据
@@ -87,7 +87,30 @@ FMDatabase * db;
     }
 }
 
-
++(void)deletePLYwithPolicyID:(NSString *)policyId
+{
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
+    
+    [db setShouldCacheStatements:YES];
+    [self creatTable];
+    BOOL a=   [db executeUpdate:[NSString stringWithFormat:@"delete from T_PLY where policyId ='%@'", policyId]];
+    if (a==YES) {
+        NSString *sqlStr;
+        sqlStr = [NSString stringWithFormat:@"delete from T_Shape where PLY_ID ='%@'", policyId];
+        [db executeUpdate:sqlStr];
+    }
+    else
+    {
+     [SVProgressHUD showErrorWithStatus:@"删除失败"];
+    }
+}
 //插入与更新保单数据
 +(void)insertIntoTPLYTableWithPolicyId:(NSString *)policyId
                             andProposalNo:(NSString * )proposalNo
@@ -102,6 +125,9 @@ FMDatabase * db;
                            andDelegatePerson:(NSString *)delegatePerson
 
 {
+    if ([status isEqualToString:@"0"]) {
+        status=@"2";
+    }
     if (!db) {
         [self creatDatabase];
     }
@@ -120,7 +146,7 @@ FMDatabase * db;
     if([rs next])
     {
         
-         [db executeUpdate:[NSString stringWithFormat:@"update T_PLY set policyId = '%@',proposalNo = '%@',proposalDate = '%@',area='%@',productName = '%@',organizationCode = '%@',orgName = '%@',commInfo = '%@',agriCategory = '%@',status = '%@',delegatePerson = '%@'",policyId,proposalNo,proposalDate,area,productName,OrgCode,orgName,comminfo,agriCategory,status,delegatePerson]];
+         [db executeUpdate:[NSString stringWithFormat:@"update T_PLY set proposalNo = '%@',proposalDate = '%@',area='%@',productName = '%@',organizationCode = '%@',orgName = '%@',commInfo = '%@',agriCategory = '%@',status = '%@',delegatePerson = '%@' where policyId = '%@'",proposalNo,proposalDate,area,productName,OrgCode,orgName,comminfo,agriCategory,status,delegatePerson,policyId]];
         return;
     }
     //向数据库中插入一条数据
@@ -147,7 +173,7 @@ FMDatabase * db;
     FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from T_PLY where policyId = '%@'", policyId]];
     if ([rs next])
     {
-        //stastus  1待采集  2上报中  3  已上报
+        //stastus  1待采集  2已上报  3  上报中
         NSString * status=[rs stringForColumn:@"status"];
         
         
@@ -172,8 +198,6 @@ FMDatabase * db;
 
 // 图斑表数据更新插入数据
 +(void)insertIntoTShapeTableWithTID:(NSMutableArray *)shapeAry
-
-
 {
     if (!db) {
         [self creatDatabase];
@@ -216,22 +240,17 @@ FMDatabase * db;
     FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from T_PLY where status = '%@'", status]];
     //判断结果集中是否有数据，如果有则取出数据
     while ([rs next]) {
-    
-        
         MainModel *mainModel = [[MainModel alloc] init];
         mainModel.productName = [rs stringForColumn:@"productName"];
         mainModel.proposalDate = [rs stringForColumn:@"proposalDate"];
         mainModel.proposalNo= [rs stringForColumn:@"proposalNo"];
         mainModel.area = [rs stringForColumn:@"area"];
         mainModel.policyId=[rs stringForColumn:@"policyId"];
+        mainModel.delegatePerson=[rs stringForColumn:@"delegatePerson"];
         [allDatarray addObject:mainModel];
-        
     }
     return allDatarray ;
 }
-
-
-
 //验证本地登录
 +(int)LocalCheckandUname:(NSString *)username andPassword:(NSString *)passWord
 

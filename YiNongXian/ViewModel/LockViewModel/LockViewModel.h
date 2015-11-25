@@ -9,5 +9,5 @@
 #import "ViewModelClass.h"
 
 @interface LockViewModel : ViewModelClass
--(void)LockRequestAndLockType:(NSString *)lockType andbussinessId:(NSString *)bussinessId andstatus:(NSString *)status andDescription:(NSString *)description;
+-(void)LockRequestAndLockType:(NSString *)lockType andbussinessId:(NSString *)bussinessId andstatus:(NSString *)status andDescription:(NSString *)description andType:(int)type;
 @end

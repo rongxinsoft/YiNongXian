@@ -11,7 +11,7 @@
 @interface NetRequestClass : NSObject
 #pragma 将要上传的数据转为JOSN 得到进行加密后的字符串
 +(NSDictionary *)dataProcessing:(NSDictionary *)dic;
-
++(NSDictionary *)dataStrProcessing:(NSString *)Str;
 
 #pragma 监测网络的可链接性
 + (BOOL) netWorkReachabilityWithURLString:(NSString *) strUrl;
