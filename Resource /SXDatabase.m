@@ -44,14 +44,18 @@ FMDatabase * db;
     //为数据库设置缓存，提高查询效率
     [db setShouldCacheStatements:YES];
     
-    //判断数据库中是否已经存在这个表，如果不存在则创建该表
+    //用户表
     [db executeUpdate:@"CREATE TABLE P_USER(F_UserName TEXT,F_Password TEXT,F_Rname TEXT,F_OrgCode TEXT,F_Rights TEXT,F_RegionCode TEXT)"];
     //保单表
     [db executeUpdate:@"CREATE TABLE T_PLY(policyId TEXT,proposalNo TEXT,proposalDate TEXT,area TEXT,productName TEXT,organizationCode TEXT,orgName TEXT,commInfo TEXT,agriCategory TEXT,status TEXT,delegatePerson TEXT)"];
+    
+    //案件表
+    [db executeUpdate:@"CREATE TABLE T_Srvy(accidentId TEXT,reportNo TEXT,reporTime TEXT,reportPerson TEXT,reportReason TEXT,accdientAddress TEXT,reperPhone TEXT,accidentTime TEXT,productName TEXT,commInfo TEXT,productType TEXT,orgCode TEXT,orgName TEXT,status TEXT,delegatePerson TEXT)"];
+    
     //图斑表
     [db executeUpdate:@"CREATE TABLE T_Shape(T_ID TEXT,APP_ID TEXT,PLY_ID TEXT,SHAPE TEXT,WGS84_SHAPE TEXT,STATUS TEXT,CREATED_TM TEXT,CREATED_BY TEXT,CTEATE_TYPE TEXT,UPLOAD_STATUS TEXT,AREA TEXT,DAMAGELEVEL TEXT)"];
 }
-//插入与更新用户数据
+#pragma mark-  用户数据
 +(void)insertIntoUserTableWithUserName:(NSString *)F_UserName
                             andPassword:(NSString * )F_Password
                                andRname:(NSString *)F_Rname
@@ -86,8 +90,24 @@ FMDatabase * db;
         
     }
 }
+#pragma mark-  插入与更新案件数据
++(void)insertIntoTSrvyTableWithaccidentId:(NSString *)accidentId
+                                            andreportNo:(NSString * )reportNo
+                                            andreporTime:(NSString *)reporTime
+                                            andreportPerson:(NSString *)reportPerson
+                                            andreportReason:(NSString *)reportReason
+                                            andaccdientAddress:(NSString *)accdientAddress
+                                            andreperPhone:(NSString *)reperPhone
+                                            andaccidentTime:(NSString *)accidentTime
+                                            andproductName:(NSString *)productName
+                                            andcommInfo:(NSString *)commInfo
+                                            andproductType:(NSString *)productType
+                                            andorgCode:(NSString *)orgCode
+                                            andorgName:(NSString *)orgName
+                                            andstatus:(NSString *)status
+                                            anddelegatePerson:(NSString *)delegatePerson
 
-+(void)deletePLYwithPolicyID:(NSString *)policyId
+
 {
     if (!db) {
         [self creatDatabase];
@@ -100,18 +120,92 @@ FMDatabase * db;
     
     [db setShouldCacheStatements:YES];
     [self creatTable];
-    BOOL a=   [db executeUpdate:[NSString stringWithFormat:@"delete from T_PLY where policyId ='%@'", policyId]];
+    //案件表
+    [db executeUpdate:@"CREATE TABLE T_Srvy(accidentId TEXT,reportNo TEXT,reporTime TEXT,reportPerson TEXT,reportReason TEXT,accdientAddress TEXT,reperPhone TEXT,accidentTime TEXT,productName TEXT,commInfo TEXT,productType TEXT,orgCode TEXT,orgName TEXT,status TEXT,delegatePerson TEXT)"];
+    NSString *sqlStr;
+    sqlStr = [NSString stringWithFormat:@"select * from T_Srvy where accidentId= '%@'", accidentId];
+    FMResultSet *rs = [db executeQuery:sqlStr];
+    
+    if([rs next])
+    {
+        
+        [db executeUpdate:[NSString stringWithFormat:@"update T_Srvy set reportNo = '%@',reporTime = '%@',reportReason='%@',accdientAddress = '%@',reperPhone = '%@',accidentTime = '%@',productName = '%@',commInfo = '%@',productType = '%@',orgCode = '%@' ,orgName = '%@',status = '%@',delegatePerson = '%@' where accidentId = '%@'",reportNo,reporTime,reportReason,accdientAddress,reperPhone,accidentTime,productName,commInfo,productType,orgCode,orgName,status,delegatePerson,accidentId]];
+        return;
+    }
+    //向数据库中插入一条数据
+    else{
+        [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO  T_Srvy (accidentId ,reportNo,reporTime,reportPerson ,reportReason ,accdientAddress,reperPhone,accidentTime,productName,commInfo,productType,orgCode,orgName,status,delegatePerson)VALUES ('%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@','%@')",accidentId,reportNo,reporTime,reportPerson,reportReason,accdientAddress,reperPhone,accidentTime,productName,commInfo,productType,orgCode,orgName,status,delegatePerson]];
+    }
+
+}
+#pragma 删除 案件单个数据
++(void)deleteT_SrywithPolicyID:(NSString *)accidentId
+{
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
+    
+    [db setShouldCacheStatements:YES];
+    [self creatTable];
+    BOOL a= [db executeUpdate:[NSString stringWithFormat:@"delete from T_Srvy where accidentId ='%@'", accidentId]];
+    //成功则删除对应ID 图斑
     if (a==YES) {
         NSString *sqlStr;
-        sqlStr = [NSString stringWithFormat:@"delete from T_Shape where PLY_ID ='%@'", policyId];
+        sqlStr = [NSString stringWithFormat:@"delete from T_Shape where PLY_ID ='%@'", accidentId];
         [db executeUpdate:sqlStr];
     }
     else
     {
-     [SVProgressHUD showErrorWithStatus:@"删除失败"];
+        [SVProgressHUD showErrorWithStatus:@"删除失败"];
     }
 }
-//插入与更新保单数据
+#pragma  检验案件
++(int)checkTSrvyID:(NSString *)accidentId
+
+{
+    
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return nil;
+    }
+    [db setShouldCacheStatements:YES];
+    
+    FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from T_Srvy where accidentId = '%@'", accidentId]];
+    if ([rs next])
+    {
+        //stastus  1待采集  2已上报  3  上报中
+        NSString * status=[rs stringForColumn:@"status"];
+        
+        
+        if ([status isEqualToString:@"1"])
+        {
+            return 1;
+        }
+        else if ([status isEqualToString:@"2"])
+        {
+            return 2;
+        }else
+        {
+            return 3;
+        }
+    }else
+    {
+        return 0;
+    }
+    
+    return 0;
+}
+
+#pragma mark 插入与更新保单数据
 +(void)insertIntoTPLYTableWithPolicyId:(NSString *)policyId
                             andProposalNo:(NSString * )proposalNo
                             andProposalDate:(NSString *)proposalDate
@@ -195,8 +289,32 @@ FMDatabase * db;
     
     return 0;
 }
-
-// 图斑表数据更新插入数据
+#pragma mark-删除  保单
++(void)deletePLYwithPolicyID:(NSString *)policyId
+{
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return;
+    }
+    
+    [db setShouldCacheStatements:YES];
+    [self creatTable];
+    BOOL a=   [db executeUpdate:[NSString stringWithFormat:@"delete from T_PLY where policyId ='%@'", policyId]];
+    if (a==YES) {
+        NSString *sqlStr;
+        sqlStr = [NSString stringWithFormat:@"delete from T_Shape where PLY_ID ='%@'", policyId];
+        [db executeUpdate:sqlStr];
+    }
+    else
+    {
+        [SVProgressHUD showErrorWithStatus:@"删除失败"];
+    }
+}
+#pragma mark-图斑
 +(void)insertIntoTShapeTableWithTID:(NSMutableArray *)shapeAry
 {
     if (!db) {

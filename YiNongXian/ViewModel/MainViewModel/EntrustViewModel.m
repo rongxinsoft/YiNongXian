@@ -10,12 +10,16 @@
 #import "AppDelegate.h"
 #import "NetRequestClass.h"
 @implementation EntrustViewModel
--(void)entrustRequestAnddelegateId:(NSString *)delegateId andDelegatePerson:(NSString *)delegatePerson andBeDelegatedPerson:(NSString *)beDelegatedPerson
+-(void)entrustRequestAnddelegateId:(NSString *)delegateId andDelegatePerson:(NSString *)delegatePerson andBeDelegatedPerson:(NSString *)beDelegatedPerson andType:(int)type
 {
     AppDelegate * delegate=DELEGATE;
     NSString * url;
+    if (type==201) {
+        url=[NSString stringWithFormat:@"%@/survey/delegateSurvey",delegate.POSTURL];
+    }else
+    {
     url=[NSString stringWithFormat:@"%@/ply/delegatePly",delegate.POSTURL];
-    
+    }
     NSDictionary * requestDic=@{@"delegateId":delegateId,@"delegatePerson":delegatePerson,@"beDelegatedPerson":beDelegatedPerson};
     NSDictionary * encryDic=[NetRequestClass dataProcessing:requestDic];
     if (encryDic !=nil) {

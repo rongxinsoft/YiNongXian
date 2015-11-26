@@ -1,14 +1,14 @@
 //
-//  MainTableViewCell.m
+//  surveyTableViewCell.m
 //  YiNongXian
 //
-//  Created by 索金铭 on 15/11/17.
+//  Created by 索金铭 on 15/11/26.
 //  Copyright © 2015年 bxlt. All rights reserved.
 //
 
-#import "MainTableViewCell.h"
-#import "caseModel.h"
-@implementation MainTableViewCell
+#import "surveyTableViewCell.h"
+#include "caseModel.h"
+@implementation surveyTableViewCell
 
 - (void)awakeFromNib
 {
@@ -17,41 +17,51 @@
     self.rightView.layer.borderWidth=1;
     self.rightView.layer.borderColor=[UIColor groupTableViewBackgroundColor].CGColor;
 }
--(void) setValueWithDic : (MainModel *) mainModel  andRightValue:(MainModel *) rightModel andTypeCount:(int)type
+-(void) setcaseValueWithDic : (caseModel *) mainModel  andRightValue:(caseModel *) rightModel andTypeCount:(int)type
 {
-    if (![mainModel.productName isKindOfClass:[NSNull class]])
+    
+    if (![mainModel.reportPerson isKindOfClass:[NSNull class]])
     {
-        self.leftproductName.text=[NSString stringWithFormat:@"产品名称:%@",mainModel.productName];
+        self.leftproductName.text=[NSString stringWithFormat:@"报案人:%@",mainModel.reportPerson];
     }
-    if (![mainModel.proposalNo isKindOfClass:[NSNull class]])
+    if (![mainModel.reportNo isKindOfClass:[NSNull class]])
     {
-        self.leftProposalNo.text=[NSString stringWithFormat:@"投保单号:%@",mainModel.proposalNo];
-
+        self.leftProposalNo.text=[NSString stringWithFormat:@"报案号:%@",mainModel.reportNo];
+        
     }
-    if (![mainModel.area isKindOfClass:[NSNull class]])
+    if (![mainModel.accdientAddress isKindOfClass:[NSNull class]]) {
+        self.L_caseAddress.text=[NSString stringWithFormat:@"出险地点:%@",mainModel.accdientAddress];
+    }
+    if (![mainModel.reporTime isKindOfClass:[NSNull class]])
     {
-        self.leftarea.text=[NSString stringWithFormat:@"投保区域:%@",mainModel.area];
+        self.leftarea.text=[NSString stringWithFormat:@"报案时间:%@",mainModel.reporTime];
     }
-    if (![mainModel.proposalDate isKindOfClass:[NSNull class]])
+    if (![mainModel.reperPhone isKindOfClass:[NSNull class]])
     {
-        self.leftproposalDate.text=[NSString stringWithFormat:@"投保日期:%@",mainModel.proposalDate];
+        self.leftproposalDate.text=[NSString stringWithFormat:@"联系电话:%@",mainModel.reperPhone];
     }
+    
+    
+    
     if (![rightModel.productName isKindOfClass:[NSNull class]])
     {
-        self.R_productName.text=[NSString stringWithFormat:@"产品名称:%@",rightModel.productName];
-;
+        self.R_productName.text=[NSString stringWithFormat:@"报案人:%@",rightModel.reportPerson];
     }
-   if (![rightModel.proposalNo isKindOfClass:[NSNull class]])
+    if (![rightModel.reportNo isKindOfClass:[NSNull class]])
     {
-        self.R_ProposalNo.text=[NSString stringWithFormat:@"投保单号:%@", rightModel.proposalNo];
+        self.R_ProposalNo.text=[NSString stringWithFormat:@"报案号:%@",rightModel.reportNo];
+        
     }
-    if (![rightModel.area isKindOfClass:[NSNull class]])
-    {
-        self.R_area.text=[NSString stringWithFormat:@"投保区域:%@",rightModel.area];;
+    if (![rightModel.accdientAddress isKindOfClass:[NSNull class]]) {
+        self.R_caseAddress.text=[NSString stringWithFormat:@"出险地点:%@",rightModel.accdientAddress];
     }
-    if (![rightModel.proposalDate isKindOfClass:[NSNull class]])
+    if (![rightModel.reporTime isKindOfClass:[NSNull class]])
     {
-        self.R_proposalDate.text=[NSString stringWithFormat:@"投保日期:%@",rightModel.proposalDate];
+        self.R_area.text=[NSString stringWithFormat:@"报案时间:%@",rightModel.reporTime];
+    }
+    if (![rightModel.reperPhone isKindOfClass:[NSNull class]])
+    {
+        self.R_proposalDate.text=[NSString stringWithFormat:@"联系电话:%@",rightModel.reperPhone];
     }
     if (type==103||type==104) {
         if (![mainModel.delegatePerson isEqualToString:@"(null)"]) {
@@ -101,5 +111,6 @@
     [super setSelected:selected animated:animated];
     // Configure the view for the selected state
 }
+
 
 @end

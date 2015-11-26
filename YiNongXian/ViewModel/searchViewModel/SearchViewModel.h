@@ -9,5 +9,5 @@
 #import "ViewModelClass.h"
 
 @interface SearchViewModel : ViewModelClass
--(void)requestSearchAndsearchId:(NSString *)searchId andUserName:(NSString *)userName andRtotal:(NSString *)rtotal andAgriCategory:(NSString*)agriCategory;
+-(void)requestSearchAndsearchId:(NSString *)searchId andUserName:(NSString *)userName andRtotal:(NSString *)rtotal andAgriCategory:(NSString*)agriCategory  andType:(int)type;
 @end

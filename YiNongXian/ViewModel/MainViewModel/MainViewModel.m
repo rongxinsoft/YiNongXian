@@ -10,6 +10,7 @@
 #import "NetRequestClass.h"
 #import "AppDelegate.h"
 #import "MainModel.h"
+#import "caseModel.h"
 @implementation MainViewModel
 -(void)requstMainDataAndUserName:(NSString *)userName andAgriCategory:(NSString *)agriCategory andrtotal:(NSString *)rtotal andPage:(NSString *)page andType:(int)typeCount
 {
@@ -21,6 +22,9 @@
     }else if(typeCount==101)
     {
         url=[NSString stringWithFormat:@"%@/ply/queryDelegatePly",delegate.POSTURL];
+    }else if(typeCount==200)
+    {
+        url=[NSString stringWithFormat:@"%@/survey/queryDelegateSurveyList",delegate.POSTURL];
     }
     
     NSDictionary * requestDic=@{@"userLoginCode":userName,@"agriCategory":agriCategory,@"rtotal":rtotal,@"pageNum":page};
@@ -63,6 +67,27 @@
             }
             
             NSMutableArray *returnArray = [[NSMutableArray alloc] initWithCapacity:100];
+            if (typeCount==200) {
+                for (NSDictionary * dic  in policyAry) {
+                    caseModel * model=[[caseModel alloc]init];
+                    model.accdientAddress=[dic objectForKey:@"accdientAddress"];
+                    model.accidentId=[dic objectForKey:@"accidentId"];
+                    model.commInfo=[dic objectForKey:@"commInfo"];
+                    model.delegatePerson=[dic objectForKey:@"delegatePerson"];
+                    model.orgCode=[dic objectForKey:@"orgCode"];
+                    model.orgName=[dic objectForKey:@"orgName"];
+                    model.productName=[dic objectForKey:@"productName"];
+                    model.productType=[dic objectForKey:@"productType"];
+                    model.reperPhone=[dic objectForKey:@"reperPhone"];
+                    model.reporTime=[dic objectForKey:@"reporTime"];
+                    model.reportNo=[dic objectForKey:@"reportNo"];
+                    model.reportPerson=[dic objectForKey:@"reportPerson"];
+                    model.reportReason=[dic objectForKey:@"reportReason"];
+                    model.status=[dic objectForKey:@"status"];
+                    [returnArray addObject:model];
+                }
+            }else
+            {
             for (NSDictionary * dic  in policyAry) {
                 MainModel * model=[[MainModel alloc]init];
                 model.policyId=[dic objectForKey:@"policyId"];
@@ -76,6 +101,7 @@
                 model.agriCategory=[dic objectForKey:@"agriCategory"];
                 model.delegatePerson=[dic objectForKey:@"delegatePerson"];
                 [returnArray addObject:model];
+            }
             }
             self.returnBlock(returnArray);
         } else

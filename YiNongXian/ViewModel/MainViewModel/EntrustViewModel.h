@@ -9,5 +9,5 @@
 #import "ViewModelClass.h"
 
 @interface EntrustViewModel : ViewModelClass
--(void)entrustRequestAnddelegateId:(NSString *)delegateId andDelegatePerson:(NSString *)delegatePerson andBeDelegatedPerson:(NSString *)beDelegatedPerson;
+-(void)entrustRequestAnddelegateId:(NSString *)delegateId andDelegatePerson:(NSString *)delegatePerson andBeDelegatedPerson:(NSString *)beDelegatedPerson andType:(int)type;
 @end

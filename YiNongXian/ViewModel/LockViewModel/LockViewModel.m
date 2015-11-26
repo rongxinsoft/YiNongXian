@@ -17,11 +17,24 @@
     NSString * url;
     NSDictionary * requestDic;
     NSDictionary * encryDic;
-    if (type==100 ||type==103) {
+    if (type==100 ) {
         url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
     requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
         encryDic=[NetRequestClass dataProcessing:requestDic];
-    }else
+    }else if(type==103)
+    {
+        if (description!=nil) {
+            url=[NSString stringWithFormat:@"%@/ply/canceldgplyonmobile",delegate.POSTURL];
+            encryDic=[NetRequestClass dataStrProcessing:bussinessId];
+
+        }else
+        {
+            url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
+            requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
+            encryDic=[NetRequestClass dataProcessing:requestDic];
+        }
+    }
+    else
     {
          url=[NSString stringWithFormat:@"%@/ply/claimPly",delegate.POSTURL];
         encryDic=[NetRequestClass dataStrProcessing:bussinessId];

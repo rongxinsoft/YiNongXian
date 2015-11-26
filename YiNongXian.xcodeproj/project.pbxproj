@@ -33,6 +33,10 @@
 		21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409931BFC716100F735B5 /* LoginViewModel.m */; };
 		21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409971BFC7A7700F735B5 /* WCAlertView.m */; };
 		21E666001C02E1F400B35D74 /* EntrustViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */; };
+		21E746131C06AF300017570C /* caseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E746121C06AF300017570C /* caseModel.m */; };
+		21E746171C06BE970017570C /* surveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E746151C06BE970017570C /* surveyTableViewCell.m */; };
+		21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E746161C06BE970017570C /* surveyTableViewCell.xib */; };
+		21E7461B1C06DCF30017570C /* noCopytextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E7461A1C06DCF30017570C /* noCopytextFiled.m */; };
 		21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9741BF98CC500CE757D /* RepordViewController.m */; };
 		21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D9751BF98CC500CE757D /* RepordViewController.xib */; };
 		21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */; };
@@ -126,6 +130,13 @@
 		21E409971BFC7A7700F735B5 /* WCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAlertView.m; sourceTree = "<group>"; };
 		21E665FE1C02E1F400B35D74 /* EntrustViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrustViewModel.h; sourceTree = "<group>"; };
 		21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrustViewModel.m; sourceTree = "<group>"; };
+		21E746111C06AF300017570C /* caseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caseModel.h; sourceTree = "<group>"; };
+		21E746121C06AF300017570C /* caseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = caseModel.m; sourceTree = "<group>"; };
+		21E746141C06BE970017570C /* surveyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = surveyTableViewCell.h; sourceTree = "<group>"; };
+		21E746151C06BE970017570C /* surveyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = surveyTableViewCell.m; sourceTree = "<group>"; };
+		21E746161C06BE970017570C /* surveyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = surveyTableViewCell.xib; sourceTree = "<group>"; };
+		21E746191C06DCF30017570C /* noCopytextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noCopytextFiled.h; sourceTree = "<group>"; };
+		21E7461A1C06DCF30017570C /* noCopytextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noCopytextFiled.m; sourceTree = "<group>"; };
 		21E8D9731BF98CC500CE757D /* RepordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepordViewController.h; sourceTree = "<group>"; };
 		21E8D9741BF98CC500CE757D /* RepordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepordViewController.m; sourceTree = "<group>"; };
 		21E8D9751BF98CC500CE757D /* RepordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepordViewController.xib; sourceTree = "<group>"; };
@@ -251,6 +262,7 @@
 		213D5D351BF42D56008D9C25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				21E746101C06AF1E0017570C /* caseModel */,
 				21E403BB1C040EE0005D1DDD /* ShapeModel */,
 				21E3BFF51BFEBD540091250B /* mainModel */,
 			);
@@ -298,6 +310,8 @@
 				213D5D431BF43CA2008D9C25 /* LoginViewController.h */,
 				213D5D441BF43CA2008D9C25 /* LoginViewController.m */,
 				213D5D451BF43CA2008D9C25 /* LoginViewController.xib */,
+				21E746191C06DCF30017570C /* noCopytextFiled.h */,
+				21E7461A1C06DCF30017570C /* noCopytextFiled.m */,
 			);
 			name = LoginViewController;
 			path = Login;
@@ -314,6 +328,9 @@
 				212C19421BFB090800A568BB /* MainTableViewCell.h */,
 				212C19431BFB090800A568BB /* MainTableViewCell.m */,
 				212C19441BFB090800A568BB /* MainTableViewCell.xib */,
+				21E746141C06BE970017570C /* surveyTableViewCell.h */,
+				21E746151C06BE970017570C /* surveyTableViewCell.m */,
+				21E746161C06BE970017570C /* surveyTableViewCell.xib */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -397,6 +414,15 @@
 			);
 			name = WCAlertView;
 			path = "../../Resource /WCAlertView";
+			sourceTree = "<group>";
+		};
+		21E746101C06AF1E0017570C /* caseModel */ = {
+			isa = PBXGroup;
+			children = (
+				21E746111C06AF300017570C /* caseModel.h */,
+				21E746121C06AF300017570C /* caseModel.m */,
+			);
+			path = caseModel;
 			sourceTree = "<group>";
 		};
 		21E8D9721BF98C8600CE757D /* RepordViewController */ = {
@@ -638,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				213D5D491BF4417D008D9C25 /* CPIC_Logo@2x.png in Resources */,
+				21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */,
 				21F7FA1E1BF5CC9800CFB9A7 /* shangbao@2x.png in Resources */,
 				21FE207F1BF19A71002B08FC /* LaunchScreen.storyboard in Resources */,
 				212C19481BFB22C100A568BB /* list@2x.png in Resources */,
@@ -745,6 +772,7 @@
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
 				21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */,
 				213D5D3A1BF42D56008D9C25 /* ViewModelClass.m in Sources */,
+				21E7461B1C06DCF30017570C /* noCopytextFiled.m in Sources */,
 				212C19451BFB090800A568BB /* MainTableViewCell.m in Sources */,
 				213D5D3E1BF42DE1008D9C25 /* NetRequestClass.m in Sources */,
 				213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */,
@@ -752,11 +780,13 @@
 				21E666001C02E1F400B35D74 /* EntrustViewModel.m in Sources */,
 				21FE20711BF19A71002B08FC /* main.m in Sources */,
 				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
+				21E746171C06BE970017570C /* surveyTableViewCell.m in Sources */,
 				21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */,
 				21E403C51C043244005D1DDD /* LockViewModel.m in Sources */,
 				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
 				21E3BFF81BFEBD730091250B /* MainModel.m in Sources */,
 				21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */,
+				21E746131C06AF300017570C /* caseModel.m in Sources */,
 				21E403C11C041402005D1DDD /* DownloadShapeViewModel.m in Sources */,
 				21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */,
 				21E307291C01FE3500646B2D /* SearchViewModel.m in Sources */,

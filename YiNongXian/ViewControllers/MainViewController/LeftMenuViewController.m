@@ -194,8 +194,6 @@
     {
         if (self.swipeController.visibleState == RNSwipeVisibleLeft)
         {
-           
-            
             self.swipeController.typeCount=(int)indexPath.row+100;
             [self.swipeController resetView];
             if (indexPath.row==3||indexPath.row==4) {
@@ -207,6 +205,29 @@
              postNotificationName:@"STARTREQUEST" object:self];
             }
 
+        }
+    }else if (indexPath.section==2)
+    {
+        if (self.swipeController.visibleState == RNSwipeVisibleLeft)
+        {
+            self.swipeController.typeCount=(int)indexPath.row+200;
+            [self.swipeController resetView];
+           
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"STARTREQUEST" object:self];
+            
+           
+            
+
+//            if (indexPath.row==3||indexPath.row==4) {
+//                [[NSNotificationCenter defaultCenter]
+//                 postNotificationName:@"SELECTSQLITE" object:self];
+//            }else
+//            {
+//                [[NSNotificationCenter defaultCenter]
+//                 postNotificationName:@"STARTREQUEST" object:self];
+//            }
+//            
         }
     }
 }

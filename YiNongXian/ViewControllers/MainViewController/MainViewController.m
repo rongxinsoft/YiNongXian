@@ -11,6 +11,7 @@
 #import "RNSwipeViewController.h"
 #import "LeftMenuViewController.h"
 #import "MainTableViewCell.h"
+#import "surveyTableViewCell.h"
 #import "MainViewModel.h"
 #import "MJRefresh.h"
 #import "ViewModelClass.h"
@@ -19,6 +20,7 @@
 #import "SXDatabase.h"
 #import "DownloadShapeViewModel.h"
 #import "LockViewModel.h"
+
 
 static int RefreshCount = 2;//上拉加载基数
 @interface MainViewController ()
@@ -53,11 +55,14 @@ static int RefreshCount = 2;//上拉加载基数
 -(void)StartRefresh
 {
     
-    if (self.swipeController.typeCount==102) {
+    if (self.swipeController.typeCount==102||self.swipeController.typeCount==201) {
         recerveArray=nil;
         [self.tableView reloadData];
     }else
     {
+        recerveArray=nil;
+        [self.tableView reloadData];
+        
     // 马上进入刷新状态
      [self.tableView.mj_header beginRefreshing];
     }
@@ -66,7 +71,7 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(void)headerRequest
 {
-    if (self.swipeController.typeCount==102) {
+    if (self.swipeController.typeCount==102||self.swipeController.typeCount==201) {
         recerveArray=nil;
         [self.tableView.mj_header setHidden:YES];
         [self.tableView.mj_footer setHidden:YES];
@@ -75,6 +80,7 @@ static int RefreshCount = 2;//上拉加载基数
     [self.tableView.mj_header setHidden:NO];
     [self.tableView.mj_footer setHidden:NO];
     [self.tableView.mj_footer endRefreshing];
+    
     MainViewModel * mainModel = [[MainViewModel alloc] init];
     [mainModel setBlockWithReturnBlock:^(id returnValue)
     {
@@ -202,47 +208,101 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    tableView.separatorStyle=UITableViewCellSelectionStyleNone;
-    static NSString *CellIdentifier = @"MainTableViewCell";
-    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"MainTableViewCell" owner:self options:nil] lastObject];
-    }
-    if (recerveArray!=nil&&recerveArray.count!=0)
-    {
-        if (recerveArray.count%2==0)
+    if (self.swipeController.typeCount>=200) {
+        tableView.separatorStyle=UITableViewCellSelectionStyleNone;
+        static NSString *CellIdentifier = @"surveyTableViewCell";
+        surveyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
         {
-            [cell setValueWithDic:recerveArray [2*indexPath.row] andRightValue:recerveArray [2*indexPath.row+1] andTypeCount:self.swipeController.typeCount];
-        }else
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"surveyTableViewCell" owner:self options:nil] lastObject];
+        }
+        if (recerveArray!=nil&&recerveArray.count!=0)
         {
-            if (indexPath.row==recerveArray.count/2) {
-                cell.rightView.hidden=YES;
-                [cell setValueWithDic:recerveArray [2*indexPath.row] andRightValue:nil andTypeCount:self.swipeController.typeCount];
+            if (recerveArray.count%2==0)
+            {
+                [cell setcaseValueWithDic:recerveArray [2*indexPath.row] andRightValue:recerveArray [2*indexPath.row+1] andTypeCount:self.swipeController.typeCount];
+            }else
+            {
+                if (indexPath.row==recerveArray.count/2) {
+                    cell.rightView.hidden=YES;
+                    [cell setcaseValueWithDic:recerveArray [2*indexPath.row] andRightValue:nil andTypeCount:self.swipeController.typeCount];
+                }
+                else
+                {
+                    [cell setcaseValueWithDic:recerveArray [2*indexPath.row] andRightValue:recerveArray [2*indexPath.row+1]     andTypeCount:self.swipeController.typeCount];
+                }
+                
             }
-            else
+            [cell setBtn:self.swipeController.typeCount];
+            //委托按钮
+            [cell.L_entrustBtn addTarget:self
+                                  action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
+            cell.L_entrustBtn.tag=2*indexPath.row;
+            [cell.R_entrustBtn addTarget:self action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
+            cell.R_entrustBtn.tag=2*indexPath.row+1;
+            if (self.swipeController.typeCount==200) {
+                cell.L_entrustBtn.hidden=YES;
+                cell.R_entrustBtn.hidden=YES;
+            }
+         
+            //认领按钮
+            [cell.L_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.L_entrust setTitle:@"认领案件" forState: UIControlStateNormal];
+            cell.L_entrust.tag=2*indexPath.row;
+            [cell.R_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.R_entrust setTitle:@"认领案件" forState: UIControlStateNormal];
+            cell.R_entrust.tag=2*indexPath.row+1;
+        }
+        return cell;
+    }else{
+        tableView.separatorStyle=UITableViewCellSelectionStyleNone;
+        static NSString *CellIdentifier = @"MainTableViewCell";
+        MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"MainTableViewCell" owner:self options:nil] lastObject];
+        }
+        if (recerveArray!=nil&&recerveArray.count!=0)
+        {
+            if (recerveArray.count%2==0)
             {
                 [cell setValueWithDic:recerveArray [2*indexPath.row] andRightValue:recerveArray [2*indexPath.row+1] andTypeCount:self.swipeController.typeCount];
+            }else
+            {
+                if (indexPath.row==recerveArray.count/2) {
+                    cell.rightView.hidden=YES;
+                    [cell setValueWithDic:recerveArray [2*indexPath.row] andRightValue:nil andTypeCount:self.swipeController.typeCount];
+                }
+                else
+                {
+                    [cell setValueWithDic:recerveArray [2*indexPath.row] andRightValue:recerveArray [2*indexPath.row+1]     andTypeCount:self.swipeController.typeCount];
+                }
+                
             }
+            [cell setBtn:self.swipeController.typeCount];
+            //委托按钮
+            [cell.L_entrustBtn addTarget:self
+                                  action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
+            cell.L_entrustBtn.tag=2*indexPath.row;
+            [cell.R_entrustBtn addTarget:self action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
+            cell.R_entrustBtn.tag=2*indexPath.row+1;
+            //认领按钮
+            [cell.L_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
+            cell.L_entrust.tag=2*indexPath.row;
+            [cell.R_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
+            cell.R_entrust.tag=2*indexPath.row+1;
         }
-        [cell setBtn:self.swipeController.typeCount];
-        //委托按钮
-        [cell.L_entrustBtn addTarget:self
-                              action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
-        cell.L_entrustBtn.tag=2*indexPath.row;
-        [cell.R_entrustBtn addTarget:self action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
-        cell.R_entrustBtn.tag=2*indexPath.row+1;
-        //认领按钮
-        [cell.L_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
-        cell.L_entrust.tag=2*indexPath.row;
-        [cell.R_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
-         cell.R_entrust.tag=2*indexPath.row+1;
+        return cell;
     }
-    return cell;
+  
+   
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.swipeController.typeCount>=200) {
+        return 250;
+    }
     return 230;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -268,7 +328,7 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if (self.swipeController.typeCount==102) {
+    if (self.swipeController.typeCount==102||self.swipeController.typeCount==201) {
         return 50;
     }
     return 0;
@@ -276,7 +336,7 @@ static int RefreshCount = 2;//上拉加载基数
 #pragma mark-委托点击方法
 -(void)entrustTap:(UIButton*)sender
 {
-    if (self.swipeController.typeCount==100)
+    if (self.swipeController.typeCount==100||self.swipeController.typeCount==201)
     {
         [self entrust:sender.tag];
     }
@@ -288,7 +348,7 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(void)entrust:(long)sender
 {
-    [WCAlertView showAlertWithTitle:@"保单委托" message:@"请输入要委托的用户名" customizationBlock:^(WCAlertView *alertView)
+    [WCAlertView showAlertWithTitle:@"委托" message:@"请输入要委托的用户名" customizationBlock:^(WCAlertView *alertView)
      {
          alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
      } completionBlock:^(NSUInteger buttonIndex, WCAlertView *alertView)
@@ -296,7 +356,6 @@ static int RefreshCount = 2;//上拉加载基数
          if (buttonIndex==alertView.cancelButtonIndex) {
          }else
          {
-             MainModel * mainModel=recerveArray[sender];
              //得到输入框
              UITextField *tf=[alertView textFieldAtIndex:0];
              EntrustViewModel * entrustModel = [[EntrustViewModel alloc] init];
@@ -313,8 +372,16 @@ static int RefreshCount = 2;//上拉加载基数
              } WithFailureBlock:^{
                  [SVProgressHUD dismiss];
              }];
-             [entrustModel entrustRequestAnddelegateId:mainModel.policyId andDelegatePerson:USERNAME andBeDelegatedPerson:tf.text];
-             [SVProgressHUD showWithStatus:@"请稍后……" maskType:SVProgressHUDMaskTypeBlack];
+             if (self.swipeController.typeCount==201) {
+                 caseModel * mainModel=recerveArray[sender];
+                 [entrustModel entrustRequestAnddelegateId:mainModel.accidentId andDelegatePerson:USERNAME andBeDelegatedPerson:tf.text andType:self.swipeController.typeCount];
+
+             }else
+             {
+                 MainModel * mainModel=recerveArray[sender];
+                 [entrustModel entrustRequestAnddelegateId:mainModel.policyId andDelegatePerson:USERNAME andBeDelegatedPerson:tf.text andType:self.swipeController.typeCount];
+             }
+            [SVProgressHUD showWithStatus:@"请稍后……" maskType:SVProgressHUDMaskTypeBlack];
          }
      } cancelButtonTitle:@"取消" otherButtonTitles:@"委托", nil];
 
@@ -342,13 +409,14 @@ static int RefreshCount = 2;//上拉加载基数
             [SVProgressHUD dismiss];
         }];
         NSString *AgriCategoryType=[NSString stringWithFormat:@"%i",self.swipeController.AgriCategoryType];
-        [searchModel requestSearchAndsearchId:self.searchText.text andUserName:USERNAME andRtotal:@"1" andAgriCategory:AgriCategoryType];
+        [searchModel requestSearchAndsearchId:self.searchText.text andUserName:USERNAME andRtotal:@"1" andAgriCategory:AgriCategoryType andType:self.swipeController.typeCount];
         [SVProgressHUD showWithStatus:@"正在搜索……" maskType:SVProgressHUDMaskTypeBlack];
     
 }
 #pragma mark-认领--枷锁 删除按钮
 -(void)recerveTap:(UIButton *)sender
 {
+    //承保注销
     MainModel * mainModel=recerveArray[sender.tag];
     if (self.swipeController.typeCount==104) {
         [SXDatabase deletePLYwithPolicyID:mainModel.policyId];
@@ -357,11 +425,10 @@ static int RefreshCount = 2;//上拉加载基数
          postNotificationName:@"reloadTabelData" object:self];
         return;
     }
-    
+    //认领
         int a=[SXDatabase checkPLYID:mainModel.policyId];
         switch (a) {
             case 0://下载图班  申请枷锁  存表
-
         {DownloadShapeViewModel * shapeVM= [[DownloadShapeViewModel alloc]init];
         [shapeVM setBlockWithReturnBlock:^(id returnValue)
         {
@@ -423,7 +490,13 @@ static int RefreshCount = 2;//上拉加载基数
      } WithErrorBlock:^(id errorCode) {
      } WithFailureBlock:^{
      }];
-    [lockVM LockRequestAndLockType:@"1" andbussinessId:mainModel.policyId andstatus:statusStr andDescription:nil andType:self.swipeController.typeCount];
+    if ([mainModel.delegatePerson isEqualToString:@"(null)"]) {
+        [lockVM LockRequestAndLockType:@"1" andbussinessId:mainModel.policyId andstatus:statusStr andDescription:nil andType:self.swipeController.typeCount];
+    }else
+    {
+        [lockVM LockRequestAndLockType:@"1" andbussinessId:mainModel.policyId andstatus:statusStr andDescription:mainModel.delegatePerson andType:self.swipeController.typeCount];
+    }
+    
 }
 #pragma mark-隐藏键盘
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

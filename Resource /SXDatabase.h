@@ -40,4 +40,28 @@
 + (NSMutableArray *)getWillcollect:(NSString*)status;
 //删除数据库与policyId有关所有数据
 +(void)deletePLYwithPolicyID:(NSString *)policyId;
+
+
+
+
+//插入与更新案件数据
++(void)insertIntoTSrvyTableWithaccidentId:(NSString *)accidentId
+                              andreportNo:(NSString * )reportNo
+                             andreporTime:(NSString *)reporTime
+                          andreportPerson:(NSString *)reportPerson
+                          andreportReason:(NSString *)reportReason
+                       andaccdientAddress:(NSString *)accdientAddress
+                            andreperPhone:(NSString *)reperPhone
+                          andaccidentTime:(NSString *)accidentTime
+                           andproductName:(NSString *)productName
+                              andcommInfo:(NSString *)commInfo
+                           andproductType:(NSString *)productType
+                               andorgCode:(NSString *)orgCode
+                               andorgName:(NSString *)orgName
+                                andstatus:(NSString *)status
+                        anddelegatePerson:(NSString *)delegatePerson;
+// 删除 案件单个数据
++(void)deleteT_SrywithPolicyID:(NSString *)accidentId;
+//检验案件
++(int)checkTSrvyID:(NSString *)accidentId;
 @end
