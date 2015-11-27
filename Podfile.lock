@@ -32,6 +32,7 @@ PODS:
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
   - SVProgressHUD (1.1.3)
+  - WMPageController (1.2.0)
   - XLPagerTabStrip (2.0.0)
 
 DEPENDENCIES:
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - Reachability
   - SDWebImage
   - SVProgressHUD
+  - WMPageController
   - XLPagerTabStrip
 
 SPEC CHECKSUMS:
@@ -52,6 +54,7 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  WMPageController: 61e5998f9fee1a0e934c483302f1ed5984a23368
   XLPagerTabStrip: 2c69b8e3208432a94e713c198ce597faad5a87bb
 
 COCOAPODS: 0.39.0

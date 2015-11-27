@@ -20,7 +20,7 @@
 #import "SXDatabase.h"
 #import "DownloadShapeViewModel.h"
 #import "LockViewModel.h"
-
+#import "initDetailView.h"
 
 static int RefreshCount = 2;//上拉加载基数
 @interface MainViewController ()
@@ -208,7 +208,7 @@ static int RefreshCount = 2;//上拉加载基数
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.swipeController.typeCount>=200) {
+    if (self.swipeController.typeCount>=200) {//案件CELL
         tableView.separatorStyle=UITableViewCellSelectionStyleNone;
         static NSString *CellIdentifier = @"surveyTableViewCell";
         surveyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -254,7 +254,7 @@ static int RefreshCount = 2;//上拉加载基数
             cell.R_entrust.tag=2*indexPath.row+1;
         }
         return cell;
-    }else{
+    }else{//承保CELL
         tableView.separatorStyle=UITableViewCellSelectionStyleNone;
         static NSString *CellIdentifier = @"MainTableViewCell";
         MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -280,6 +280,8 @@ static int RefreshCount = 2;//上拉加载基数
                 
             }
             [cell setBtn:self.swipeController.typeCount];
+            [cell.L_details addTarget:self action:@selector(intoDetailsVc) forControlEvents:UIControlEventTouchUpInside];
+            [cell.R_details addTarget:self action:@selector(intoDetailsVc) forControlEvents:UIControlEventTouchUpInside];
             //委托按钮
             [cell.L_entrustBtn addTarget:self
                                   action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -297,7 +299,11 @@ static int RefreshCount = 2;//上拉加载基数
   
    
 }
-
+-(void)intoDetailsVc
+{
+    WMPageController * pageVc=[initDetailView initDetailVC];
+    [self.navigationController pushViewController:pageVc animated:YES];
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.swipeController.typeCount>=200) {
@@ -413,7 +419,7 @@ static int RefreshCount = 2;//上拉加载基数
         [SVProgressHUD showWithStatus:@"正在搜索……" maskType:SVProgressHUDMaskTypeBlack];
     
 }
-#pragma mark-认领--枷锁 删除按钮
+#pragma mark-承保认领--枷锁 删除按钮
 -(void)recerveTap:(UIButton *)sender
 {
     //承保注销

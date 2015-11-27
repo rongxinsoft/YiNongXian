@@ -41,6 +41,28 @@
 		21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D9751BF98CC500CE757D /* RepordViewController.xib */; };
 		21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */; };
 		21E8D97C1BF9C88800CE757D /* RepordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D97A1BF9C88800CE757D /* RepordTableViewCell.xib */; };
+		21E92C1B1C08003900C977A7 /* CaseTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C191C08003900C977A7 /* CaseTextViewController.m */; };
+		21E92C1C1C08003900C977A7 /* CaseTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E92C1A1C08003900C977A7 /* CaseTextViewController.xib */; };
+		21E92C201C08005800C977A7 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C1E1C08005800C977A7 /* MapViewController.m */; };
+		21E92C211C08005800C977A7 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E92C1F1C08005800C977A7 /* MapViewController.xib */; };
+		21E92C251C08007D00C977A7 /* ImageDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C231C08007D00C977A7 /* ImageDataViewController.m */; };
+		21E92C261C08007D00C977A7 /* ImageDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E92C241C08007D00C977A7 /* ImageDataViewController.xib */; };
+		21E92C291C08038A00C977A7 /* initDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C281C08038A00C977A7 /* initDetailView.m */; };
+		21E92C2C1C080FF200C977A7 /* TouchPropagatedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C2B1C080FF200C977A7 /* TouchPropagatedScrollView.m */; };
+		21E92C2F1C0810CD00C977A7 /* QHCommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C2E1C0810CD00C977A7 /* QHCommonUtil.m */; };
+		21E92C311C08360F00C977A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C301C08360F00C977A7 /* UIKit.framework */; };
+		21E92C331C08363B00C977A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C321C08363A00C977A7 /* Foundation.framework */; };
+		21E92C351C08364500C977A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C341C08364500C977A7 /* CoreGraphics.framework */; };
+		21E92C371C08364E00C977A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C361C08364E00C977A7 /* CoreLocation.framework */; };
+		21E92C391C08365600C977A7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C381C08365600C977A7 /* QuartzCore.framework */; };
+		21E92C3B1C08366500C977A7 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C3A1C08366500C977A7 /* CoreText.framework */; };
+		21E92C3D1C0836AA00C977A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C3C1C0836AA00C977A7 /* Security.framework */; };
+		21E92C3F1C0836C700C977A7 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C3E1C0836C700C977A7 /* MobileCoreServices.framework */; };
+		21E92C411C0836D400C977A7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C401C0836D400C977A7 /* MediaPlayer.framework */; };
+		21E92C431C0836FC00C977A7 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C421C0836FC00C977A7 /* libstdc++.tbd */; };
+		21E92C451C08371000C977A7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E92C441C08371000C977A7 /* libz.tbd */; };
+		21E92C4B1C083A4600C977A7 /* GoogleLayerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C471C083A4600C977A7 /* GoogleLayerOperation.m */; };
+		21E92C4C1C083A4600C977A7 /* GoogleTiledLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E92C491C083A4600C977A7 /* GoogleTiledLayer.m */; };
 		21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */; };
 		21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9F91BF58F9700CFB9A7 /* RNSwipeViewController.m */; };
 		21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F7F9FC1BF58F9700CFB9A7 /* UIView+Sizes.m */; };
@@ -143,6 +165,37 @@
 		21E8D9781BF9C88800CE757D /* RepordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepordTableViewCell.h; sourceTree = "<group>"; };
 		21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepordTableViewCell.m; sourceTree = "<group>"; };
 		21E8D97A1BF9C88800CE757D /* RepordTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepordTableViewCell.xib; sourceTree = "<group>"; };
+		21E92C181C08003900C977A7 /* CaseTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaseTextViewController.h; sourceTree = "<group>"; };
+		21E92C191C08003900C977A7 /* CaseTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaseTextViewController.m; sourceTree = "<group>"; };
+		21E92C1A1C08003900C977A7 /* CaseTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CaseTextViewController.xib; sourceTree = "<group>"; };
+		21E92C1D1C08005800C977A7 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		21E92C1E1C08005800C977A7 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		21E92C1F1C08005800C977A7 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		21E92C221C08007D00C977A7 /* ImageDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDataViewController.h; sourceTree = "<group>"; };
+		21E92C231C08007D00C977A7 /* ImageDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDataViewController.m; sourceTree = "<group>"; };
+		21E92C241C08007D00C977A7 /* ImageDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageDataViewController.xib; sourceTree = "<group>"; };
+		21E92C271C08038A00C977A7 /* initDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = initDetailView.h; sourceTree = "<group>"; };
+		21E92C281C08038A00C977A7 /* initDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = initDetailView.m; sourceTree = "<group>"; };
+		21E92C2A1C080FF200C977A7 /* TouchPropagatedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchPropagatedScrollView.h; sourceTree = "<group>"; };
+		21E92C2B1C080FF200C977A7 /* TouchPropagatedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchPropagatedScrollView.m; sourceTree = "<group>"; };
+		21E92C2D1C0810CD00C977A7 /* QHCommonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QHCommonUtil.h; sourceTree = "<group>"; };
+		21E92C2E1C0810CD00C977A7 /* QHCommonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QHCommonUtil.m; sourceTree = "<group>"; };
+		21E92C301C08360F00C977A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		21E92C321C08363A00C977A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		21E92C341C08364500C977A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		21E92C361C08364E00C977A7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		21E92C381C08365600C977A7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		21E92C3A1C08366500C977A7 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		21E92C3C1C0836AA00C977A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		21E92C3E1C0836C700C977A7 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		21E92C401C0836D400C977A7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		21E92C421C0836FC00C977A7 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		21E92C441C08371000C977A7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		21E92C461C083A4600C977A7 /* GoogleLayerOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleLayerOperation.h; path = "../../Resource /WCAlertView/GoogleLayerOperation.h"; sourceTree = "<group>"; };
+		21E92C471C083A4600C977A7 /* GoogleLayerOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleLayerOperation.m; path = "../../Resource /WCAlertView/GoogleLayerOperation.m"; sourceTree = "<group>"; };
+		21E92C481C083A4600C977A7 /* GoogleTiledLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GoogleTiledLayer.h; path = "../../Resource /WCAlertView/GoogleTiledLayer.h"; sourceTree = "<group>"; };
+		21E92C491C083A4600C977A7 /* GoogleTiledLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GoogleTiledLayer.m; path = "../../Resource /WCAlertView/GoogleTiledLayer.m"; sourceTree = "<group>"; };
+		21E92C4A1C083A4600C977A7 /* MapLayerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapLayerTypes.h; path = "../../Resource /WCAlertView/MapLayerTypes.h"; sourceTree = "<group>"; };
 		21F7F9F61BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
 		21F7F9F71BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
 		21F7F9F81BF58F9700CFB9A7 /* RNSwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSwipeViewController.h; sourceTree = "<group>"; };
@@ -193,6 +246,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21E92C451C08371000C977A7 /* libz.tbd in Frameworks */,
+				21E92C431C0836FC00C977A7 /* libstdc++.tbd in Frameworks */,
+				21E92C411C0836D400C977A7 /* MediaPlayer.framework in Frameworks */,
+				21E92C3F1C0836C700C977A7 /* MobileCoreServices.framework in Frameworks */,
+				21E92C3D1C0836AA00C977A7 /* Security.framework in Frameworks */,
+				21E92C3B1C08366500C977A7 /* CoreText.framework in Frameworks */,
+				21E92C391C08365600C977A7 /* QuartzCore.framework in Frameworks */,
+				21E92C371C08364E00C977A7 /* CoreLocation.framework in Frameworks */,
+				21E92C351C08364500C977A7 /* CoreGraphics.framework in Frameworks */,
+				21E92C331C08363B00C977A7 /* Foundation.framework in Frameworks */,
+				21E92C311C08360F00C977A7 /* UIKit.framework in Frameworks */,
 				567F58AA10BC528E83AFE409 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +336,7 @@
 		213D5D361BF42D56008D9C25 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				21E92C121C07FD0900C977A7 /* DetailsViewController */,
 				212C192D1BFAC1E600A568BB /* insuredViewController */,
 				21E8D9721BF98C8600CE757D /* RepordViewController */,
 				21F7FA241BF5E45E00CFB9A7 /* SetingController */,
@@ -347,11 +412,18 @@
 		21E3BFF41BFEB6D00091250B /* ThirdTools */ = {
 			isa = PBXGroup;
 			children = (
+				21E92C2D1C0810CD00C977A7 /* QHCommonUtil.h */,
+				21E92C2E1C0810CD00C977A7 /* QHCommonUtil.m */,
 				212A2A981BFD60E5000856DB /* SXDatabase.h */,
 				212A2A971BFD60E5000856DB /* SXDatabase.m */,
-				21E409951BFC7A7700F735B5 /* WCAlertView */,
 				21E4098E1BFC2A8700F735B5 /* Encrpt.m */,
 				21E4098F1BFC2A8700F735B5 /* Encrpt.h */,
+				21E409951BFC7A7700F735B5 /* WCAlertView */,
+				21E92C461C083A4600C977A7 /* GoogleLayerOperation.h */,
+				21E92C471C083A4600C977A7 /* GoogleLayerOperation.m */,
+				21E92C481C083A4600C977A7 /* GoogleTiledLayer.h */,
+				21E92C491C083A4600C977A7 /* GoogleTiledLayer.m */,
+				21E92C4A1C083A4600C977A7 /* MapLayerTypes.h */,
 			);
 			path = ThirdTools;
 			sourceTree = "<group>";
@@ -436,6 +508,26 @@
 				21E8D97A1BF9C88800CE757D /* RepordTableViewCell.xib */,
 			);
 			path = RepordViewController;
+			sourceTree = "<group>";
+		};
+		21E92C121C07FD0900C977A7 /* DetailsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21E92C181C08003900C977A7 /* CaseTextViewController.h */,
+				21E92C191C08003900C977A7 /* CaseTextViewController.m */,
+				21E92C1A1C08003900C977A7 /* CaseTextViewController.xib */,
+				21E92C1D1C08005800C977A7 /* MapViewController.h */,
+				21E92C1E1C08005800C977A7 /* MapViewController.m */,
+				21E92C1F1C08005800C977A7 /* MapViewController.xib */,
+				21E92C221C08007D00C977A7 /* ImageDataViewController.h */,
+				21E92C231C08007D00C977A7 /* ImageDataViewController.m */,
+				21E92C241C08007D00C977A7 /* ImageDataViewController.xib */,
+				21E92C271C08038A00C977A7 /* initDetailView.h */,
+				21E92C281C08038A00C977A7 /* initDetailView.m */,
+				21E92C2A1C080FF200C977A7 /* TouchPropagatedScrollView.h */,
+				21E92C2B1C080FF200C977A7 /* TouchPropagatedScrollView.m */,
+			);
+			path = DetailsViewController;
 			sourceTree = "<group>";
 		};
 		21F7F9F51BF58F9700CFB9A7 /* RNSwipeViewController */ = {
@@ -551,6 +643,17 @@
 		24000248C983505534DFE7B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21E92C441C08371000C977A7 /* libz.tbd */,
+				21E92C421C0836FC00C977A7 /* libstdc++.tbd */,
+				21E92C401C0836D400C977A7 /* MediaPlayer.framework */,
+				21E92C3E1C0836C700C977A7 /* MobileCoreServices.framework */,
+				21E92C3C1C0836AA00C977A7 /* Security.framework */,
+				21E92C3A1C08366500C977A7 /* CoreText.framework */,
+				21E92C381C08365600C977A7 /* QuartzCore.framework */,
+				21E92C361C08364E00C977A7 /* CoreLocation.framework */,
+				21E92C341C08364500C977A7 /* CoreGraphics.framework */,
+				21E92C321C08363A00C977A7 /* Foundation.framework */,
+				21E92C301C08360F00C977A7 /* UIKit.framework */,
 				DE7DD37B4AD6320E3A690824 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -667,6 +770,7 @@
 				21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */,
 				21F7FA1E1BF5CC9800CFB9A7 /* shangbao@2x.png in Resources */,
 				21FE207F1BF19A71002B08FC /* LaunchScreen.storyboard in Resources */,
+				21E92C261C08007D00C977A7 /* ImageDataViewController.xib in Resources */,
 				212C19481BFB22C100A568BB /* list@2x.png in Resources */,
 				213D5D4F1BF445D0008D9C25 /* ok@2x.png in Resources */,
 				21F7FA1D1BF5CC9800CFB9A7 /* chengbao@2x.png in Resources */,
@@ -674,7 +778,9 @@
 				21E8D97C1BF9C88800CE757D /* RepordTableViewCell.xib in Resources */,
 				21F7FA1F1BF5CC9800CFB9A7 /* tool@2x.png in Resources */,
 				213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */,
+				21E92C1C1C08003900C977A7 /* CaseTextViewController.xib in Resources */,
 				214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */,
+				21E92C211C08005800C977A7 /* MapViewController.xib in Resources */,
 				21F7FA221BF5D9C400CFB9A7 /* password@2x.png in Resources */,
 				213D5D4E1BF445D0008D9C25 /* no@2x.png in Resources */,
 				21F7FA1C1BF5CC9800CFB9A7 /* chakan@2x.png in Resources */,
@@ -763,10 +869,16 @@
 				21F7FA281BF5E47800CFB9A7 /* SetingViewController.m in Sources */,
 				21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */,
 				21F7FA141BF5C34F00CFB9A7 /* LeftTableViewCell.m in Sources */,
+				21E92C4B1C083A4600C977A7 /* GoogleLayerOperation.m in Sources */,
+				21E92C2C1C080FF200C977A7 /* TouchPropagatedScrollView.m in Sources */,
+				21E92C251C08007D00C977A7 /* ImageDataViewController.m in Sources */,
 				213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */,
+				21E92C2F1C0810CD00C977A7 /* QHCommonUtil.m in Sources */,
 				21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */,
 				21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */,
+				21E92C1B1C08003900C977A7 /* CaseTextViewController.m in Sources */,
 				21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */,
+				21E92C291C08038A00C977A7 /* initDetailView.m in Sources */,
 				21E403BE1C040EF4005D1DDD /* ShapeModel.m in Sources */,
 				21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
@@ -784,7 +896,9 @@
 				21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */,
 				21E403C51C043244005D1DDD /* LockViewModel.m in Sources */,
 				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
+				21E92C201C08005800C977A7 /* MapViewController.m in Sources */,
 				21E3BFF81BFEBD730091250B /* MainModel.m in Sources */,
+				21E92C4C1C083A4600C977A7 /* GoogleTiledLayer.m in Sources */,
 				21F7FA061BF5918400CFB9A7 /* LeftMenuViewController.m in Sources */,
 				21E746131C06AF300017570C /* caseModel.m in Sources */,
 				21E403C11C041402005D1DDD /* DownloadShapeViewModel.m in Sources */,
@@ -926,15 +1040,52 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YiNongXianTests/PrefixHeader.pch;
 				INFOPLIST_FILE = YiNongXian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MJRefresh\"",
+					"-l\"Reachability\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"WMPageController\"",
+					"-l\"XLPagerTabStrip\"",
+					"-l\"libqrencode\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bxlt.YiNongXian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -945,15 +1096,52 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(HOME)/Library/SDKs/ArcGIS/**";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = YiNongXianTests/PrefixHeader.pch;
 				INFOPLIST_FILE = YiNongXian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"FMDB\"",
+					"-l\"MJRefresh\"",
+					"-l\"Reachability\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"WMPageController\"",
+					"-l\"XLPagerTabStrip\"",
+					"-l\"libqrencode\"",
+					"-l\"sqlite3\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bxlt.YiNongXian;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

@@ -22,6 +22,11 @@
 #import "Config.h"
 #import "WCAlertView.h"
 //#import "NetRequestClass.h"
+#define RGBA(R/*红*/, G/*绿*/, B/*蓝*/, A/*透明*/) \
+[UIColor colorWithRed:R/255.f green:G/255.f blue:B/255.f alpha:A]
+#define isIos7      ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define StatusbarSize ((isIos7 >= 7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)?20.f:0.f)
+
 #import "SVProgressHUD.h"
 #define DeviceWidth [UIScreen mainScreen].bounds.size.width
 #define DeviceHeight [UIScreen mainScreen].bounds.size.height

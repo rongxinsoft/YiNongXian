@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>WMPageController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>XLPagerTabStrip.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,17 +57,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>21FA18380E92CD79480E6F8872B84079</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B3237656E8D94079D05A86F254B1BE0</key>
+		<key>48E282230EF1E99C5CF0110C9B72A399</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5394ECC638A3885D35A9DB27B93B5A06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>59B5154DEC6908AAF54B5F46275BEC56</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>705868FC6FF1C9272C9686141FF7833E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B2D6AC328340C56DA25947A090D03208</key>
+		<key>BAF8E6EF9F4C5818C7B387CDD5FF54BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D2EB3862C50FE6FC2F1223BDF403C9F5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E787294A172F9D94815F16E910E4CA4C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBC2517D6CB9FB6743809770BE214E61</key>
+		<key>BDD666DDF753D51A1B31927AF1B87D1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
