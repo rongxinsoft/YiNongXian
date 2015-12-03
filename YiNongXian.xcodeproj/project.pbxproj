@@ -23,6 +23,9 @@
 		213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D591BF46B49008D9C25 /* MainViewController.xib */; };
 		213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D651BF4973D008D9C25 /* PooCodeView.m */; };
 		214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214EEBDC1BF9DD27003282D9 /* Images.xcassets */; };
+		218C6F001C0EE11B003EADDF /* WarterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C6EFE1C0EE11B003EADDF /* WarterDetailViewController.m */; };
+		218C6F011C0EE11B003EADDF /* WarterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218C6EFF1C0EE11B003EADDF /* WarterDetailViewController.xib */; };
+		21D123ED1C0C3C2C00980D6A /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D123EC1C0C3C2C00980D6A /* Tools.m */; };
 		21E307291C01FE3500646B2D /* SearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E307281C01FE3500646B2D /* SearchViewModel.m */; };
 		21E3BFF81BFEBD730091250B /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BFF71BFEBD730091250B /* MainModel.m */; };
 		21E3BFFF1BFEC47F0091250B /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E3BFFE1BFEC47F0091250B /* MainViewModel.m */; };
@@ -32,11 +35,16 @@
 		21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E4098E1BFC2A8700F735B5 /* Encrpt.m */; };
 		21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409931BFC716100F735B5 /* LoginViewModel.m */; };
 		21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E409971BFC7A7700F735B5 /* WCAlertView.m */; };
+		21E509E41C0D428B00473B20 /* WaterCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E509E21C0D428B00473B20 /* WaterCameraViewController.m */; };
+		21E509E51C0D428B00473B20 /* WaterCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E509E31C0D428B00473B20 /* WaterCameraViewController.xib */; };
 		21E666001C02E1F400B35D74 /* EntrustViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */; };
 		21E746131C06AF300017570C /* caseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E746121C06AF300017570C /* caseModel.m */; };
 		21E746171C06BE970017570C /* surveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E746151C06BE970017570C /* surveyTableViewCell.m */; };
 		21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E746161C06BE970017570C /* surveyTableViewCell.xib */; };
 		21E7461B1C06DCF30017570C /* noCopytextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E7461A1C06DCF30017570C /* noCopytextFiled.m */; };
+		21E7EE4C1C0E87D200F2648B /* WaterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E7EE4A1C0E87D200F2648B /* WaterCollectionViewCell.m */; };
+		21E7EE4D1C0E87D200F2648B /* WaterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E7EE4B1C0E87D200F2648B /* WaterCollectionViewCell.xib */; };
+		21E871521C0FF88900EE974A /* UIImage+Water.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E871511C0FF88900EE974A /* UIImage+Water.m */; };
 		21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9741BF98CC500CE757D /* RepordViewController.m */; };
 		21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D9751BF98CC500CE757D /* RepordViewController.xib */; };
 		21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9791BF9C88800CE757D /* RepordTableViewCell.m */; };
@@ -132,6 +140,11 @@
 		213D5D641BF4973D008D9C25 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
 		213D5D651BF4973D008D9C25 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
 		214EEBDC1BF9DD27003282D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		218C6EFD1C0EE11B003EADDF /* WarterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarterDetailViewController.h; sourceTree = "<group>"; };
+		218C6EFE1C0EE11B003EADDF /* WarterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarterDetailViewController.m; sourceTree = "<group>"; };
+		218C6EFF1C0EE11B003EADDF /* WarterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarterDetailViewController.xib; sourceTree = "<group>"; };
+		21D123EB1C0C3C2C00980D6A /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		21D123EC1C0C3C2C00980D6A /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 		21E307271C01FE3500646B2D /* SearchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewModel.h; sourceTree = "<group>"; };
 		21E307281C01FE3500646B2D /* SearchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewModel.m; sourceTree = "<group>"; };
 		21E3BFF61BFEBD730091250B /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
@@ -150,6 +163,9 @@
 		21E409931BFC716100F735B5 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		21E409961BFC7A7700F735B5 /* WCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCAlertView.h; sourceTree = "<group>"; };
 		21E409971BFC7A7700F735B5 /* WCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCAlertView.m; sourceTree = "<group>"; };
+		21E509E11C0D428B00473B20 /* WaterCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCameraViewController.h; sourceTree = "<group>"; };
+		21E509E21C0D428B00473B20 /* WaterCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterCameraViewController.m; sourceTree = "<group>"; };
+		21E509E31C0D428B00473B20 /* WaterCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCameraViewController.xib; sourceTree = "<group>"; };
 		21E665FE1C02E1F400B35D74 /* EntrustViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrustViewModel.h; sourceTree = "<group>"; };
 		21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrustViewModel.m; sourceTree = "<group>"; };
 		21E746111C06AF300017570C /* caseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caseModel.h; sourceTree = "<group>"; };
@@ -159,6 +175,11 @@
 		21E746161C06BE970017570C /* surveyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = surveyTableViewCell.xib; sourceTree = "<group>"; };
 		21E746191C06DCF30017570C /* noCopytextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = noCopytextFiled.h; sourceTree = "<group>"; };
 		21E7461A1C06DCF30017570C /* noCopytextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = noCopytextFiled.m; sourceTree = "<group>"; };
+		21E7EE491C0E87D200F2648B /* WaterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCollectionViewCell.h; sourceTree = "<group>"; };
+		21E7EE4A1C0E87D200F2648B /* WaterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterCollectionViewCell.m; sourceTree = "<group>"; };
+		21E7EE4B1C0E87D200F2648B /* WaterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCollectionViewCell.xib; sourceTree = "<group>"; };
+		21E871501C0FF88900EE974A /* UIImage+Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Water.h"; sourceTree = "<group>"; };
+		21E871511C0FF88900EE974A /* UIImage+Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Water.m"; sourceTree = "<group>"; };
 		21E8D9731BF98CC500CE757D /* RepordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepordViewController.h; sourceTree = "<group>"; };
 		21E8D9741BF98CC500CE757D /* RepordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepordViewController.m; sourceTree = "<group>"; };
 		21E8D9751BF98CC500CE757D /* RepordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepordViewController.xib; sourceTree = "<group>"; };
@@ -336,6 +357,7 @@
 		213D5D361BF42D56008D9C25 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				21986AB31C104D5E00B2C4C2 /* ToolsController */,
 				21E92C121C07FD0900C977A7 /* DetailsViewController */,
 				212C192D1BFAC1E600A568BB /* insuredViewController */,
 				21E8D9721BF98C8600CE757D /* RepordViewController */,
@@ -400,6 +422,14 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
+		21986AB31C104D5E00B2C4C2 /* ToolsController */ = {
+			isa = PBXGroup;
+			children = (
+				21E509E01C0D41B000473B20 /* WatermarkCameraViewController */,
+			);
+			name = ToolsController;
+			sourceTree = "<group>";
+		};
 		21E307261C01FE1C00646B2D /* searchViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +442,8 @@
 		21E3BFF41BFEB6D00091250B /* ThirdTools */ = {
 			isa = PBXGroup;
 			children = (
+				21D123EB1C0C3C2C00980D6A /* Tools.h */,
+				21D123EC1C0C3C2C00980D6A /* Tools.m */,
 				21E92C2D1C0810CD00C977A7 /* QHCommonUtil.h */,
 				21E92C2E1C0810CD00C977A7 /* QHCommonUtil.m */,
 				212A2A981BFD60E5000856DB /* SXDatabase.h */,
@@ -486,6 +518,24 @@
 			);
 			name = WCAlertView;
 			path = "../../Resource /WCAlertView";
+			sourceTree = "<group>";
+		};
+		21E509E01C0D41B000473B20 /* WatermarkCameraViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21E509E11C0D428B00473B20 /* WaterCameraViewController.h */,
+				21E509E21C0D428B00473B20 /* WaterCameraViewController.m */,
+				21E509E31C0D428B00473B20 /* WaterCameraViewController.xib */,
+				21E7EE491C0E87D200F2648B /* WaterCollectionViewCell.h */,
+				21E7EE4A1C0E87D200F2648B /* WaterCollectionViewCell.m */,
+				21E7EE4B1C0E87D200F2648B /* WaterCollectionViewCell.xib */,
+				218C6EFD1C0EE11B003EADDF /* WarterDetailViewController.h */,
+				218C6EFE1C0EE11B003EADDF /* WarterDetailViewController.m */,
+				218C6EFF1C0EE11B003EADDF /* WarterDetailViewController.xib */,
+				21E871501C0FF88900EE974A /* UIImage+Water.h */,
+				21E871511C0FF88900EE974A /* UIImage+Water.m */,
+			);
+			path = WatermarkCameraViewController;
 			sourceTree = "<group>";
 		};
 		21E746101C06AF1E0017570C /* caseModel */ = {
@@ -767,6 +817,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				213D5D491BF4417D008D9C25 /* CPIC_Logo@2x.png in Resources */,
+				21E509E51C0D428B00473B20 /* WaterCameraViewController.xib in Resources */,
 				21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */,
 				21F7FA1E1BF5CC9800CFB9A7 /* shangbao@2x.png in Resources */,
 				21FE207F1BF19A71002B08FC /* LaunchScreen.storyboard in Resources */,
@@ -777,6 +828,7 @@
 				21F7FA0F1BF5961B00CFB9A7 /* leftButoom@2x.png in Resources */,
 				21E8D97C1BF9C88800CE757D /* RepordTableViewCell.xib in Resources */,
 				21F7FA1F1BF5CC9800CFB9A7 /* tool@2x.png in Resources */,
+				218C6F011C0EE11B003EADDF /* WarterDetailViewController.xib in Resources */,
 				213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */,
 				21E92C1C1C08003900C977A7 /* CaseTextViewController.xib in Resources */,
 				214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */,
@@ -784,6 +836,7 @@
 				21F7FA221BF5D9C400CFB9A7 /* password@2x.png in Resources */,
 				213D5D4E1BF445D0008D9C25 /* no@2x.png in Resources */,
 				21F7FA1C1BF5CC9800CFB9A7 /* chakan@2x.png in Resources */,
+				21E7EE4D1C0E87D200F2648B /* WaterCollectionViewCell.xib in Resources */,
 				21F7FA151BF5C34F00CFB9A7 /* LeftTableViewCell.xib in Resources */,
 				213D5D471BF43CA2008D9C25 /* LoginViewController.xib in Resources */,
 				213D5D4B1BF441EF008D9C25 /* backgroud@2x.png in Resources */,
@@ -880,8 +933,11 @@
 				21F7FA001BF58F9700CFB9A7 /* RNSwipeViewController.m in Sources */,
 				21E92C291C08038A00C977A7 /* initDetailView.m in Sources */,
 				21E403BE1C040EF4005D1DDD /* ShapeModel.m in Sources */,
+				21E509E41C0D428B00473B20 /* WaterCameraViewController.m in Sources */,
 				21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */,
+				21E871521C0FF88900EE974A /* UIImage+Water.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
+				218C6F001C0EE11B003EADDF /* WarterDetailViewController.m in Sources */,
 				21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */,
 				213D5D3A1BF42D56008D9C25 /* ViewModelClass.m in Sources */,
 				21E7461B1C06DCF30017570C /* noCopytextFiled.m in Sources */,
@@ -894,6 +950,7 @@
 				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
 				21E746171C06BE970017570C /* surveyTableViewCell.m in Sources */,
 				21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */,
+				21D123ED1C0C3C2C00980D6A /* Tools.m in Sources */,
 				21E403C51C043244005D1DDD /* LockViewModel.m in Sources */,
 				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
 				21E92C201C08005800C977A7 /* MapViewController.m in Sources */,
@@ -904,6 +961,7 @@
 				21E403C11C041402005D1DDD /* DownloadShapeViewModel.m in Sources */,
 				21F7FA0D1BF5924300CFB9A7 /* SwichViewController.m in Sources */,
 				21E307291C01FE3500646B2D /* SearchViewModel.m in Sources */,
+				21E7EE4C1C0E87D200F2648B /* WaterCollectionViewCell.m in Sources */,
 				213D5D461BF43CA2008D9C25 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

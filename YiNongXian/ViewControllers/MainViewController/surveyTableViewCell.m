@@ -63,7 +63,7 @@
     {
         self.R_proposalDate.text=[NSString stringWithFormat:@"联系电话:%@",rightModel.reperPhone];
     }
-    if (type==103||type==104) {
+    if (type==202||type==203) {
         if (![mainModel.delegatePerson isEqualToString:@"(null)"]) {
             self.entrustLable.hidden=NO;
         }else{
@@ -78,13 +78,13 @@
 }
 -(void)setBtn:(int)type
 {
-    type-=100;
+    type-=200;
     switch (type) {
         case 1:
             self.L_entrustBtn.hidden=YES;
             self.R_entrustBtn.hidden=YES;
             break;
-        case 3:
+        case 2:
             [self.L_entrustBtn setTitle:@"注销" forState:UIControlStateNormal];
             [self.L_entrust setTitle:@"上报" forState:UIControlStateNormal];
             [self.L_details setHidden:NO];
@@ -92,7 +92,7 @@
             [self.R_entrustBtn setTitle:@"注销" forState:UIControlStateNormal];
             [self.R_entrust setTitle:@"上报" forState:UIControlStateNormal];
             break;
-        case 4:
+        case 3:
             [self.L_entrustBtn setHidden:YES];
             [self.L_details setHidden:NO];
             [self.R_details setHidden:NO];

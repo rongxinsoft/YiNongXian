@@ -11,6 +11,7 @@
 #import "Encrpt.h"
 #import "ShapeModel.h"
 #import "MainModel.h"
+#import "caseModel.h"
 FMDatabase * db;
 @implementation SXDatabase
 
@@ -163,6 +164,40 @@ FMDatabase * db;
     {
         [SVProgressHUD showErrorWithStatus:@"删除失败"];
     }
+}
+//将要采集数据
++ (NSMutableArray *)getWillcase:(NSString*)status
+{
+    if (!db) {
+        [self creatDatabase];
+    }
+    
+    if (![db open]) {
+        NSLog(@"数据库打开失败");
+        return nil;
+    }
+    [db setShouldCacheStatements:YES];
+    
+    NSMutableArray * allDatarray = [[NSMutableArray alloc] initWithCapacity:50];
+    //定义一个结果集，存放查询的数据
+    FMResultSet *rs = [db executeQuery:[NSString stringWithFormat:@"select * from T_Srvy where status = '%@'", status]];
+    //判断结果集中是否有数据，如果有则取出数据
+    while ([rs next]) {
+        caseModel *mainModel = [[ caseModel alloc] init];
+        mainModel.accidentId=[rs stringForColumn:@"accidentId"];
+        mainModel.productName = [rs stringForColumn:@"productName"];
+        mainModel.commInfo=[rs stringForColumn:@"commInfo"];
+        mainModel.reportNo = [rs stringForColumn:@"reportNo"];
+        mainModel.reportPerson= [rs stringForColumn:@"reportPerson"];
+        mainModel.reporTime = [rs stringForColumn:@"reporTime"];
+        mainModel.reportReason=[rs stringForColumn:@"reportReason"];
+        mainModel.accidentTime=[rs stringForColumn:@"accidentTime"];
+        mainModel.reperPhone=[rs stringForColumn:@"reperPhone"];
+        mainModel.accdientAddress=[rs stringForColumn:@"accdientAddress"];
+        mainModel.delegatePerson=[rs stringForColumn:@"delegatePerson"];
+        [allDatarray addObject:mainModel];
+    }
+    return allDatarray ;
 }
 #pragma  检验案件
 +(int)checkTSrvyID:(NSString *)accidentId
@@ -362,6 +397,7 @@ FMDatabase * db;
         mainModel.productName = [rs stringForColumn:@"productName"];
         mainModel.proposalDate = [rs stringForColumn:@"proposalDate"];
         mainModel.proposalNo= [rs stringForColumn:@"proposalNo"];
+        mainModel.orgName=[rs stringForColumn:@"orgName"];
         mainModel.area = [rs stringForColumn:@"area"];
         mainModel.policyId=[rs stringForColumn:@"policyId"];
         mainModel.delegatePerson=[rs stringForColumn:@"delegatePerson"];

@@ -10,5 +10,6 @@
 
 @interface SetingViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *iPtext;
+- (IBAction)StartAction:(id)sender;
 
 @end

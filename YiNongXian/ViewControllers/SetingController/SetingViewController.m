@@ -7,17 +7,20 @@
 //
 
 #import "SetingViewController.h"
-
+#import "AppDelegate.h"
 @interface SetingViewController ()
 
 @end
 
 @implementation SetingViewController
-
+@synthesize iPtext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.hidden=NO;
     self.navigationItem.title=@"系统设置";
+     AppDelegate * del=DELEGATE;
+    iPtext.text=del.POSTURL;
+    
 
     
     // Do any additional setup after loading the view from its nib.
@@ -35,4 +38,9 @@
 }
 
 
+- (IBAction)StartAction:(id)sender {
+    AppDelegate * del=DELEGATE;
+    del.POSTURL=iPtext.text;
+    [iPtext resignFirstResponder];
+}
 @end

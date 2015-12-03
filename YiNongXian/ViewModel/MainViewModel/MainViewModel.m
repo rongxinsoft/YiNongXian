@@ -72,6 +72,7 @@
                     caseModel * model=[[caseModel alloc]init];
                     model.accdientAddress=[dic objectForKey:@"accdientAddress"];
                     model.accidentId=[dic objectForKey:@"accidentId"];
+                    model.accidentTime=[dic objectForKey:@"accidentTime"];
                     model.commInfo=[dic objectForKey:@"commInfo"];
                     model.delegatePerson=[dic objectForKey:@"delegatePerson"];
                     model.orgCode=[dic objectForKey:@"orgCode"];

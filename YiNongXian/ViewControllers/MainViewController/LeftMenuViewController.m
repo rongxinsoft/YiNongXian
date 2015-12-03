@@ -14,6 +14,7 @@
 #import "MainViewController.h"
 #import "MJRefresh.h"
 #import "SXDatabase.h"
+#import "WaterCameraViewController.h"
 @interface LeftMenuViewController ()
 
 @property(strong,nonatomic)UIViewController * currentVC;
@@ -80,7 +81,12 @@
         }
              break;
         case 2:{
-            NSArray * ary1=@[@"委托任务池查询",@"案件查询",@"处理中(0)",@"已完成(0)"];
+            
+            NSArray * arys=[SXDatabase getWillcase:@"1"];
+            NSString * willCollet=[NSString stringWithFormat:@"处理中(%lu)",(unsigned long)arys.count];
+            NSArray * didAry=[SXDatabase getWillcase:@"2"];
+            NSString * didCollet=[NSString stringWithFormat:@"已完成(%lu)",(unsigned long)didAry.count];
+            NSArray * ary1=@[@"委托任务池查询",@"案件查询",willCollet,didCollet];
             cell.celltitle.text=ary1[indexPath.row];
         }
              break;
@@ -130,7 +136,8 @@
 - (IBAction)plantAction:(id)sender {
     [self changeColor:0];
     self.swipeController.AgriCategoryType=1;
-    if (self.swipeController.typeCount>=100) {
+    int a=self.swipeController.typeCount;
+    if (a==100||a==101||a==200||a==201) {
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"STARTREQUEST" object:self];
     }
@@ -138,7 +145,8 @@
 - (IBAction)farmAction:(id)sender {
     self.swipeController.AgriCategoryType=2;
     [self changeColor:1];
-    if (self.swipeController.typeCount>=100) {
+    int a=self.swipeController.typeCount;
+    if (a==100||a==101||a==200||a==201) {
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"STARTREQUEST" object:self];
     }
@@ -146,7 +154,8 @@
 - (IBAction)forestryAction:(id)sender {
     self.swipeController.AgriCategoryType=3;
     [self changeColor:2];
-    if (self.swipeController.typeCount>=100) {
+    int a=self.swipeController.typeCount;
+    if (a==100||a==101||a==200||a==201) {
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"STARTREQUEST" object:self];
     }
@@ -213,22 +222,19 @@
             self.swipeController.typeCount=(int)indexPath.row+200;
             [self.swipeController resetView];
            
+            if (indexPath.row==3||indexPath.row==2) {
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"SELECTSQLITE" object:self];
+            }else
+            {
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"STARTREQUEST" object:self];
+            }
             
-           
-            
-
-//            if (indexPath.row==3||indexPath.row==4) {
-//                [[NSNotificationCenter defaultCenter]
-//                 postNotificationName:@"SELECTSQLITE" object:self];
-//            }else
-//            {
-//                [[NSNotificationCenter defaultCenter]
-//                 postNotificationName:@"STARTREQUEST" object:self];
-//            }
-//            
         }
+    }else
+    {
+        [self.navigationController pushViewController:[[WaterCameraViewController alloc]init] animated:YES];
     }
 }
 -(void)reloadTabelData

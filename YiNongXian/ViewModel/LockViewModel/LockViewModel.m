@@ -17,27 +17,33 @@
     NSString * url;
     NSDictionary * requestDic;
     NSDictionary * encryDic;
-    if (type==100 ) {
+    if (type==100 ||description==nil) {
         url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
-    requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
+        requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
         encryDic=[NetRequestClass dataProcessing:requestDic];
-    }else if(type==103)
+    }else if(type==103||type==202)
     {
-        if (description!=nil) {
-            url=[NSString stringWithFormat:@"%@/ply/canceldgplyonmobile",delegate.POSTURL];
-            encryDic=[NetRequestClass dataStrProcessing:bussinessId];
-
+        if (type==103) {
+                url=[NSString stringWithFormat:@"%@/ply/canceldgplyonmobile",delegate.POSTURL];
+                encryDic=[NetRequestClass dataStrProcessing:bussinessId];
+            
         }else
         {
-            url=[NSString stringWithFormat:@"%@/ply/lock",delegate.POSTURL];
-            requestDic=@{@"userLoginCode":USERNAME,@"lockType":lockType,@"bussinessId":bussinessId,@"status":status,@"description":@""};
-            encryDic=[NetRequestClass dataProcessing:requestDic];
+                url=[NSString stringWithFormat:@"%@/survey/canceldgsurveyonmobile",delegate.POSTURL];
+                encryDic=[NetRequestClass dataStrProcessing:bussinessId];
         }
     }
     else
     {
-         url=[NSString stringWithFormat:@"%@/ply/claimPly",delegate.POSTURL];
+        if (type>=200) {
+            url=[NSString stringWithFormat:@"%@/survey/claimSrvy",delegate.POSTURL];
+            encryDic=[NetRequestClass dataStrProcessing:bussinessId];
+
+        }else
+        {
+        url=[NSString stringWithFormat:@"%@/ply/claimPly",delegate.POSTURL];
         encryDic=[NetRequestClass dataStrProcessing:bussinessId];
+        }
     }
     if (encryDic !=nil) {
         [NetRequestClass NetRequestPOSTWithRequestURL:url WithParameter:encryDic WithReturnValeuBlock:^(id returnValue) {

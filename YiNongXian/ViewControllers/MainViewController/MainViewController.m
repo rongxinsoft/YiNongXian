@@ -21,6 +21,7 @@
 #import "DownloadShapeViewModel.h"
 #import "LockViewModel.h"
 #import "initDetailView.h"
+#import "Tools.h"
 
 static int RefreshCount = 2;//上拉加载基数
 @interface MainViewController ()
@@ -84,17 +85,15 @@ static int RefreshCount = 2;//上拉加载基数
     MainViewModel * mainModel = [[MainViewModel alloc] init];
     [mainModel setBlockWithReturnBlock:^(id returnValue)
     {
-        if ([returnValue isKindOfClass:[NSArray class]] ) {
+        if ([returnValue isKindOfClass:[NSArray class]]&&returnValue!=nil) {
             recerveArray=returnValue;
-            [self.tableView.mj_header endRefreshing];
-            [self.tableView reloadData];
         }else
         {
             [SVProgressHUD showInfoWithStatus:returnValue];
-            [self.tableView.mj_header endRefreshing];
-             [self.tableView reloadData];
         }
-      
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+
     } WithErrorBlock:^(id errorCode) {
         [self.tableView.mj_header endRefreshing];
     } WithFailureBlock:^{
@@ -150,9 +149,21 @@ static int RefreshCount = 2;//上拉加载基数
         if (recerveArray.count==0||recerveArray==nil) {
             [SVProgressHUD showInfoWithStatus:@"无数据"];
         }
-    }else
+    }else if(self.swipeController.typeCount==104)
     {
         recerveArray=[SXDatabase getWillcollect:@"2"];
+        if (recerveArray.count==0||recerveArray==nil) {
+            [SVProgressHUD showInfoWithStatus:@"无数据"];
+        }
+    }else if (self.swipeController.typeCount==202)
+    {
+        recerveArray=[SXDatabase getWillcase:@"1"];
+        if (recerveArray.count==0||recerveArray==nil) {
+            [SVProgressHUD showInfoWithStatus:@"无数据"];
+        }
+    }else
+    {
+        recerveArray=[SXDatabase getWillcase:@"2"];
         if (recerveArray.count==0||recerveArray==nil) {
             [SVProgressHUD showInfoWithStatus:@"无数据"];
         }
@@ -234,6 +245,11 @@ static int RefreshCount = 2;//上拉加载基数
                 
             }
             [cell setBtn:self.swipeController.typeCount];
+            //详情页
+            [cell.L_details addTarget:self action:@selector(intoDetailsVc:) forControlEvents:UIControlEventTouchUpInside];
+            cell.L_details.tag=2*indexPath.row;
+            [cell.R_details addTarget:self action:@selector(intoDetailsVc:) forControlEvents:UIControlEventTouchUpInside];
+            cell.R_details.tag=2*indexPath.row;
             //委托按钮
             [cell.L_entrustBtn addTarget:self
                                   action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -246,11 +262,9 @@ static int RefreshCount = 2;//上拉加载基数
             }
          
             //认领按钮
-            [cell.L_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.L_entrust setTitle:@"认领案件" forState: UIControlStateNormal];
+            [cell.L_entrust addTarget:self action:@selector(caseclaimTap:) forControlEvents:UIControlEventTouchUpInside];
             cell.L_entrust.tag=2*indexPath.row;
-            [cell.R_entrust addTarget:self action:@selector(recerveTap:) forControlEvents:UIControlEventTouchUpInside];
-            [cell.R_entrust setTitle:@"认领案件" forState: UIControlStateNormal];
+            [cell.R_entrust addTarget:self action:@selector(caseclaimTap:) forControlEvents:UIControlEventTouchUpInside];
             cell.R_entrust.tag=2*indexPath.row+1;
         }
         return cell;
@@ -280,8 +294,10 @@ static int RefreshCount = 2;//上拉加载基数
                 
             }
             [cell setBtn:self.swipeController.typeCount];
-            [cell.L_details addTarget:self action:@selector(intoDetailsVc) forControlEvents:UIControlEventTouchUpInside];
-            [cell.R_details addTarget:self action:@selector(intoDetailsVc) forControlEvents:UIControlEventTouchUpInside];
+            [cell.L_details addTarget:self action:@selector(intoDetailsVc:) forControlEvents:UIControlEventTouchUpInside];
+            cell.L_details.tag=2*indexPath.row;
+            [cell.R_details addTarget:self action:@selector(intoDetailsVc:) forControlEvents:UIControlEventTouchUpInside];
+            cell.R_details.tag=2*indexPath.row+1;
             //委托按钮
             [cell.L_entrustBtn addTarget:self
                                   action:@selector(entrustTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -299,9 +315,21 @@ static int RefreshCount = 2;//上拉加载基数
   
    
 }
--(void)intoDetailsVc
+#pragma 详情按钮方法
+-(void)intoDetailsVc:(UIButton *)sender
 {
     WMPageController * pageVc=[initDetailView initDetailVC];
+    if (self.swipeController.typeCount>=200) {
+        caseModel * mod=recerveArray[sender.tag];
+        [Tools saveCase:mod];
+        [Tools isCaseOrMain:YES];
+    }else
+    {
+        MainModel * mmod=recerveArray[sender.tag];
+        [Tools saveMainModel:mmod];
+        [Tools isCaseOrMain:NO];
+    }
+    
     [self.navigationController pushViewController:pageVc animated:YES];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -325,7 +353,7 @@ static int RefreshCount = 2;//上拉加载基数
         UIButton * searchBtn=[[UIButton alloc]initWithFrame:CGRectMake(DeviceWidth-50, 0, 50, 50)];
     
         [searchBtn setTitle:@"搜索" forState:UIControlStateNormal];
-        [searchBtn setBackgroundColor:AppLineColor];
+        [searchBtn setBackgroundColor:[UIColor lightGrayColor]];
         [searchBtn addTarget:self action:@selector(searchTap) forControlEvents:UIControlEventTouchUpInside];
         [ssearchView addSubview:searchBtn];
         [ssearchView addSubview:self.searchText];
@@ -350,7 +378,9 @@ static int RefreshCount = 2;//上拉加载基数
     {
         [self lockAction:sender.tag andStatus:@"0"];
     }
-    
+    if (self.swipeController.typeCount==202) {
+        [self lockCase:sender.tag andStatus:@"2"];
+    }
 }
 -(void)entrust:(long)sender
 {
@@ -503,6 +533,92 @@ static int RefreshCount = 2;//上拉加载基数
         [lockVM LockRequestAndLockType:@"1" andbussinessId:mainModel.policyId andstatus:statusStr andDescription:mainModel.delegatePerson andType:self.swipeController.typeCount];
     }
     
+}
+
+#pragma 案件认领
+-(void)caseclaimTap:(UIButton *)sender
+{
+    //认领
+    caseModel * model=recerveArray[sender.tag];
+    if (self.swipeController.typeCount==203) {
+        [SXDatabase deleteT_SrywithPolicyID:model.accidentId];
+        [self taskAction];
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"reloadTabelData" object:self];
+        return;
+    }
+    int a=[SXDatabase  checkTSrvyID:model.accidentId];
+    switch (a) {
+        case 0://下载图班  申请枷锁  存表
+        {DownloadShapeViewModel * shapeVM= [[DownloadShapeViewModel alloc]init];
+            [shapeVM setBlockWithReturnBlock:^(id returnValue)
+             {
+                 if ([returnValue isKindOfClass:[NSArray class]]&&returnValue
+                     !=nil){shapeAry=returnValue;
+                     [self lockCase:sender.tag andStatus:@"1"];
+                 }
+                 else
+                 { [SVProgressHUD showInfoWithStatus:returnValue];}
+             } WithErrorBlock:^(id errorCode) {
+             } WithFailureBlock:^{
+             }];
+           [shapeVM requestShopeAndPly_Id:model.accidentId];
+        }
+            break;
+        case 1:
+            [SVProgressHUD showInfoWithStatus:@"该案件已在待采集列表中 不可认领"];
+            break;
+        case 2: //已上报  更新与这条数据相关的图班数据   申请枷锁 数据存入表
+            [SVProgressHUD showInfoWithStatus:@"该案件已完成 不可认领"];
+            break;
+        case 3:
+            break;
+        default:
+            break;
+    }
+}
+-(void)lockCase:(long)senderTag andStatus:(NSString *)statusStr
+{
+    NSString * statueShow;
+    if ([statusStr isEqualToString:@"1"]) {
+        statueShow=@"认领成功";
+    }else if ([statusStr isEqualToString:@"2"])
+    {
+        statueShow=@"注销成功";
+    }
+    LockViewModel * lockVM=[[LockViewModel alloc]init];
+    caseModel * mainModel=recerveArray[senderTag];
+    [lockVM setBlockWithReturnBlock:^(id returnValue)
+     {
+         if (returnValue==nil) {
+             
+             [SXDatabase insertIntoTSrvyTableWithaccidentId:mainModel.accidentId andreportNo:mainModel.reportNo andreporTime:mainModel.reporTime andreportPerson:mainModel.reportPerson andreportReason:mainModel.reportReason andaccdientAddress:mainModel.accdientAddress andreperPhone:mainModel.reperPhone andaccidentTime:mainModel.accidentTime andproductName:mainModel.productName andcommInfo:mainModel.commInfo andproductType:mainModel.productType andorgCode:mainModel.orgCode andorgName:mainModel.orgName andstatus:statusStr anddelegatePerson:mainModel.delegatePerson];
+             [SXDatabase insertIntoTShapeTableWithTID:shapeAry];
+             [SVProgressHUD showSuccessWithStatus:statueShow];
+             if ([statusStr isEqualToString:@"1"]) {
+                 [self StartRefresh];
+             }else if ([statusStr isEqualToString:@"2"])
+             {
+                 [self taskAction];
+             }
+             
+             [[NSNotificationCenter defaultCenter]
+              postNotificationName:@"reloadTabelData" object:self];
+             
+         }else
+         {
+             [SVProgressHUD showInfoWithStatus:returnValue];
+         }
+     } WithErrorBlock:^(id errorCode) {
+     } WithFailureBlock:^{
+     }];
+    if ([mainModel.delegatePerson isEqualToString:@"(null)"]) {
+        [lockVM LockRequestAndLockType:@"2" andbussinessId:mainModel.accidentId andstatus:statusStr andDescription:nil andType:self.swipeController.typeCount];
+    }else
+    {
+        [lockVM LockRequestAndLockType:@"2" andbussinessId:mainModel.accidentId andstatus:statusStr andDescription:mainModel.delegatePerson andType:self.swipeController.typeCount];
+    }
+
 }
 #pragma mark-隐藏键盘
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

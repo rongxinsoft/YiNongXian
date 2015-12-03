@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MLCamera.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +62,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>21FA18380E92CD79480E6F8872B84079</key>
+		<key>0E0F9D5E265B78617A240497044ECF64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,22 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48E282230EF1E99C5CF0110C9B72A399</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5394ECC638A3885D35A9DB27B93B5A06</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>59B5154DEC6908AAF54B5F46275BEC56</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>705868FC6FF1C9272C9686141FF7833E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,12 +87,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BAF8E6EF9F4C5818C7B387CDD5FF54BD</key>
+		<key>CFEC975FA602E46EC0CC8605D644260D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BDD666DDF753D51A1B31927AF1B87D1F</key>
+		<key>D590D0700097AA46D8096C68E904D193</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F2714AA0FD4BC4E4001E97748DD95868</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F79D8232971507453CC306F21C0A61AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F8BD910170563F0D1C3CE15A4B56E1B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA93347052718711D4AABE652B95E125</key>
 		<dict>
 			<key>primary</key>
 			<true/>

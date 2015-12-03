@@ -64,4 +64,6 @@
 +(void)deleteT_SrywithPolicyID:(NSString *)accidentId;
 //检验案件
 +(int)checkTSrvyID:(NSString *)accidentId;
+
++ (NSMutableArray *)getWillcase:(NSString*)status;
 @end

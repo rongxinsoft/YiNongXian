@@ -22,7 +22,7 @@
     
     self.mapView.layerDelegate=self;
     
-    GoogleTiledLayer *tiledLAyer=[[GoogleTiledLayer alloc] initWithMapType:IMAGE_GOOGLE_MAP];
+    GoogleTiledLayer *tiledLAyer=[[GoogleTiledLayer alloc] initWithMapType: VECTOR_GOOGLE_MAP];
     [self.mapView addMapLayer:tiledLAyer withName:@"Tiled Layer"];
     
     
