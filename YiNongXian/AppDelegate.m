@@ -71,39 +71,10 @@
     
     float latitude = newLocation.coordinate.latitude;
     float longitude = newLocation.coordinate.longitude;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",latitude ]forKey:@"jing"];
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",longitude ] forKey:@"wei"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",longitude ]forKey:@"jing"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",latitude ] forKey:@"wei"];
 
 }
-
-- (void)locationManager: (CLLocationManager *)manager
-       didFailWithError: (NSError *)error {
-    
-    NSString *errorString;
-    [manager stopUpdatingLocation];
-    NSLog(@"Error: %@",[error localizedDescription]);
-    switch([error code]) {
-        case kCLErrorDenied:
-            //Access denied by user
-            errorString = @"用户访问位置服务已关闭 请在 设置》E农险》位置  中允许访问";
-            
-            [[NSUserDefaults standardUserDefaults] setObject:@""forKey:@"jing"];
-            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"wei"];
-            break;
-        case kCLErrorLocationUnknown:
-            //Probably temporary...
-            errorString = @"位置数据不可用";
-            //Do something else...
-            break;
-        default:
-            errorString = @"一个未知的错误发生";
-            break;
-    }
-    [WCAlertView showAlertWithTitle:nil message:errorString customizationBlock:nil completionBlock:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-}
-
-
-
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

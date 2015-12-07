@@ -21,11 +21,11 @@
     self.goodImgScro.showsHorizontalScrollIndicator = FALSE;
     self.goodImgScro.showsVerticalScrollIndicator = FALSE;
     
-    
+   
     for (int a=0; a<photosAry.count; a++) {
         UIImageView *imagesView=[[UIImageView alloc]init];
-        imagesView.image=[UIImage imageNamed:photosAry[a]];
-        imagesView.frame=CGRectMake(DeviceWidth*a, 0, DeviceWidth,DeviceWidth*3/4) ;
+        imagesView.frame=CGRectMake(DeviceWidth*a, 0, DeviceWidth,DeviceWidth*3/5) ;
+        imagesView.image=[[UIImage alloc]initWithContentsOfFile:photosAry[a]];
         [self.goodImgScro addSubview:imagesView];
     }
     [self.goodImgScro setContentOffset:CGPointMake(DeviceWidth*num, 0) animated:NO];

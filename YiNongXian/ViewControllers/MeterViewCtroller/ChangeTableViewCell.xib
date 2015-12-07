@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ChangeTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="49.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUY-XB-tAp">
+                        <rect key="frame" x="15" y="8" width="85" height="33.5"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="uZh-vC-xds"/>
+                            <constraint firstAttribute="height" constant="33.5" id="znA-ba-p0x"/>
+                        </constraints>
+                        <state key="normal" title="手动打点">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nem-KK-HO9">
+                        <rect key="frame" x="100" y="8" width="85" height="33.5"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.098039215690000001" green="0.49803921569999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="地图拖动">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="DUY-XB-tAp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7QJ-V9-FCd"/>
+                    <constraint firstAttribute="bottom" secondItem="DUY-XB-tAp" secondAttribute="bottom" constant="8" id="HQD-lq-Bi6"/>
+                    <constraint firstAttribute="trailing" secondItem="Nem-KK-HO9" secondAttribute="trailing" constant="15" id="IJq-N3-zd1"/>
+                    <constraint firstItem="Nem-KK-HO9" firstAttribute="leading" secondItem="DUY-XB-tAp" secondAttribute="trailing" id="MKf-Ka-miK"/>
+                    <constraint firstItem="Nem-KK-HO9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Nbr-W3-Zw8"/>
+                    <constraint firstItem="DUY-XB-tAp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Ry4-XI-CSP"/>
+                    <constraint firstAttribute="bottom" secondItem="Nem-KK-HO9" secondAttribute="bottom" constant="8" id="aGo-1K-gCV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="DragTap" destination="Nem-KK-HO9" id="mQv-p2-KNt"/>
+                <outlet property="handTap" destination="DUY-XB-tAp" id="LdD-XM-BcT"/>
+            </connections>
+            <point key="canvasLocation" x="44" y="240"/>
+        </tableViewCell>
+    </objects>
+</document>

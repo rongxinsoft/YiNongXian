@@ -173,9 +173,7 @@ BOOL isTap;
 }
 -(int)loginValidation
 {
-    return 1;//开发阶段 不用验证
-    
-    
+    return 1;
     BOOL a=[self checkAction];
     if ([unameText.text isEqualToString:@""]||unameText.text==nil) {
         [SVProgressHUD showInfoWithStatus:@"帐号不可为空,请输入"];

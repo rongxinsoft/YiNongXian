@@ -7,8 +7,9 @@
 //
 
 #import "ImageDataViewController.h"
-
+#import "WaterCollectionViewCell.h"
 #import "TouchPropagatedScrollView.h"
+#import "HomeViewController.h"
 #import "QHCommonUtil.h"
 #define MENU_HEIGHT 40
 #define MENU_BUTTON_WIDTH  180
@@ -16,7 +17,7 @@
 #define MIN_MENU_FONT  13.f
 #define MAX_MENU_FONT  18.f
 
-@interface ImageDataViewController ()<UIScrollViewDelegate>
+@interface ImageDataViewController ()<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     UIView *_navView;
     UIView *_topNaviV;
@@ -27,33 +28,21 @@
     float _startPointX;
     UIView *_selectTabV;
 }
+@property(assign,nonatomic)int pageNum;
 
 @end
 
 @implementation ImageDataViewController
-
+@synthesize pageNum;
 - (void)viewDidLoad
 {
     self.view.backgroundColor = [UIColor whiteColor];
-//    UIView *statusBarView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, self.view.frame.size.width, 0.f)];
-//    if (isIos7 >= 7 && __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_6_1)
-//    {
-//        statusBarView.frame = CGRectMake(statusBarView.frame.origin.x, statusBarView.frame.origin.y, statusBarView.frame.size.width, 20.f);
-//        statusBarView.backgroundColor = [UIColor clearColor];
-//        ((UIImageView *)statusBarView).backgroundColor = RGBA(212,25,38,1);
-//        [self.view addSubview:statusBarView];
-//    }
-//    
-//    _navView = [[UIImageView alloc] initWithFrame:CGRectMake(0.f, StatusbarSize, self.view.frame.size.width, 44.f)];
-//    ((UIImageView *)_navView).backgroundColor = RGBA(212,25,38,1);
-//    [self.view insertSubview:_navView belowSubview:statusBarView];
- //   _navView.userInteractionEnabled = YES;
     
     _topNaviV = [[UIView alloc] initWithFrame:CGRectMake(0, _navView.frame.size.height + _navView.frame.origin.y, DeviceWidth, MENU_HEIGHT)];
     _topNaviV.backgroundColor = RGBA(236.f, 236.f, 236.f, 1);
     [self.view addSubview:_topNaviV];
     
-    _scrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _topNaviV.frame.origin.y + _topNaviV.frame.size.height, DeviceWidth, self.view.frame.size.height - _topNaviV.frame.origin.y - _topNaviV.frame.size.height)];
+    _scrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _topNaviV.frame.origin.y + _topNaviV.frame.size.height, DeviceWidth, DeviceHeight - _topNaviV.frame.size.height)];
     [_scrollV setPagingEnabled:YES];
     [_scrollV setShowsHorizontalScrollIndicator:NO];
     [self.view insertSubview:_scrollV belowSubview:self.view];
@@ -70,7 +59,7 @@
 - (void)createTwo
 {
     float btnW = 30;
-    NSArray *arT = @[@"全部(0)     ｜", @"投保单(0)  ｜", @"投保单的清单(0)｜", @"验标、查勘照片(0)｜", @"地号图／地形图／平面图(0)｜", @"公示照片(0)  ｜", @"被保险人信息(0) ｜", @"全属资料(0)  ｜", @"内部审批材料及其他(0)｜", @"反洗钱材料(0)|"];
+    NSArray *arT = @[@"全部(0)｜", @"投保单(0)｜", @"投保单的清单(0)｜", @"验标、查勘照片(0)｜", @"地号图／地形图／平面图(0)｜", @"公示照片(0)｜", @"被保险人信息(0) ｜", @"全属资料(0)｜", @"内部审批材料及其他(0)｜", @"反洗钱材料(0)|"];
     _navScrollV = [[TouchPropagatedScrollView alloc] initWithFrame:CGRectMake(0, 0, DeviceWidth - btnW, MENU_HEIGHT)];
     [_navScrollV setShowsHorizontalScrollIndicator:NO];
     for (int i = 0; i < [arT count]; i++)
@@ -106,49 +95,109 @@
         view.userInteractionEnabled = YES;
         UITapGestureRecognizer *singleTapRecognizer = [[UITapGestureRecognizer alloc] init];
         singleTapRecognizer.numberOfTapsRequired = 1;
-        [singleTapRecognizer addTarget:self action:@selector(pust2View:)];
         [view addGestureRecognizer:singleTapRecognizer];
         
-        [self initPageView:view];
+        [self initPageView:view andPage:i];
         
         [scrollV addSubview:view];
     }
     [scrollV setContentSize:CGSizeMake(scrollV.frame.size.width * pageCount, scrollV.frame.size.height)];
 }
 #pragma mark-   PAGE VIew
-- (void)initPageView:(UIView *)view
+- (void)initPageView:(UIView *)view andPage:(int)page
 {
-    int width = (view.frame.size.width - 20)/3;
-    float x = 5;
-    float y = 4;
-    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 10, self.view.frame.size.width, self.view.frame.size.height - 64)];
-    int sumJ = (int)(1+arc4random()%4);
-    int sumI = (int)(1+arc4random()%3);
-    for (int j = 1; j <= sumJ; j++)
-    {
-        for (int i = 1; i <= 3; i++)
-        {
-            if (j == sumJ && i > sumI)
-            {
-                break;
-            }
-            float w = x * i + width * (i - 1);
-            float h = y * j + width * (j - 1);
-            UILabel *l = [[UILabel alloc] initWithFrame:CGRectMake(w, h, width, width)];
-            [l setBackgroundColor:[QHCommonUtil getRandomColor]];
-            [v addSubview:l];
+    
+    UICollectionViewFlowLayout * flowLayout= [self setCollectionViewFlowLayout];
+    UICollectionView * colView  =[[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, DeviceWidth, DeviceHeight) collectionViewLayout:flowLayout];
+    colView.tag=page+30;
+    colView.backgroundColor=[UIColor whiteColor];
+    colView.delegate=self;
+    colView.dataSource=self;
+     [colView registerClass:[WaterCollectionViewCell class]forCellWithReuseIdentifier:@"WaterCollectionViewCell"];
+    [view addSubview:colView];
+}
+
+
+- (UICollectionViewFlowLayout *)setCollectionViewFlowLayout
+{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.sectionInset            = UIEdgeInsetsMake(0, 0, 0, 0);
+    layout.minimumInteritemSpacing = 0.0;
+    layout.minimumLineSpacing      = 0.0;
+    
+    return layout;
+}
+#pragma mark UIcollectionDelegata
+//定义展示的UICollectionViewCell的个数
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 1;
+}
+//定义展示的Section的个数
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+//每个UICollectionView展示的内容
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    
+    static NSString * CellIdentifier = @"WaterCollectionViewCell";
+    WaterCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+  //  cell.photo_Img.image=[[UIImage alloc] initWithContentsOfFile:photosAry[indexPath.row]];
+    NSLog(@"#######%ld",collectionView.tag);
+    if (collectionView.tag!=30) {
+        if (indexPath.row==0) {
+            cell.photo_Img.image=[UIImage imageNamed:@"list"];
+            cell.photo_Img.userInteractionEnabled=YES;
+            UITapGestureRecognizer* singleRecognizer;
+            singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(SingleTap:)];
+            //点击的次数
+            singleRecognizer.numberOfTapsRequired = 1; // 单击
+            [cell.photo_Img addGestureRecognizer:singleRecognizer];
+            
+            UIView *singleTapView = [singleRecognizer view];
+            singleTapView.tag = collectionView.tag;
         }
     }
-    
-    [view addSubview:v];
+   
+   
+    cell.backgroundColor = [UIColor colorWithRed:((10 * indexPath.row) / 255.0) green:((20 * indexPath.row)/255.0) blue:((30 * indexPath.row)/255.0) alpha:1.0f];
+    return cell;
 }
+-(void)SingleTap:(id)sender
+{
+    UITapGestureRecognizer *singleTap = (UITapGestureRecognizer *)sender;
+    int j=(int)[singleTap view].tag;
+    [self.navigationController pushViewController:[[HomeViewController alloc]init] animated:YES];
+    
+}
+
+//定义每个UICollectionView 的 margin
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(200, 150);
+}
+
+
+
+
+
 
 - (void)changeView:(float)x
 {
     float xx = x * (MENU_BUTTON_WIDTH / self.view.frame.size.width);
     
     float startX = xx;
-       float endX = xx + MENU_BUTTON_WIDTH;
+    float endX = xx + MENU_BUTTON_WIDTH;
     int sT = (x)/_scrollV.frame.size.width + 1;
     
     if (sT <= 0)

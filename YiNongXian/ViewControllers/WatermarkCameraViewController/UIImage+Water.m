@@ -10,15 +10,11 @@
 
 @implementation UIImage (Water)
 
-
-
-
-
-
 #pragma mark -也是文字水印
 - (UIImage *) imageWithStringWaterMark:(NSArray *)markAry  color:(UIColor *)color font:(UIFont *)font
 {
-    
+   
+
     
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0)
@@ -32,40 +28,39 @@
     }
 #endif
     //原图
-    [self drawInRect:CGRectMake(0, 0, self.size.width, self.size.height)];
+    [self drawInRect:CGRectMake(0, 50, self.size.width, self.size.height-150)];
     //文字颜色
     [color set];
     //水印文字
     
-    UIImage * image=[self createImageWithColor:[UIColor colorWithWhite:0.5 alpha:0.5]];
+    UIImage * image=[self createImageWithColor:[UIColor colorWithWhite:1 alpha:1]];
     for (int a=0; a<markAry.count; a++) {
         NSString *markString=markAry[a];
         switch (a) {
             case 0:
-                [image  drawInRect:CGRectMake((self.size.width-500)/2, 0,500 , 100)];
-                markString =[NSString stringWithFormat:@"用户名:%@",markString];
-                 [markString drawInRect:CGRectMake((self.size.width-500)/2, 0,500 , 100) withFont:font];
+                 [image  drawInRect:CGRectMake(0, 0,self.size.width , 50)];
+                 markString =[NSString stringWithFormat:@"用户名:%@",markString];
+                 [markString drawInRect:CGRectMake((self.size.width-500)/2, 0,500 , 50) withFont:font];
                 break;
             case 1:
                 
-                 [image drawInRect:CGRectMake(0, self.size.height-800,500, 100) ];
+                 [image drawInRect:CGRectMake(0, self.size.height-210,500, 100) ];
                  markString =[NSString stringWithFormat:@"经度:%@",markString];
-                [markString drawInRect:CGRectMake(0, self.size.height-800,500, 100) withFont:font];
+                [markString drawInRect:CGRectMake(0, self.size.height-210,500, 100) withFont:font];
                  break;
             case 2:
-                [image drawInRect:CGRectMake(self.size.width-500, self.size.height-800,500, 100) ];
+                [image drawInRect:CGRectMake(self.size.width-500, self.size.height-210,500, 100) ];
                  markString =[NSString stringWithFormat:@"纬度:%@",markString];
-                [markString drawInRect:CGRectMake(self.size.width-500, self.size.height-800,500, 100) withFont:font];
+                [markString drawInRect:CGRectMake(self.size.width-500, self.size.height-210,500, 100) withFont:font];
                 break;
             case 3:
                  markString =[NSString stringWithFormat:@"来源:%@",markString];
-                [image drawInRect:CGRectMake(0, self.size.height-600,500, 100) ];
-                 [markString drawInRect:CGRectMake(0, self.size.height-600,500, 100) withFont:font];
+                [image drawInRect:CGRectMake(0, self.size.height-100,self.size.width, 100) ];
+                 [markString drawInRect:CGRectMake(0, self.size.height-100,500, 100) withFont:font];
                 break;
             case 4:
                  markString =[NSString stringWithFormat:@"时间:%@",markString];
-                [image drawInRect:CGRectMake(self.size.width-1000, self.size.height-600,1000, 100) ];
-                [markString drawInRect:CGRectMake(self.size.width-1000, self.size.height-600,1000, 100) withFont:font];
+                [markString drawInRect:CGRectMake(self.size.width-1000, self.size.height-100,1000, 100) withFont:font];
                 break;
 
                 
@@ -78,7 +73,7 @@
     
     UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-   newPic=  [newPic thumbnailWithImageWithoutScale:newPic size:CGSizeMake(3000, 2250)];
+    newPic=  [newPic thumbnailWithImageWithoutScale:newPic size:CGSizeMake(3000, 2250)];
     return newPic;
     
 }

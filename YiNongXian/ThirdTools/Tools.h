@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 @class caseModel,MainModel;
 @interface Tools : NSObject
+//平方米转亩
++(double)SquareTurn:(double)square;
+
 
 +(void)isCaseOrMain:(BOOL )isCase;
 +(BOOL)isORno;

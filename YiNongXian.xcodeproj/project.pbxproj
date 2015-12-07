@@ -11,6 +11,8 @@
 		212C19451BFB090800A568BB /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 212C19431BFB090800A568BB /* MainTableViewCell.m */; };
 		212C19461BFB090800A568BB /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 212C19441BFB090800A568BB /* MainTableViewCell.xib */; };
 		212C19481BFB22C100A568BB /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 212C19471BFB22C100A568BB /* list@2x.png */; };
+		212CB4231C152B4600824DAB /* FlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 212CB4211C152B4600824DAB /* FlyViewController.m */; };
+		212CB4241C152B4600824DAB /* FlyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 212CB4221C152B4600824DAB /* FlyViewController.xib */; };
 		213D5D3A1BF42D56008D9C25 /* ViewModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D391BF42D56008D9C25 /* ViewModelClass.m */; };
 		213D5D3E1BF42DE1008D9C25 /* NetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D3D1BF42DE1008D9C25 /* NetRequestClass.m */; };
 		213D5D461BF43CA2008D9C25 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D441BF43CA2008D9C25 /* LoginViewController.m */; };
@@ -23,6 +25,12 @@
 		213D5D5B1BF46B49008D9C25 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213D5D591BF46B49008D9C25 /* MainViewController.xib */; };
 		213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213D5D651BF4973D008D9C25 /* PooCodeView.m */; };
 		214EEBDD1BF9DD27003282D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214EEBDC1BF9DD27003282D9 /* Images.xcassets */; };
+		21804CE91C1130D000A08D01 /* MeterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21804CE71C1130D000A08D01 /* MeterViewController.m */; };
+		21804CEA1C1130D000A08D01 /* MeterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21804CE81C1130D000A08D01 /* MeterViewController.xib */; };
+		21804CEE1C11377B00A08D01 /* MeterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21804CEC1C11377B00A08D01 /* MeterTableViewCell.m */; };
+		21804CEF1C11377B00A08D01 /* MeterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21804CED1C11377B00A08D01 /* MeterTableViewCell.xib */; };
+		21804CF31C1139A200A08D01 /* ChangeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21804CF11C1139A200A08D01 /* ChangeTableViewCell.m */; };
+		21804CF41C1139A200A08D01 /* ChangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21804CF21C1139A200A08D01 /* ChangeTableViewCell.xib */; };
 		218C6F001C0EE11B003EADDF /* WarterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 218C6EFE1C0EE11B003EADDF /* WarterDetailViewController.m */; };
 		218C6F011C0EE11B003EADDF /* WarterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218C6EFF1C0EE11B003EADDF /* WarterDetailViewController.xib */; };
 		21D123ED1C0C3C2C00980D6A /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D123EC1C0C3C2C00980D6A /* Tools.m */; };
@@ -38,12 +46,25 @@
 		21E509E41C0D428B00473B20 /* WaterCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E509E21C0D428B00473B20 /* WaterCameraViewController.m */; };
 		21E509E51C0D428B00473B20 /* WaterCameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E509E31C0D428B00473B20 /* WaterCameraViewController.xib */; };
 		21E666001C02E1F400B35D74 /* EntrustViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */; };
+		21E6840C1C134359009E6DEE /* ConverterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E6840A1C134359009E6DEE /* ConverterViewController.m */; };
+		21E6840D1C134359009E6DEE /* ConverterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E6840B1C134359009E6DEE /* ConverterViewController.xib */; };
 		21E746131C06AF300017570C /* caseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E746121C06AF300017570C /* caseModel.m */; };
 		21E746171C06BE970017570C /* surveyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E746151C06BE970017570C /* surveyTableViewCell.m */; };
 		21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E746161C06BE970017570C /* surveyTableViewCell.xib */; };
 		21E7461B1C06DCF30017570C /* noCopytextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E7461A1C06DCF30017570C /* noCopytextFiled.m */; };
 		21E7EE4C1C0E87D200F2648B /* WaterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E7EE4A1C0E87D200F2648B /* WaterCollectionViewCell.m */; };
 		21E7EE4D1C0E87D200F2648B /* WaterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E7EE4B1C0E87D200F2648B /* WaterCollectionViewCell.xib */; };
+		21E85F5F1C1463FF00F04876 /* LLSimpleCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F5C1C1463FF00F04876 /* LLSimpleCamera.m */; };
+		21E85F601C1463FF00F04876 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F5E1C1463FF00F04876 /* UIImage+FixOrientation.m */; };
+		21E85F651C14641E00F04876 /* camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21E85F611C14641E00F04876 /* camera-flash@2x.png */; };
+		21E85F661C14641E00F04876 /* camera-switch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21E85F621C14641E00F04876 /* camera-switch@2x.png */; };
+		21E85F671C14641E00F04876 /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21E85F631C14641E00F04876 /* cancel@2x.png */; };
+		21E85F681C14641E00F04876 /* cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21E85F641C14641E00F04876 /* cancel@3x.png */; };
+		21E85F6F1C14645300F04876 /* UIImage+Crop.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F6A1C14645300F04876 /* UIImage+Crop.m */; };
+		21E85F701C14645300F04876 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F6C1C14645300F04876 /* UIImage+Resize.m */; };
+		21E85F711C14645300F04876 /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F6E1C14645300F04876 /* ViewUtils.m */; };
+		21E85F781C1464AF00F04876 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F751C1464AF00F04876 /* HomeViewController.m */; };
+		21E85F791C1464AF00F04876 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E85F771C1464AF00F04876 /* ImageViewController.m */; };
 		21E871521C0FF88900EE974A /* UIImage+Water.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E871511C0FF88900EE974A /* UIImage+Water.m */; };
 		21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21E8D9741BF98CC500CE757D /* RepordViewController.m */; };
 		21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21E8D9751BF98CC500CE757D /* RepordViewController.xib */; };
@@ -122,6 +143,9 @@
 		212C19431BFB090800A568BB /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		212C19441BFB090800A568BB /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		212C19471BFB22C100A568BB /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		212CB4201C152B4600824DAB /* FlyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyViewController.h; sourceTree = "<group>"; };
+		212CB4211C152B4600824DAB /* FlyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlyViewController.m; sourceTree = "<group>"; };
+		212CB4221C152B4600824DAB /* FlyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlyViewController.xib; sourceTree = "<group>"; };
 		213D5D381BF42D56008D9C25 /* ViewModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewModelClass.h; path = ViewModel/ViewModelClass.h; sourceTree = "<group>"; };
 		213D5D391BF42D56008D9C25 /* ViewModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewModelClass.m; path = ViewModel/ViewModelClass.m; sourceTree = "<group>"; };
 		213D5D3C1BF42DE1008D9C25 /* NetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestClass.h; sourceTree = "<group>"; };
@@ -140,6 +164,15 @@
 		213D5D641BF4973D008D9C25 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
 		213D5D651BF4973D008D9C25 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
 		214EEBDC1BF9DD27003282D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		21804CE61C1130D000A08D01 /* MeterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeterViewController.h; sourceTree = "<group>"; };
+		21804CE71C1130D000A08D01 /* MeterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeterViewController.m; sourceTree = "<group>"; };
+		21804CE81C1130D000A08D01 /* MeterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeterViewController.xib; sourceTree = "<group>"; };
+		21804CEB1C11377B00A08D01 /* MeterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeterTableViewCell.h; sourceTree = "<group>"; };
+		21804CEC1C11377B00A08D01 /* MeterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeterTableViewCell.m; sourceTree = "<group>"; };
+		21804CED1C11377B00A08D01 /* MeterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeterTableViewCell.xib; sourceTree = "<group>"; };
+		21804CF01C1139A200A08D01 /* ChangeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeTableViewCell.h; sourceTree = "<group>"; };
+		21804CF11C1139A200A08D01 /* ChangeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeTableViewCell.m; sourceTree = "<group>"; };
+		21804CF21C1139A200A08D01 /* ChangeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeTableViewCell.xib; sourceTree = "<group>"; };
 		218C6EFD1C0EE11B003EADDF /* WarterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarterDetailViewController.h; sourceTree = "<group>"; };
 		218C6EFE1C0EE11B003EADDF /* WarterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WarterDetailViewController.m; sourceTree = "<group>"; };
 		218C6EFF1C0EE11B003EADDF /* WarterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WarterDetailViewController.xib; sourceTree = "<group>"; };
@@ -168,6 +201,9 @@
 		21E509E31C0D428B00473B20 /* WaterCameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCameraViewController.xib; sourceTree = "<group>"; };
 		21E665FE1C02E1F400B35D74 /* EntrustViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntrustViewModel.h; sourceTree = "<group>"; };
 		21E665FF1C02E1F400B35D74 /* EntrustViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntrustViewModel.m; sourceTree = "<group>"; };
+		21E684091C134359009E6DEE /* ConverterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConverterViewController.h; sourceTree = "<group>"; };
+		21E6840A1C134359009E6DEE /* ConverterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConverterViewController.m; sourceTree = "<group>"; };
+		21E6840B1C134359009E6DEE /* ConverterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConverterViewController.xib; sourceTree = "<group>"; };
 		21E746111C06AF300017570C /* caseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caseModel.h; sourceTree = "<group>"; };
 		21E746121C06AF300017570C /* caseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = caseModel.m; sourceTree = "<group>"; };
 		21E746141C06BE970017570C /* surveyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = surveyTableViewCell.h; sourceTree = "<group>"; };
@@ -178,6 +214,24 @@
 		21E7EE491C0E87D200F2648B /* WaterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterCollectionViewCell.h; sourceTree = "<group>"; };
 		21E7EE4A1C0E87D200F2648B /* WaterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterCollectionViewCell.m; sourceTree = "<group>"; };
 		21E7EE4B1C0E87D200F2648B /* WaterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterCollectionViewCell.xib; sourceTree = "<group>"; };
+		21E85F5B1C1463FF00F04876 /* LLSimpleCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSimpleCamera.h; sourceTree = "<group>"; };
+		21E85F5C1C1463FF00F04876 /* LLSimpleCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSimpleCamera.m; sourceTree = "<group>"; };
+		21E85F5D1C1463FF00F04876 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		21E85F5E1C1463FF00F04876 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
+		21E85F611C14641E00F04876 /* camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-flash@2x.png"; sourceTree = "<group>"; };
+		21E85F621C14641E00F04876 /* camera-switch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-switch@2x.png"; sourceTree = "<group>"; };
+		21E85F631C14641E00F04876 /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		21E85F641C14641E00F04876 /* cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@3x.png"; sourceTree = "<group>"; };
+		21E85F691C14645300F04876 /* UIImage+Crop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Crop.h"; sourceTree = "<group>"; };
+		21E85F6A1C14645300F04876 /* UIImage+Crop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Crop.m"; sourceTree = "<group>"; };
+		21E85F6B1C14645300F04876 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		21E85F6C1C14645300F04876 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		21E85F6D1C14645300F04876 /* ViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewUtils.h; sourceTree = "<group>"; };
+		21E85F6E1C14645300F04876 /* ViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewUtils.m; sourceTree = "<group>"; };
+		21E85F741C1464AF00F04876 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		21E85F751C1464AF00F04876 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		21E85F761C1464AF00F04876 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		21E85F771C1464AF00F04876 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		21E871501C0FF88900EE974A /* UIImage+Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Water.h"; sourceTree = "<group>"; };
 		21E871511C0FF88900EE974A /* UIImage+Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Water.m"; sourceTree = "<group>"; };
 		21E8D9731BF98CC500CE757D /* RepordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepordViewController.h; sourceTree = "<group>"; };
@@ -315,6 +369,16 @@
 			path = insuredViewController;
 			sourceTree = "<group>";
 		};
+		212CB41F1C152B3900824DAB /* flyController */ = {
+			isa = PBXGroup;
+			children = (
+				212CB4201C152B4600824DAB /* FlyViewController.h */,
+				212CB4211C152B4600824DAB /* FlyViewController.m */,
+				212CB4221C152B4600824DAB /* FlyViewController.xib */,
+			);
+			path = flyController;
+			sourceTree = "<group>";
+		};
 		213D5D231BF42615008D9C25 /* Resource  */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +391,10 @@
 		213D5D241BF42615008D9C25 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				21E85F611C14641E00F04876 /* camera-flash@2x.png */,
+				21E85F621C14641E00F04876 /* camera-switch@2x.png */,
+				21E85F631C14641E00F04876 /* cancel@2x.png */,
+				21E85F641C14641E00F04876 /* cancel@3x.png */,
 				212C19471BFB22C100A568BB /* list@2x.png */,
 				21F7FA201BF5D9C400CFB9A7 /* password@2x.png */,
 				21F7FA211BF5D9C400CFB9A7 /* user@2x.png */,
@@ -422,9 +490,28 @@
 			path = MainViewController;
 			sourceTree = "<group>";
 		};
+		21804CE51C1130B600A08D01 /* MeterViewCtroller */ = {
+			isa = PBXGroup;
+			children = (
+				21804CE61C1130D000A08D01 /* MeterViewController.h */,
+				21804CE71C1130D000A08D01 /* MeterViewController.m */,
+				21804CE81C1130D000A08D01 /* MeterViewController.xib */,
+				21804CEB1C11377B00A08D01 /* MeterTableViewCell.h */,
+				21804CEC1C11377B00A08D01 /* MeterTableViewCell.m */,
+				21804CED1C11377B00A08D01 /* MeterTableViewCell.xib */,
+				21804CF01C1139A200A08D01 /* ChangeTableViewCell.h */,
+				21804CF11C1139A200A08D01 /* ChangeTableViewCell.m */,
+				21804CF21C1139A200A08D01 /* ChangeTableViewCell.xib */,
+			);
+			path = MeterViewCtroller;
+			sourceTree = "<group>";
+		};
 		21986AB31C104D5E00B2C4C2 /* ToolsController */ = {
 			isa = PBXGroup;
 			children = (
+				212CB41F1C152B3900824DAB /* flyController */,
+				21E684081C13433F009E6DEE /* ConverterViewController */,
+				21804CE51C1130B600A08D01 /* MeterViewCtroller */,
 				21E509E01C0D41B000473B20 /* WatermarkCameraViewController */,
 			);
 			name = ToolsController;
@@ -442,6 +529,13 @@
 		21E3BFF41BFEB6D00091250B /* ThirdTools */ = {
 			isa = PBXGroup;
 			children = (
+				21E85F691C14645300F04876 /* UIImage+Crop.h */,
+				21E85F6A1C14645300F04876 /* UIImage+Crop.m */,
+				21E85F6B1C14645300F04876 /* UIImage+Resize.h */,
+				21E85F6C1C14645300F04876 /* UIImage+Resize.m */,
+				21E85F6D1C14645300F04876 /* ViewUtils.h */,
+				21E85F6E1C14645300F04876 /* ViewUtils.m */,
+				21E85F5A1C1463FF00F04876 /* LLSimpleCamera */,
 				21D123EB1C0C3C2C00980D6A /* Tools.h */,
 				21D123EC1C0C3C2C00980D6A /* Tools.m */,
 				21E92C2D1C0810CD00C977A7 /* QHCommonUtil.h */,
@@ -538,6 +632,16 @@
 			path = WatermarkCameraViewController;
 			sourceTree = "<group>";
 		};
+		21E684081C13433F009E6DEE /* ConverterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				21E684091C134359009E6DEE /* ConverterViewController.h */,
+				21E6840A1C134359009E6DEE /* ConverterViewController.m */,
+				21E6840B1C134359009E6DEE /* ConverterViewController.xib */,
+			);
+			path = ConverterViewController;
+			sourceTree = "<group>";
+		};
 		21E746101C06AF1E0017570C /* caseModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +649,41 @@
 				21E746121C06AF300017570C /* caseModel.m */,
 			);
 			path = caseModel;
+			sourceTree = "<group>";
+		};
+		21E85F5A1C1463FF00F04876 /* LLSimpleCamera */ = {
+			isa = PBXGroup;
+			children = (
+				21E85F5B1C1463FF00F04876 /* LLSimpleCamera.h */,
+				21E85F5C1C1463FF00F04876 /* LLSimpleCamera.m */,
+				21E85F5D1C1463FF00F04876 /* UIImage+FixOrientation.h */,
+				21E85F5E1C1463FF00F04876 /* UIImage+FixOrientation.m */,
+			);
+			path = LLSimpleCamera;
+			sourceTree = "<group>";
+		};
+		21E85F721C14646C00F04876 /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				21E92C1D1C08005800C977A7 /* MapViewController.h */,
+				21E92C1E1C08005800C977A7 /* MapViewController.m */,
+				21E92C1F1C08005800C977A7 /* MapViewController.xib */,
+			);
+			name = MapVC;
+			sourceTree = "<group>";
+		};
+		21E85F731C14648E00F04876 /* photosVC */ = {
+			isa = PBXGroup;
+			children = (
+				21E85F741C1464AF00F04876 /* HomeViewController.h */,
+				21E85F751C1464AF00F04876 /* HomeViewController.m */,
+				21E85F761C1464AF00F04876 /* ImageViewController.h */,
+				21E85F771C1464AF00F04876 /* ImageViewController.m */,
+				21E92C221C08007D00C977A7 /* ImageDataViewController.h */,
+				21E92C231C08007D00C977A7 /* ImageDataViewController.m */,
+				21E92C241C08007D00C977A7 /* ImageDataViewController.xib */,
+			);
+			name = photosVC;
 			sourceTree = "<group>";
 		};
 		21E8D9721BF98C8600CE757D /* RepordViewController */ = {
@@ -563,15 +702,11 @@
 		21E92C121C07FD0900C977A7 /* DetailsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				21E85F731C14648E00F04876 /* photosVC */,
+				21E85F721C14646C00F04876 /* MapVC */,
 				21E92C181C08003900C977A7 /* CaseTextViewController.h */,
 				21E92C191C08003900C977A7 /* CaseTextViewController.m */,
 				21E92C1A1C08003900C977A7 /* CaseTextViewController.xib */,
-				21E92C1D1C08005800C977A7 /* MapViewController.h */,
-				21E92C1E1C08005800C977A7 /* MapViewController.m */,
-				21E92C1F1C08005800C977A7 /* MapViewController.xib */,
-				21E92C221C08007D00C977A7 /* ImageDataViewController.h */,
-				21E92C231C08007D00C977A7 /* ImageDataViewController.m */,
-				21E92C241C08007D00C977A7 /* ImageDataViewController.xib */,
 				21E92C271C08038A00C977A7 /* initDetailView.h */,
 				21E92C281C08038A00C977A7 /* initDetailView.m */,
 				21E92C2A1C080FF200C977A7 /* TouchPropagatedScrollView.h */,
@@ -817,11 +952,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				213D5D491BF4417D008D9C25 /* CPIC_Logo@2x.png in Resources */,
+				21E85F661C14641E00F04876 /* camera-switch@2x.png in Resources */,
+				21804CF41C1139A200A08D01 /* ChangeTableViewCell.xib in Resources */,
 				21E509E51C0D428B00473B20 /* WaterCameraViewController.xib in Resources */,
 				21E746181C06BE970017570C /* surveyTableViewCell.xib in Resources */,
 				21F7FA1E1BF5CC9800CFB9A7 /* shangbao@2x.png in Resources */,
 				21FE207F1BF19A71002B08FC /* LaunchScreen.storyboard in Resources */,
+				21E85F671C14641E00F04876 /* cancel@2x.png in Resources */,
 				21E92C261C08007D00C977A7 /* ImageDataViewController.xib in Resources */,
+				21E6840D1C134359009E6DEE /* ConverterViewController.xib in Resources */,
+				21804CEA1C1130D000A08D01 /* MeterViewController.xib in Resources */,
+				212CB4241C152B4600824DAB /* FlyViewController.xib in Resources */,
+				21804CEF1C11377B00A08D01 /* MeterTableViewCell.xib in Resources */,
 				212C19481BFB22C100A568BB /* list@2x.png in Resources */,
 				213D5D4F1BF445D0008D9C25 /* ok@2x.png in Resources */,
 				21F7FA1D1BF5CC9800CFB9A7 /* chengbao@2x.png in Resources */,
@@ -844,6 +986,8 @@
 				21E8D9771BF98CC500CE757D /* RepordViewController.xib in Resources */,
 				21F7FA231BF5D9C400CFB9A7 /* user@2x.png in Resources */,
 				21F7FA071BF5918400CFB9A7 /* LeftMenuViewController.xib in Resources */,
+				21E85F651C14641E00F04876 /* camera-flash@2x.png in Resources */,
+				21E85F681C14641E00F04876 /* cancel@3x.png in Resources */,
 				21F7FA171BF5CC0800CFB9A7 /* headIcon@2x.png in Resources */,
 				212C19461BFB090800A568BB /* MainTableViewCell.xib in Resources */,
 			);
@@ -919,14 +1063,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				21E3BFFF1BFEC47F0091250B /* MainViewModel.m in Sources */,
+				212CB4231C152B4600824DAB /* FlyViewController.m in Sources */,
+				21E85F6F1C14645300F04876 /* UIImage+Crop.m in Sources */,
 				21F7FA281BF5E47800CFB9A7 /* SetingViewController.m in Sources */,
 				21E409941BFC716100F735B5 /* LoginViewModel.m in Sources */,
 				21F7FA141BF5C34F00CFB9A7 /* LeftTableViewCell.m in Sources */,
+				21804CE91C1130D000A08D01 /* MeterViewController.m in Sources */,
 				21E92C4B1C083A4600C977A7 /* GoogleLayerOperation.m in Sources */,
 				21E92C2C1C080FF200C977A7 /* TouchPropagatedScrollView.m in Sources */,
 				21E92C251C08007D00C977A7 /* ImageDataViewController.m in Sources */,
 				213D5D661BF4973D008D9C25 /* PooCodeView.m in Sources */,
 				21E92C2F1C0810CD00C977A7 /* QHCommonUtil.m in Sources */,
+				21804CEE1C11377B00A08D01 /* MeterTableViewCell.m in Sources */,
 				21E8D97B1BF9C88800CE757D /* RepordTableViewCell.m in Sources */,
 				21E409981BFC7A7700F735B5 /* WCAlertView.m in Sources */,
 				21E92C1B1C08003900C977A7 /* CaseTextViewController.m in Sources */,
@@ -936,21 +1084,29 @@
 				21E509E41C0D428B00473B20 /* WaterCameraViewController.m in Sources */,
 				21F7FA021BF58F9700CFB9A7 /* UIViewController+RNSwipeViewController.m in Sources */,
 				21E871521C0FF88900EE974A /* UIImage+Water.m in Sources */,
+				21E85F5F1C1463FF00F04876 /* LLSimpleCamera.m in Sources */,
 				21FE20741BF19A71002B08FC /* AppDelegate.m in Sources */,
 				218C6F001C0EE11B003EADDF /* WarterDetailViewController.m in Sources */,
 				21F7FA011BF58F9700CFB9A7 /* UIView+Sizes.m in Sources */,
 				213D5D3A1BF42D56008D9C25 /* ViewModelClass.m in Sources */,
+				21E85F791C1464AF00F04876 /* ImageViewController.m in Sources */,
 				21E7461B1C06DCF30017570C /* noCopytextFiled.m in Sources */,
+				21804CF31C1139A200A08D01 /* ChangeTableViewCell.m in Sources */,
+				21E85F781C1464AF00F04876 /* HomeViewController.m in Sources */,
+				21E85F701C14645300F04876 /* UIImage+Resize.m in Sources */,
 				212C19451BFB090800A568BB /* MainTableViewCell.m in Sources */,
+				21E85F601C1463FF00F04876 /* UIImage+FixOrientation.m in Sources */,
 				213D5D3E1BF42DE1008D9C25 /* NetRequestClass.m in Sources */,
 				213D5D5A1BF46B49008D9C25 /* MainViewController.m in Sources */,
 				212A2A991BFD60E5000856DB /* SXDatabase.m in Sources */,
 				21E666001C02E1F400B35D74 /* EntrustViewModel.m in Sources */,
 				21FE20711BF19A71002B08FC /* main.m in Sources */,
+				21E85F711C14645300F04876 /* ViewUtils.m in Sources */,
 				21F7F9FF1BF58F9700CFB9A7 /* RNDirectionPanGestureRecognizer.m in Sources */,
 				21E746171C06BE970017570C /* surveyTableViewCell.m in Sources */,
 				21E409901BFC2A8700F735B5 /* Encrpt.m in Sources */,
 				21D123ED1C0C3C2C00980D6A /* Tools.m in Sources */,
+				21E6840C1C134359009E6DEE /* ConverterViewController.m in Sources */,
 				21E403C51C043244005D1DDD /* LockViewModel.m in Sources */,
 				21E8D9761BF98CC500CE757D /* RepordViewController.m in Sources */,
 				21E92C201C08005800C977A7 /* MapViewController.m in Sources */,

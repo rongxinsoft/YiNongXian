@@ -11,7 +11,8 @@
 #import "UIImage+Water.h"
 #import "MLCameraViewController.h"
 #import "WarterDetailViewController.h"
-@interface WaterCameraViewController ()
+#import <CoreLocation/CoreLocation.h>
+@interface WaterCameraViewController ()<CLLocationManagerDelegate>
 @property(strong,nonatomic)NSMutableArray * photosAry;
 @end
 
@@ -201,10 +202,6 @@
     NSData * newImg=  UIImageJPEGRepresentation(img, 0.0);
     long length=[newImg length]/1024; 
      UIImage * new=[[UIImage alloc]initWithData:newImg];
-    
-    
-    
-    
     NSDate* date = [NSDate date];
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyyMMddHHMMSS"];
@@ -231,6 +228,33 @@
 {
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (void)locationManager: (CLLocationManager *)manager
+       didFailWithError: (NSError *)error {
+    
+    NSString *errorString;
+    [manager stopUpdatingLocation];
+    NSLog(@"Error: %@",[error localizedDescription]);
+    switch([error code]) {
+        case kCLErrorDenied:
+            //Access denied by user
+            errorString = @"用户访问位置服务已关闭 请在 设置》E农险》位置  中允许访问";
+            
+            [[NSUserDefaults standardUserDefaults] setObject:@""forKey:@"jing"];
+            [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"wei"];
+            break;
+        case kCLErrorLocationUnknown:
+            //Probably temporary...
+            errorString = @"位置数据不可用";
+            //Do something else...
+            break;
+        default:
+            errorString = @"一个未知的错误发生";
+            break;
+    }
+    [WCAlertView showAlertWithTitle:nil message:errorString customizationBlock:nil completionBlock:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

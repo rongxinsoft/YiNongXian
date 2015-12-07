@@ -10,11 +10,14 @@
 #import "RepordViewController.h"
 #import "LeftTableViewCell.h"
 #import "UIViewController+RNSwipeViewController.h"
+#import "MeterViewController.h"
 #import "RNSwipeViewController.h"
 #import "MainViewController.h"
 #import "MJRefresh.h"
 #import "SXDatabase.h"
 #import "WaterCameraViewController.h"
+#import "ConverterViewController.h"
+#import "FlyViewController.h"
 @interface LeftMenuViewController ()
 
 @property(strong,nonatomic)UIViewController * currentVC;
@@ -234,7 +237,23 @@
         }
     }else
     {
-        [self.navigationController pushViewController:[[WaterCameraViewController alloc]init] animated:YES];
+        switch (indexPath.row) {
+            case 0:
+                [self.navigationController pushViewController:[[MeterViewController alloc]init] animated:YES];
+                break;
+            case 1:
+                [self.navigationController pushViewController:[[WaterCameraViewController alloc]init] animated:YES];
+                break;
+            case 2:
+                [self.navigationController pushViewController:[[FlyViewController alloc] init] animated:YES];
+                break;
+            case 3:
+                [self.navigationController pushViewController:[[ConverterViewController alloc]init] animated:YES];
+                break;
+            default:
+                break;
+        }
+        
     }
 }
 -(void)reloadTabelData

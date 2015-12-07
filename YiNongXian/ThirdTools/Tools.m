@@ -15,6 +15,11 @@ static caseModel * caseM;
 static MainModel * main;
 static bool isORno;
 
+
++(double)SquareTurn:(double)square
+{
+    return square*0.0015;
+}
 +(void)isCaseOrMain:(BOOL )isCase
 {
     isORno=isCase;
